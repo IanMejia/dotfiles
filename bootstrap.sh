@@ -26,3 +26,7 @@ ln -s $BASEDIR/zsh/zprofile $HOME/.zprofile
 ln -s $BASEDIR/zsh/p10k.zsh $HOME/.p10k.zsh
 ln -s $BASEDIR/zsh/zlogin $HOME/.zlogin
 ln -s $BASEDIR/zsh/zshrc $HOME/.zshrc
+
+# x-stuff
+ln -s $BASEDIR/Xresources $HOME/.Xresources
+ln -s $BASEDIR/xinit $HOME/.xinit
