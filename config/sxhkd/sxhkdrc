@@ -19,7 +19,7 @@ XF86MonBrightness{Up,Down}
     light {-A 5,-U 5}
 
 XF86Audio{Mute,LowerVolume,RaiseVolume}
-    pactl set-sink{-mute @DEFAULT_SINK@ toggle,-volume @DEFAULT_SINK +5%,-volume @DEFAULT_SINK +5%}
+    pamixer {-t,-d 5,-i 5}
 
 XF86Audio{Play,Prev,Next,Stop}
     playerctl {play-pause,previous,next,stop}

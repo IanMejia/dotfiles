@@ -2,13 +2,10 @@
 
 # variables
 xresources=$HOME/.Xresources
-session=${1:-plasma}
+session=${1:-bspwm}
 
 case $session in
-    plasma   ) exec startplasma-x11;;
-    spectrwm ) exec spectrwm;;
     bspwm    ) exec bspwm;;
-    qtile    ) exec qtile;;
     *        ) exec $1;;
 esac
 

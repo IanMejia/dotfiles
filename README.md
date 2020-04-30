@@ -11,7 +11,7 @@ colorschemes are Gruvbox.
 
 - *Window Manager:*
 
-  - ***TODO***
+  - Bspwm with polybar.
 
 - *Shell:*
 

@@ -1,0 +1,94 @@
+[global/wm]
+margin-top = 0
+margin-bottom = 0
+
+include-file = ~/.config/polybar/modules.ini
+include-file = ~/.config/polybar/colors.ini
+
+[bar/mybar]
+monitor = ${env:MONITOR:eDP}
+width = 100%
+height = 25
+;offset-x = 1%
+;offset-y = 1%
+radius = 0
+fixed-center = true
+
+background = ${color.bg}
+foreground = ${color.fg}
+
+line-size = 3
+line-color = #f00
+
+;add if you prefer a transparent border around the bar
+;border-size = 2
+;border-color = #00000000
+
+padding-left = 0
+padding-right = 2
+
+module-margin-left = 1
+module-margin-right = 2
+
+font-0 = "Ubuntu Condensed:size=10;2"
+font-1 = "icomoon\-feather:size=10;2"
+font-2 = "xos4 Terminus:size=12;1"
+
+modules-left = workspaces
+modules-center = title
+modules-right = pulseaudio keyboard network date battery powermenu
+
+separator = |
+
+tray-position = right
+tray-padding = 2
+;tray-background = #0063ff
+
+wm-restack = bspwm
+
+;override-redirect = true
+
+;scroll-up = bspwm-desknext
+;scroll-down = bspwm-deskprev
+
+cursor-click = pointer
+cursor-scroll = ns-resize
+
+;[module/powermenu]
+;type = custom/menu
+;
+;expand-right = true
+;
+;format-spacing = 1
+;
+;label-open = 
+;label-open-foreground = ${colors.secondary}
+;label-close =  cancel
+;label-close-foreground = ${colors.secondary}
+;label-separator = |
+;label-separator-foreground = ${colors.foreground-alt}
+;
+;menu-0-0 = reboot
+;menu-0-0-exec = menu-open-1
+;menu-0-1 = power off
+;menu-0-1-exec = menu-open-2
+;
+;menu-1-0 = cancel
+;menu-1-0-exec = menu-open-0
+;menu-1-1 = reboot
+;menu-1-1-exec = sudo reboot
+;
+;menu-2-0 = power off
+;menu-2-0-exec = sudo poweroff
+;menu-2-1 = cancel
+;menu-2-1-exec = menu-open-0
+
+[settings]
+screenchange-reload = true
+;compositing-background = xor
+;compositing-background = screen
+;compositing-foreground = source
+;compositing-border = over
+pseudo-transparency = true
+
+; vim:ft=dosini

@@ -19,6 +19,7 @@ ln -s $BASEDIR/config/nvim/init.vim $HOME/.config/nvim/init.vim
 ln -s $BASEDIR/config/nvim/coc-settings.json $HOME/.config/nvim/coc-settings.json
 ln -s $BASEDIR/config/zathura $HOME/.config/
 ln -s $BASEDIR/config/kitty $HOME/.config/
+ln -s $BASEDIR/config/termite $HOME/.config
 
 # zsh
 ln -s $BASEDIR/zsh/zpreztorc $HOME/.zpreztorc
@@ -29,4 +30,10 @@ ln -s $BASEDIR/zsh/zshrc $HOME/.zshrc
 
 # x-stuff
 ln -s $BASEDIR/Xresources $HOME/.Xresources
-ln -s $BASEDIR/xinit $HOME/.xinit
+ln -s $BASEDIR/xinit $HOME/.xinitrc
+
+# bspwm
+ln -s $BASEDIR/config/bspwm $HOME/.config/
+ln -s $BASEDIR/config/sxhkd $HOME/.config/
+ln -s $BASEDIR/config/polybar $HOME/.config/
+
