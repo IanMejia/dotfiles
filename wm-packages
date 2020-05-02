@@ -23,11 +23,13 @@ hardcode-fixer-git
 
 bspwm
 sxhkd
-dmenu
 rofi
 arandr
 light
 pamixer
 playerctl
 lxappearance
-
+gvfs
+thunar
+thunar-volman
+thunar-archive-plugin

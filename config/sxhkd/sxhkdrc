@@ -8,7 +8,7 @@ super + Return
 
 # program launcher
 super + @space
-	dmenu_run
+	rofi -show run
 
 # make sxhkd reload its configuration files:
 super + Escape
@@ -16,13 +16,21 @@ super + Escape
 
 # media keys
 XF86MonBrightness{Up,Down}
-    light {-A 5,-U 5}
+    light {-A 2,-U 2}
 
 XF86Audio{Mute,LowerVolume,RaiseVolume}
     pamixer {-t,-d 5,-i 5}
 
 XF86Audio{Play,Prev,Next,Stop}
     playerctl {play-pause,previous,next,stop}
+
+# screenshot to whole screen
+Print
+    scrot -f
+
+# screenshow current window or selection
+alt + {_,shift + }Print
+    scrot {-f -s,-f -u}
 
 #
 # bspwm hotkeys

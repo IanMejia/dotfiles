@@ -14,12 +14,21 @@ if [ ! -d "$HOME/.config/nvim" ]; then
     mkdir $HOME/.config/nvim
 fi
 
+if [ ! -d "$HOME/.local" ]; then
+    mkdir $HOME/.local/
+fi
+
+if [ ! -d "$HOME/.local/share" ]; then
+    mkdir $HOME/.local/share
+fi
+
 # config files
 ln -s $BASEDIR/config/nvim/init.vim $HOME/.config/nvim/init.vim
 ln -s $BASEDIR/config/nvim/coc-settings.json $HOME/.config/nvim/coc-settings.json
 ln -s $BASEDIR/config/zathura $HOME/.config/
 ln -s $BASEDIR/config/kitty $HOME/.config/
 ln -s $BASEDIR/config/termite $HOME/.config
+ln -s $BASEDIR/config/rofi $HOME/.config
 
 # zsh
 ln -s $BASEDIR/zsh/zpreztorc $HOME/.zpreztorc
@@ -36,4 +45,7 @@ ln -s $BASEDIR/xinit $HOME/.xinitrc
 ln -s $BASEDIR/config/bspwm $HOME/.config/
 ln -s $BASEDIR/config/sxhkd $HOME/.config/
 ln -s $BASEDIR/config/polybar $HOME/.config/
+
+# fonts
+ln -s $BASEDIR/fonts $HOME/.local/share/
 

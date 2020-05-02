@@ -44,6 +44,7 @@ let g:rainbow_active = 1
 
 " latex config
 let g:vimtex_compiler_progname = 'nvr'
+let g:vimtex_view_method= 'zathura'
 let g:tex_flavor='latex'
 let g:tex_conceal='abdmg'
 let g:latex_to_unicode_tab = 0
@@ -63,7 +64,8 @@ let g:coc_global_extensions = [
             \ 'coc-snippets',
             \ 'coc-pairs',
             \ 'coc-marketplace',
-            \ 'coc-lists'
+            \ 'coc-lists',
+            \ 'coc-markdownlint',
             \]
 
 " silicon
