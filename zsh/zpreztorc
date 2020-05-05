@@ -47,7 +47,7 @@ zstyle ':prezto:module:pacman' frontend 'yay'
 # Prompt
 #
 
-zstyle ':prezto:module:prompt' theme 'steeef'
+zstyle ':prezto:module:prompt' theme 'giddie'
 
 #
 # Syntax Highlighting

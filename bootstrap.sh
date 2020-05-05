@@ -29,6 +29,7 @@ ln -s $BASEDIR/config/zathura $HOME/.config/
 ln -s $BASEDIR/config/kitty $HOME/.config/
 ln -s $BASEDIR/config/termite $HOME/.config
 ln -s $BASEDIR/config/rofi $HOME/.config
+ln -s $BASEDIR/config/picom $HOME/.config
 
 # zsh
 ln -s $BASEDIR/zsh/zpreztorc $HOME/.zpreztorc

@@ -1,0 +1,14 @@
+inactive-opacity = 0.6;
+active-opacity = 0.90;
+frame-opacity = 1;
+inactive-opacity-override = false;
+
+fading = true;
+
+opacity-rule = [
+  "100:class_g ?= 'kitty' && focused",
+  "100:class_g ?= 'zathura' && focused",
+  "100:class_g ?= 'rofi'",
+  "100:class_g ?= 'firefox'",
+  "100:class_g ?= 'stremio'"
+];

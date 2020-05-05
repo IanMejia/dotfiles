@@ -6,6 +6,17 @@
 super + Return
 	kitty
 
+super + shift + Return
+    st
+
+# browser
+super + {_,shift +}o
+    firefox {_,-private-window}
+
+# file explorer
+super + e
+    thunar
+
 # program launcher
 super + @space
 	rofi -show run
@@ -16,7 +27,7 @@ super + Escape
 
 # media keys
 XF86MonBrightness{Up,Down}
-    light {-A 2,-U 2}
+    light {-A 5,-U 5}
 
 XF86Audio{Mute,LowerVolume,RaiseVolume}
     pamixer {-t,-d 5,-i 5}

@@ -30,4 +30,4 @@
 *.color15: #ebdbb2
 
 ! rxvt-unicode
-URxvt.font: xft:FiraCode:size=10
+st.font: Fira Code:pixelsize=10
