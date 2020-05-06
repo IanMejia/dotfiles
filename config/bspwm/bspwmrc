@@ -11,8 +11,8 @@ $HOME/.config/polybar/launch.sh
 bspc config focus_follows_pointer true
 
 # display
-bspc monitor eDP -d dev web img file conf
-bspc monitor HDMI-A-0 -d VI VII VIII IX X
+bspc monitor eDP -d dev web term img file conf
+bspc monitor HDMI-A-0 -d VII VIII IX X
 
 #
 # visual configuration
@@ -44,16 +44,19 @@ bspc rule -a kitty desktop='^1' state=tiled follow=on
 bspc rule -a firefox desktop='^2' follow=on
 
 # desktop 3
-bspc rule -a Gimp desktop='^3'
-bspc rule -a inkscape desktop='^3'
+bspc rule -a godot desktop='^3'
 
 # desktop 4
-bspc rule -a Thunar desktop='^4' state=floating
+bspc rule -a Gimp desktop='^4'
+bspc rule -a inkscape desktop='^4'
 
 # desktop 5
-bspc rule -a Arandr desktop='^5' state=floating
-bspc rule -a Pavucontrol desktop='^5' state=floating
-bspc rule -a Lxappearance desktop='^5' state=floating
+bspc rule -a Thunar desktop='^5' state=floating
+
+# desktop 6
+bspc rule -a Arandr desktop='^6' state=floating
+bspc rule -a Pavucontrol desktop='^6' state=floating
+bspc rule -a Lxappearance desktop='^6' state=floating
 
 # external
-bspc rule -a Stremio desktop='^6' state=fullscreen
+bspc rule -a Stremio desktop='^7' state=fullscreen
