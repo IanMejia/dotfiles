@@ -19,7 +19,8 @@ colorschemes are Gruvbox.
 
 - *Terminal:*
 
-  - Kitty (Termite configs are also included).
+  - St (Personal build included).
+  - Kitty, in case needed.
 
 - *Editor:*
 
