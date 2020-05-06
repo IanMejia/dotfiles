@@ -36,7 +36,7 @@ colorschemes are Gruvbox.
 For arch-like distros, a dependency list is also included to autoinstall.
 It should be as easy as `cd` to the dotfiles directory and executing.
 
-```console
+```sh
 chmod +x arch-dependencies.sh
 ./arch-dependencies.sh
 ```
@@ -45,7 +45,7 @@ chmod +x arch-dependencies.sh
 
 Installation is quite easy, while on the *dotfiles* folder execute:
 
-```console
+```sh
 chmod +x bootstrap.sh
 ./bootstrap.sh
 ```
