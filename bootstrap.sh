@@ -34,7 +34,6 @@ ln -s $BASEDIR/config/picom $HOME/.config
 # zsh
 ln -s $BASEDIR/zsh/zpreztorc $HOME/.zpreztorc
 ln -s $BASEDIR/zsh/zprofile $HOME/.zprofile
-ln -s $BASEDIR/zsh/p10k.zsh $HOME/.p10k.zsh
 ln -s $BASEDIR/zsh/zlogin $HOME/.zlogin
 ln -s $BASEDIR/zsh/zshrc $HOME/.zshrc
 
