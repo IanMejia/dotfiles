@@ -4,10 +4,10 @@
 
 # terminal emulator
 super + Return
-	kitty
+	st
 
 super + shift + Return
-    st
+    kitty
 
 # browser
 super + {_,shift +}o
@@ -16,6 +16,10 @@ super + {_,shift +}o
 # file explorer
 super + e
     thunar
+
+# zathura
+super + z
+    zathura
 
 # program launcher
 super + @space
@@ -41,7 +45,7 @@ Print
 
 # screenshow current window or selection
 alt + {_,shift + }Print
-    scrot {-f -s,-f -u}
+    scrot {-s,-u}
 
 #
 # bspwm hotkeys

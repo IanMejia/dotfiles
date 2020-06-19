@@ -21,10 +21,11 @@ Plug 'dart-lang/dart-vim-plugin', { 'for': 'dart' }
 " various
 Plug '/usr/bin/fzf'
 Plug 'junegunn/fzf.vim'
-Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
+Plug 'mcchrish/nnn.vim'
 Plug 'segeljakt/vim-silicon', { 'on': ['Silicon', 'SiliconHighlight'] }
 Plug 'honza/vim-snippets'
 Plug 'tpope/vim-surround'
+Plug 'vimwiki/vimwiki'
 
 " visual
 Plug 'morhetz/gruvbox'
@@ -36,6 +37,9 @@ call plug#end()
 " }}}
 
 " plugin config {{{
+" nnn
+let g:nnn#layout = { 'window': { 'width': 0.9, 'height': 0.6, 'highlight': 'Debug' } }
+
 " lightline
 let g:lightline = {'colorscheme': 'gruvbox'}
 
@@ -53,12 +57,12 @@ set conceallevel=1
 
 " coc
 let g:coc_global_extensions = [
-            \ 'coc-python',
-            \ 'coc-vimlsp',
+            \ 'coc-flutter',
+            \ 'coc-julia',
             \ 'coc-go',
+            \ 'coc-python',
             \ 'coc-lua',
             \ 'coc-r-lsp',
-            \ 'coc-flutter',
             \ 'coc-sh',
             \ 'coc-json',
             \ 'coc-snippets',
@@ -66,6 +70,7 @@ let g:coc_global_extensions = [
             \ 'coc-marketplace',
             \ 'coc-lists',
             \ 'coc-markdownlint',
+            \ 'coc-vimlsp',
             \]
 
 " silicon
@@ -94,6 +99,7 @@ set tgc
 set title
 set titlestring=nvim:\ %f%m%r
 set showmatch
+set noshowmode
 set expandtab
 set tabstop=4
 set shiftwidth=4
@@ -107,7 +113,7 @@ set cursorline
 set fileencoding=utf-8
 set wrap
 set linebreak
-set tw=90
+set tw=0
 set clipboard+=unnamedplus
 set listchars=tab:\ \ ,trail:·
 set list
@@ -124,17 +130,22 @@ set re=1
 set hidden
 set nobackup
 set nowritebackup
-set cmdheight=2
+set cmdheight=1
 set updatetime=300
 set shortmess+=c
 
 filetype plugin indent on
-syntax enable
+syntax on
 
 " spellcheck
 set spelllang=en,es
-autocmd FileType markdown setlocal spell
-autocmd FileType tex setlocal spell
+augroup writting
+    autocmd!
+    autocmd FileType markdown setlocal spell
+    autocmd FileType markdown setlocal tw=80
+    autocmd FileType tex setlocal spell
+    autocmd FileType tex setlocal tw=80
+augroup END
 
 " colorscheme
 set background=dark
@@ -208,9 +219,6 @@ nnoremap <C-k> :bp<CR>
 imap <expr><s-tab> pumvisible() ? "\<c-p>" : "\<s-tab>"
 imap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
 
-" nerdtree
-map <silent> <leader>n :NERDTreeToggle<CR>
-
 " coc
 nmap <leader>rn <Plug>(coc-rename)
 
@@ -267,10 +275,6 @@ function! FloatingTerminal()
     let s:term_win = win_getid()
 endfunction
 
-" }}}
-
-" resources {{{
-" haskell development: https://blog.jez.io/haskell-development-with-neovim/
 " }}}
 
 " generic fold {{{

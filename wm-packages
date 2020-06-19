@@ -27,6 +27,7 @@ rofi
 arandr
 light
 pamixer
+pavucontrol
 playerctl
 lxappearance
 gvfs

@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# java re-parenting
+export _JAVA_AWT_WM_NONREPARENTING=1
+
 # variables
 xresources=$HOME/.Xresources
 session=${1:-bspwm}
