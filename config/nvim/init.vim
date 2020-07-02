@@ -58,7 +58,6 @@ set conceallevel=1
 " coc
 let g:coc_global_extensions = [
             \ 'coc-flutter',
-            \ 'coc-julia',
             \ 'coc-go',
             \ 'coc-python',
             \ 'coc-lua',
@@ -162,7 +161,7 @@ augroup END
 
 " providers
 let g:python3_host_prog = '/usr/bin/python'
-let g:python_host_prog = '/usr/bin/python2'
+"let g:python_host_prog = '/usr/bin/python2'
 
 let g:ruby_host_prog = '/usr/bin/ruby'
 let g:npm_host_prog = '/usr/bin/npm'

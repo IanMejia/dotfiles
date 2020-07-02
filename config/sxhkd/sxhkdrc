@@ -6,9 +6,6 @@
 super + Return
 	st
 
-super + shift + Return
-    kitty
-
 # browser
 super + {_,shift +}o
     firefox {_,-private-window}

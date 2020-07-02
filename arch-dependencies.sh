@@ -16,12 +16,24 @@ select yn in "Yes" "No"; do
         Yes )
             echo "Installing pacman packages..."
             sudo pacman -S $(cat $BASEDIR/pacman-packages)
-            #echo "Installing polybar"
-            #git clone https://aur.archlinux.org/polybar.git $BASEDIR/poly
-            #cd $BASEDIR/poly
-            #makepkg -si
-            #cd $BASEDIR
-            #rm -rf $BASEDIR/poly
+            echo "Installing polybar"
+            git clone https://aur.archlinux.org/polybar.git $BASEDIR/poly
+            cd $BASEDIR/poly
+            makepkg -si
+            cd $BASEDIR
+            rm -rf $BASEDIR/poly
+            break;;
+        No ) break;;
+        *  ) echo "Please answer yes or no."
+    esac
+done
+
+echo "Do you want to install the window manager packages?"
+select yn in "Yes" "No"; do
+    case $yn in
+        Yes )
+            echo "Installing pacman packages..."
+            sudo pacman -S $(cat $BASEDIR/wm-packages)
             break;;
         No ) break;;
         *  ) echo "Please answer yes or no."

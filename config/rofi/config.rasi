@@ -15,7 +15,7 @@ configuration {
 }
 
 window {
-  border: 2px;
+  border: 1px;
 }
 
 inputbar {
@@ -24,7 +24,7 @@ inputbar {
 }
 
 prompt {
-  padding: 16px;
+  padding: 8px;
   border: 0 1px 0 0;
 }
 
@@ -32,11 +32,11 @@ textbox {
   background-color: #2e343f;
   border: 0 0 1px 0;
   border-color: #282C33;
-  padding: 8px 16px;
+  padding: 8px 8px;
 }
 
 entry {
-  padding: 16px;
+  padding: 8px;
 }
 
 listview {
