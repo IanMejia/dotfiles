@@ -16,3 +16,7 @@ python-matplotlib
 r
 go
 yaegi
+pulseaudio
+xorg-server
+xinit
+pulseaudio

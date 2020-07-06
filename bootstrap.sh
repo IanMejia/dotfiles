@@ -27,7 +27,6 @@ ln -s $BASEDIR/config/nvim/init.vim $HOME/.config/nvim/init.vim
 ln -s $BASEDIR/config/nvim/coc-settings.json $HOME/.config/nvim/coc-settings.json
 ln -s $BASEDIR/config/zathura $HOME/.config/
 ln -s $BASEDIR/config/kitty $HOME/.config/
-ln -s $BASEDIR/config/termite $HOME/.config
 ln -s $BASEDIR/config/rofi $HOME/.config
 ln -s $BASEDIR/config/picom $HOME/.config
 

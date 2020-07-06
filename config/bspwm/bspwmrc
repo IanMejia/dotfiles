@@ -3,7 +3,6 @@
 # startup programs
 sxhkd &
 picom &
-dunst &
 feh --bg-fill $HOME/.config/bspwm/wallpaper/space.jpg &
 $HOME/.config/polybar/launch.sh
 
@@ -50,7 +49,7 @@ bspc rule -a firefox:Toolkit state=floating sticky=on
 bspc rule -a godot desktop='^3'
 
 # desktop 4
-bspc rule -a Gimp desktop='^4'
+bspc rule -a Gimp desktop='^4' state=floating
 bspc rule -a Inkscape desktop='^4' state=floating follow=on
 
 # desktop 5
