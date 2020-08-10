@@ -20,7 +20,7 @@ super + z
 
 # program launcher
 super + @space
-	rofi -show run
+    rofi -show run -theme bar
 
 # make sxhkd reload its configuration files:
 super + Escape

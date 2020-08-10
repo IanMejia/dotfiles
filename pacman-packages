@@ -20,3 +20,5 @@ pulseaudio
 xorg-server
 xinit
 pulseaudio
+fzf
+fd

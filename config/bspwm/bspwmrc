@@ -1,9 +1,12 @@
 #! /bin/sh
 
-# startup programs
+#
+# startup
+#
 sxhkd &
 picom &
-feh --bg-fill $HOME/.config/bspwm/wallpaper/space.jpg &
+xsetroot -cursor_name left_ptr &
+feh --bg-fill $HOME/.config/bspwm/wallpaper/forest.jpg &
 $HOME/.config/polybar/launch.sh
 
 #
@@ -39,21 +42,21 @@ bspc rule -a feh state=floating
 bspc rule -a Zathura state=floating
 
 # desktop 1
-bspc rule -a kitty desktop='^1' state=tiled follow=on
+bspc rule -a godot desktop='^1'
 
 # desktop 2
-bspc rule -a firefox desktop='^2' follow=on
+bspc rule -a firefox desktop='^2' follow=on state=pseudo_tiled
 bspc rule -a firefox:Toolkit state=floating sticky=on
 
 # desktop 3
-bspc rule -a godot desktop='^3'
+bspc rule -a fiji-Main desktop="^3" state=floating
 
 # desktop 4
 bspc rule -a Gimp desktop='^4' state=floating
 bspc rule -a Inkscape desktop='^4' state=floating follow=on
 
 # desktop 5
-bspc rule -a Thunar desktop='^5' state=tiled
+bspc rule -a Thunar desktop='^5' state=pseudo_tiled
 
 # desktop 6
 bspc rule -a Arandr desktop='^6' state=floating

@@ -59,7 +59,6 @@ set conceallevel=1
 let g:coc_global_extensions = [
             \ 'coc-flutter',
             \ 'coc-go',
-            \ 'coc-python',
             \ 'coc-lua',
             \ 'coc-r-lsp',
             \ 'coc-sh',
@@ -144,6 +143,8 @@ augroup writting
     autocmd FileType markdown setlocal tw=80
     autocmd FileType tex setlocal spell
     autocmd FileType tex setlocal tw=80
+    autocmd FileType vimwiki setlocal spell
+    autocmd FileType vimwiki setlocal tw=80
 augroup END
 
 " colorscheme

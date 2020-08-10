@@ -49,7 +49,6 @@
   },
   "coc.preferences.formatOnSaveFiletypes": [
       "dart",
-      "python"
   ],
   "flutter.provider.hot-reload" : true,
   "languageserver": {
