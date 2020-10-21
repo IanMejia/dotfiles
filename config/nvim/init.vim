@@ -17,20 +17,19 @@ Plug 'JuliaEditorSupport/julia-vim'
 Plug 'lervag/vimtex', { 'for': 'tex' }
 Plug 'jalvesaq/Nvim-R', { 'for': 'r' }
 Plug 'dart-lang/dart-vim-plugin', { 'for': 'dart' }
+Plug 'sophacles/vim-processing'
 
 " various
 Plug '/usr/bin/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'mcchrish/nnn.vim'
-Plug 'segeljakt/vim-silicon', { 'on': ['Silicon', 'SiliconHighlight'] }
 Plug 'honza/vim-snippets'
 Plug 'tpope/vim-surround'
 Plug 'vimwiki/vimwiki'
 
 " visual
-Plug 'morhetz/gruvbox'
-Plug 'luochen1990/rainbow'
-Plug 'itchyny/lightline.vim'
+Plug 'lifepillar/vim-gruvbox8'
+"Plug 'itchyny/lightline.vim'
 
 call plug#end()
 
@@ -41,10 +40,7 @@ call plug#end()
 let g:nnn#layout = { 'window': { 'width': 0.9, 'height': 0.6, 'highlight': 'Debug' } }
 
 " lightline
-let g:lightline = {'colorscheme': 'gruvbox'}
-
-" rainbow
-let g:rainbow_active = 1
+"let g:lightline = {'colorscheme': 'gruvbox8'}
 
 " latex config
 let g:vimtex_compiler_progname = 'nvr'
@@ -59,7 +55,6 @@ set conceallevel=1
 let g:coc_global_extensions = [
             \ 'coc-flutter',
             \ 'coc-go',
-            \ 'coc-lua',
             \ 'coc-r-lsp',
             \ 'coc-sh',
             \ 'coc-json',
@@ -97,11 +92,9 @@ set tgc
 set title
 set titlestring=nvim:\ %f%m%r
 set showmatch
-set noshowmode
 set expandtab
 set tabstop=4
 set shiftwidth=4
-set showtabline=2
 set nojoinspaces
 set splitbelow
 set splitright
@@ -139,31 +132,23 @@ syntax on
 set spelllang=en,es
 augroup writting
     autocmd!
-    autocmd FileType markdown setlocal spell
-    autocmd FileType markdown setlocal tw=80
-    autocmd FileType tex setlocal spell
-    autocmd FileType tex setlocal tw=80
-    autocmd FileType vimwiki setlocal spell
-    autocmd FileType vimwiki setlocal tw=80
+    autocmd FileType markdown,vimwiki,tex setlocal spell tw=80
 augroup END
-
-" colorscheme
-set background=dark
-let g:gruvbox_contrast_dark = 'hard'
-colorscheme gruvbox
 
 " number toggle
 set number relativenumber
 augroup numbertoggle
     autocmd!
-    autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
-    autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
+    autocmd BufEnter,FocusGained,InsertLeave * setlocal relativenumber
+    autocmd BufLeave,FocusLost,InsertEnter   * setlocal norelativenumber
 augroup END
+
+" colorscheme
+set background=dark
+colorscheme gruvbox8_hard
 
 " providers
 let g:python3_host_prog = '/usr/bin/python'
-"let g:python_host_prog = '/usr/bin/python2'
-
 let g:ruby_host_prog = '/usr/bin/ruby'
 let g:npm_host_prog = '/usr/bin/npm'
 let g:ruby_host_prog = '/usr/bin/gem'

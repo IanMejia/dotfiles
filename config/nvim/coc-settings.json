@@ -43,12 +43,11 @@
   "codeLens.enable": true,
   "codeLens.separator": "‣",
   "list.indicator": "➣",
-  "list.maxHeight": 15,
   "list.insertMappings": {
     "<C-p>": "action:preview"
   },
   "coc.preferences.formatOnSaveFiletypes": [
-      "dart",
+      "dart"
   ],
   "flutter.provider.hot-reload" : true,
   "languageserver": {

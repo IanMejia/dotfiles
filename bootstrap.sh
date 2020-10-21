@@ -12,6 +12,7 @@ fi
 
 if [ ! -d "$HOME/.config/nvim" ]; then
     mkdir $HOME/.config/nvim
+    mkdir $HOME/.config/nvim/lua
 fi
 
 if [ ! -d "$HOME/.local" ]; then

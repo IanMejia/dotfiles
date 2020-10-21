@@ -32,9 +32,10 @@ configuration {
     text-color: @background-color;
 }
 #entry {
+    expand: false;
     cycle: false;
     padding: 2px 1px;
-    width: 6em;
+    width: 8em;
 }
 #listview {
     cycle: false;
