@@ -12,7 +12,7 @@ fi
 
 if [ ! -d "$HOME/.config/nvim" ]; then
     mkdir $HOME/.config/nvim
-    mkdir $HOME/.config/nvim/lua
+    mkdir $HOME/.config/nvim/pack
 fi
 
 if [ ! -d "$HOME/.local" ]; then
@@ -26,6 +26,7 @@ fi
 # config files
 ln -s $BASEDIR/config/nvim/init.vim $HOME/.config/nvim/init.vim
 ln -s $BASEDIR/config/nvim/coc-settings.json $HOME/.config/nvim/coc-settings.json
+ln -s $BASEDIR/config/nvim/lua $HOME/.config/nvim/
 ln -s $BASEDIR/config/zathura $HOME/.config/
 ln -s $BASEDIR/config/kitty $HOME/.config/
 ln -s $BASEDIR/config/rofi $HOME/.config
@@ -49,3 +50,16 @@ ln -s $BASEDIR/config/polybar $HOME/.config/
 # fonts
 ln -s $BASEDIR/fonts $HOME/.local/share/
 
+# git commands
+echo "Do you want to install neovim packer?"
+select yn in "Yes" "No"; do
+    case $yn in
+        Yes )
+            echo "Installing Packer.nvim..."
+            git clone https://github.com/wbthomason/packer.nvim\
+             $HOME/.local/share/nvim/site/pack/packer/opt/packer.nvim
+            break;;
+        No  ) break;;
+        *   ) echo "Pease answer yes or no." ;;
+    esac
+done

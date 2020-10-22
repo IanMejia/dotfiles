@@ -8,7 +8,7 @@ echo "Do you want to install Yay?"
 select yn in "Yes" "No"; do
     case $yn in
         Yes )
-            echo "Installing polybar"
+            echo "Installing polybar..."
             git clone https://aur.archlinux.org/polybar.git $BASEDIR/poly
             cd $BASEDIR/poly
             makepkg -si

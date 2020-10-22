@@ -29,7 +29,6 @@ Plug 'vimwiki/vimwiki'
 
 " visual
 Plug 'lifepillar/vim-gruvbox8'
-"Plug 'itchyny/lightline.vim'
 
 call plug#end()
 
@@ -38,9 +37,6 @@ call plug#end()
 " plugin config {{{
 " nnn
 let g:nnn#layout = { 'window': { 'width': 0.9, 'height': 0.6, 'highlight': 'Debug' } }
-
-" lightline
-"let g:lightline = {'colorscheme': 'gruvbox8'}
 
 " latex config
 let g:vimtex_compiler_progname = 'nvr'
@@ -65,14 +61,6 @@ let g:coc_global_extensions = [
             \ 'coc-markdownlint',
             \ 'coc-vimlsp',
             \]
-
-" silicon
-let g:silicon = {
-            \ 'window-controls': v:false,
-            \ 'round-corner': v:false,
-            \ 'pad-vert': 0,
-            \ 'pad-horiz': 0,
-            \ }
 
 " fzf
 let g:fzf_layout = {'window': 'call CreateCenteredFloatingWindow()'}
@@ -146,6 +134,17 @@ augroup END
 " colorscheme
 set background=dark
 colorscheme gruvbox8_hard
+
+" statusline
+set statusline=
+set statusline+=%f\ 
+set statusline+=%r
+set statusline+=%m
+set statusline+=%=
+set statusline+=%y\ 
+set statusline+=%3p%%\ 
+set statusline+=%3l:%2c\ 
+
 
 " providers
 let g:python3_host_prog = '/usr/bin/python'
@@ -229,6 +228,7 @@ augroup END
 
 " custom functions {{{
 " floating window creation
+" command! Scratch lua require'tools'.floating_window()
 function! CreateCenteredFloatingWindow()
     let opts = {
                 \ 'width': float2nr(&columns * 0.666),
