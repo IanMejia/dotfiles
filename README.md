@@ -7,6 +7,8 @@ up having them, I encourage you not to take them entirely, rather, read them up
 and take whichever it is that works for you. Main terminals and neovim
 colorschemes are Gruvbox.
 
+![alt text](screenshots/screenshot.png?raw=true "Random display of power")
+
 ## Dependencies
 
 - *Window Manager:*
