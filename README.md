@@ -22,7 +22,6 @@ colorschemes are Gruvbox.
 - *Terminal:*
 
   - St (Personal build included).
-  - Kitty, in case needed.
 
 - *Editor:*
 
@@ -33,7 +32,7 @@ colorschemes are Gruvbox.
   - Zathura, with sane defaults.
 
 - *Font:*
-  - Fira Code
+  - JuliaMono, I love Julia and the access to unicodefonts
 
 For arch-like distros, a dependency list is also included to autoinstall.
 It should be as easy as `cd` to the dotfiles directory and executing.
