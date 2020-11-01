@@ -1,9 +1,15 @@
 -- plugins list arranged via packer --
+local vim = vim
 
 vim.cmd [[packadd packer.nvim]]
 local packer = require('packer')
 
 local plugins = {
+    {
+        -- recurrent dependency [?]
+        'wbthomason/packer.nvim',
+        opt = true
+    },
     {
         -- the best possible gruvbox ever
         'lifepillar/vim-gruvbox8'
@@ -14,14 +20,13 @@ local plugins = {
         ft = {'tex'}
     },
     {
-        -- recurrent dependency [?]
-        'wbthomason/packer.nvim',
-        opt = true
-    },
-    {
         -- an interesting plugin for syntax
         'nvim-treesitter/nvim-treesitter',
         config = 'require [[config/treesitter]]'
+    },
+    {
+        -- julia is not working, so I better make it work
+        'nvim-treesitter/playground'
     },
     {
         -- every editor hates julia
@@ -34,6 +39,19 @@ local plugins = {
     {
         -- completion engine
         'nvim-lua/completion-nvim'
+    },
+    --{
+    --    -- repls are always nice to have
+    --     'hkupty/iron.nvim',
+    --     config = 'require [[config/iron.lua]]'
+    --},
+    {
+        -- a statusline
+        'glepnir/galaxyline.nvim',
+        branch = 'main',
+        config = 'require [[config/galaxyline]]',
+        -- file icons
+        requires = {'kyazdani42/nvim-web-devicons', opt = true}
     },
     --{
     --},

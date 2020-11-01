@@ -8,39 +8,40 @@ include-file = ~/.config/polybar/colors.ini
 [bar/mybar]
 monitor = ${env:MONITOR:eDP}
 width = 100%
-height = 18
+height = 22
 ;offset-x = 1%
 ;offset-y = 2
-radius = 10
+radius = 0
 fixed-center = true
 
 background = ${color.bg}
 foreground = ${color.dark_gray}
 
-line-size = 2
+line-size = 1
 line-color = #f00
 
 ;add if you prefer a transparent border around the bar
-border-size = 2
-border-color = #00000000
+border-size = 0
+border-bottom-size = 0
+border-color = ${color.dark_gray}
 
 padding-left = 0
-padding-right = 2
+padding-right = 0
 
-module-margin-left = 1
-module-margin-right = 2
+module-margin-left = 0
+module-margin-right = 0
 
 font-0 = "Ubuntu Condensed:size=10;2"
 font-1 = "icomoon\-feather:size=10;2"
+font-2 = "Iosevka:size=30;22"
 
-modules-left = bspwm
+modules-left = bspwm left
 modules-center = title
-modules-right = pulseaudio keyboard network date battery
+modules-right = right pulseaudio keyboard network date battery
 
-separator = 
-
+tray-background = ${color.linebg}
 tray-position = right
-tray-padding = 0
+tray-padding = 2
 
 wm-restack = bspwm
 
@@ -59,5 +60,20 @@ screenchange-reload = true
 ;compositing-foreground = source
 ;compositing-border = over
 pseudo-transparency = false
+
+;; extra modules
+
+[module/left]
+type = custom/text
+content-background = ${color.linebg}
+content-foreground = ${color.bg}
+content-underline = ${color.dark_cyan}
+content = "%{T3}%{T-}"
+
+[module/right]
+type = custom/text
+content-background = ${color.bg}
+content-foreground = ${color.linebg}
+content = "%{T3}%{T-}"
 
 ; vim:ft=dosini

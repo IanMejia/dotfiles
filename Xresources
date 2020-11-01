@@ -2,6 +2,8 @@
 
 ! hard contrast: *background: #1d2021
 *.background: #1d2021
+*.background2: #32302f
+*.linebackground: #282828
 !. soft contrast: *background: #32302f
 *.foreground: #ebdbb2
 

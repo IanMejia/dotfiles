@@ -21,6 +21,7 @@ set ignorecase
 set smartcase
 set cursorline
 set fileencoding=utf-8
+set noshowmode
 set wrap
 set linebreak
 set tw=0
@@ -65,22 +66,20 @@ augroup END
 set background=dark
 colorscheme gruvbox8_hard
 
-" statusline
-set statusline=
-set statusline+=%f\ 
-set statusline+=%r
-set statusline+=%m
-set statusline+=%=
-set statusline+=%y\ 
-set statusline+=%3p%%\ 
-set statusline+=%3l:%2c\ 
-
-
 " providers
 let g:python3_host_prog = '/usr/bin/python'
 let g:ruby_host_prog = '/usr/bin/ruby'
 let g:npm_host_prog = '/usr/bin/npm'
 let g:ruby_host_prog = '/usr/bin/gem'
+
+" latex
+let g:vimtex_compiler_progname = 'nvr'
+let g:vimtex_view_method= 'zathura'
+let g:tex_flavor='latex'
+let g:tex_conceal='abdmg'
+let g:latex_to_unicode_tab = 0
+let g:latex_to_unicode_auto = 1
+set conceallevel=1
 
 " }}}
 

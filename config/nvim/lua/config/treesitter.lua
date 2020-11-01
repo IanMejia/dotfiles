@@ -6,9 +6,16 @@ require'nvim-treesitter.configs'.setup{
         'go',
         'bash',
         'lua',
-        'dart'
+        'dart',
+        'ocaml'
     },
     highlight = {
         enable = true
+    },
+    playground = {
+        enable = true,
+        disable = {},
+        updatetime = 25,
+        persist_queries = false
     }
 }
