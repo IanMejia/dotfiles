@@ -1,6 +1,6 @@
 configuration {
     display-run: "";
-    font: "Fira Code Nerd Font 10";
+    font: "Iosevka 12";
     modi: "run,window";
 }
 * {
@@ -14,7 +14,7 @@ configuration {
     transparent: #00000000;
 }
 #window {
-    border-radius: 20%;
+    border-radius: 2%;
     width: 40%;
     anchor: south;
     location: south;

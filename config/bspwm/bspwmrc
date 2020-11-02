@@ -5,6 +5,7 @@
 #
 sxhkd &
 picom &
+dunst &
 xsetroot -cursor_name left_ptr &
 feh --bg-fill $HOME/.config/bspwm/wallpaper/forest.jpg &
 $HOME/.config/polybar/launch.sh
@@ -15,7 +16,7 @@ $HOME/.config/polybar/launch.sh
 bspc config focus_follows_pointer true
 
 # display
-bspc monitor eDP -d dev web book img files conf
+bspc monitor eDP -d dev web docs img fm conf
 bspc monitor HDMI-A-0 -d VII VIII IX X
 
 #

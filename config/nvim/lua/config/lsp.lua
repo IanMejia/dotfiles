@@ -7,13 +7,14 @@ local attach_hook = require'completion'.on_attach
 local installed_lsp = {
     'julials',
     'sumneko_lua',
-    'texlab'
+    'texlab',
+    'bashls'
 }
 
 nvim_lsp.sumneko_lua.setup{}
 
 for _,lsp in ipairs(installed_lsp) do
     nvim_lsp[lsp].setup{
-        on_attach    = attach_hook,
+        on_attach = attach_hook,
     }
 end
