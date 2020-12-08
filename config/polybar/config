@@ -67,7 +67,7 @@ pseudo-transparency = false
 type = custom/text
 content-background = ${color.linebg}
 content-foreground = ${color.bg}
-content-underline = ${color.dark_cyan}
+content-underline = ${color.dark_blue}
 content = "%{T3}%{T-}"
 
 [module/right]

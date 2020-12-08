@@ -41,6 +41,8 @@ bspc config presel_feedback_color "#1d2021"
 bspc rule -a Sxiv state=floating
 bspc rule -a feh state=floating
 bspc rule -a Zathura state=floating
+bspc rule -a matplotlib state=floating
+bspc rule -a gksqt state=floating
 
 # desktop 1
 bspc rule -a godot desktop='^1'

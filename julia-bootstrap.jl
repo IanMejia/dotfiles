@@ -1,26 +1,29 @@
 using Pkg
 
 packages = [
- "Agents",
- "Crayons",
- "DataFrames",
  "DifferentialEquations",
- "DSP",
- "DynamicGrids",
+ "TimeseriesPrediction",
  "DynamicalSystems",
- "FFTW",
- "ImageFiltering",
- "ImageMagick",
- "Images",
  "InteractiveChaos",
+ "ImageFiltering",
+ "DelimitedFiles",
  "LinearAlgebra",
+ "KernelDensity",
+ "DynamicGrids",
+ "UnicodePlots",
+ "AgentsPlots",
+ "ImageMagick",
+ "LightGraphs",
+ "DataFrames",
+ "StatsBase",
+ "Crayons",
+ "PlutoUI",
+ "Images",
+ "Agents",
  "Plots",
  "Pluto",
- "PlutoUI",
- "QuantumOpticsBase",
- "SymEngine",
- "TimeseriesPrediction",
- "UnicodePlots"
+ "FFTW",
+ "DSP"
 ]
 
 for i in packages

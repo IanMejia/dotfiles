@@ -19,22 +19,18 @@ local plugins = {
         'lervag/vimtex',
         ft = {'tex'}
     },
-    {
-        -- an interesting plugin for syntax
-        'nvim-treesitter/nvim-treesitter',
-        config = 'require [[config/treesitter]]'
-    },
-    {
-        -- julia is not working, so I better make it work
-        'nvim-treesitter/playground'
-    },
+    -- {
+    --     -- an interesting plugin for syntax
+    --     'nvim-treesitter/nvim-treesitter',
+    --     config = 'require [[config/treesitter]]'
+    -- },
     {
         -- every editor hates julia
         'JuliaEditorSupport/julia-vim'
     },
     {
         'neovim/nvim-lspconfig',
-        config = 'require [[config/lsp]]'
+        --config = 'require [[config/lsp]]'
     },
     {
         -- completion engine

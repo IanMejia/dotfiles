@@ -1,11 +1,10 @@
 -- lsp configuration --
 
 -- local lsp_status = require('lsp-status')
-local nvim_lsp   = require'nvim_lsp'
+local nvim_lsp   = require'lspconfig'
 local attach_hook = require'completion'.on_attach
 
 local installed_lsp = {
-    'julials',
     'sumneko_lua',
     'texlab',
     'bashls'

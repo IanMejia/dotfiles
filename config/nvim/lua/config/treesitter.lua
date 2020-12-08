@@ -7,6 +7,7 @@ require'nvim-treesitter.configs'.setup{
         'bash',
         'lua',
         'dart',
+        'python',
         'ocaml'
     },
     highlight = {

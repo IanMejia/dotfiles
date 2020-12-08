@@ -77,6 +77,7 @@ gls.left[5] = {
     highlight = {colors.orange,colors.line_bg},
   }
 }
+
 gls.left[6] = {
   GitBranch = {
     provider = 'GitBranch',
@@ -84,6 +85,7 @@ gls.left[6] = {
     highlight = {colors.fg,colors.line_bg,'bold'},
   }
 }
+
 gls.left[10] = {
   LeftEnd = {
     provider = function() return '' end,
@@ -106,6 +108,7 @@ gls.left[13] = {
     highlight = {colors.blue,colors.bg},
   }
 }
+
 gls.right[1]= {
   FileFormat = {
     provider = 'FileFormat',
@@ -122,6 +125,7 @@ gls.right[2] = {
     highlight = {colors.fg,colors.line_bg},
   },
 }
+
 gls.right[3] = {
   PerCent = {
     provider = 'LinePercent',
@@ -130,6 +134,7 @@ gls.right[3] = {
     highlight = {colors.fg,colors.darkblue},
   }
 }
+
 gls.right[4] = {
   ScrollBar = {
     provider = 'ScrollBar',
