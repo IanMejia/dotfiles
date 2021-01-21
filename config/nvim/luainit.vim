@@ -2,7 +2,7 @@
 
 " lua initialization {{{
 lua require("plugins")
-
+autocmd BufEnter * lua require'completion'.on_attach()
 " }}}
 
 " general {{{

@@ -20,7 +20,7 @@ super + z
 
 # program launcher
 super + @space
-    rofi -show run -theme bar
+    rofi -show run -theme menu
 
 # make sxhkd reload its configuration files:
 super + Escape
@@ -38,11 +38,11 @@ XF86Audio{Play,Prev,Next,Stop}
 
 # screenshot to whole screen
 Print
-    scrot -f
+    scrot -f ~/Pictures/%Y-%m-%d-%T-scrot.png; notify-send "Shot stored in ~/Pictures"
 
 # screenshow current window or selection
 alt + {_,shift + }Print
-    scrot {-s,-u}
+    scrot {-s,-u} ~/Pictures/%Y-%m-%d-%T-scrot.png; notify-send "Shot stored in ~/Pictures"
 
 #
 # bspwm hotkeys

@@ -7,7 +7,7 @@ sxhkd &
 picom &
 dunst &
 xsetroot -cursor_name left_ptr &
-feh --bg-fill $HOME/.config/bspwm/wallpaper/forest.jpg &
+feh --bg-fill $HOME/.config/bspwm/wallpaper/space.jpg &
 $HOME/.config/polybar/launch.sh
 
 #
@@ -23,9 +23,10 @@ bspc monitor HDMI-A-0 -d VII VIII IX X
 # visual configuration
 #
 bspc config border_width         0
-bspc config window_gap           0
+bspc config window_gap           4
 
 bspc config split_ratio          0.5
+bspc config single_monocle       true
 bspc config borderless_monocle   true
 bspc config gapless_monocle      true
 
@@ -48,23 +49,21 @@ bspc rule -a gksqt state=floating
 bspc rule -a godot desktop='^1'
 
 # desktop 2
-bspc rule -a firefox desktop='^2' follow=on state=pseudo_tiled
+bspc rule -a firefox desktop='^2' follow=on state=tiled
 bspc rule -a firefox:Toolkit state=floating sticky=on
+bspc rule -a firefox:firefox state=floating
 
 # desktop 3
-bspc rule -a fiji-Main desktop="^3" state=floating
+bspc rule -a Stremio desktop='^3' state=fullscreen
 
 # desktop 4
 bspc rule -a Gimp desktop='^4' state=floating
 bspc rule -a Inkscape desktop='^4' state=floating follow=on
 
 # desktop 5
-bspc rule -a Thunar desktop='^5' state=pseudo_tiled
+bspc rule -a Thunar desktop='^5' state=floating
 
 # desktop 6
 bspc rule -a Arandr desktop='^6' state=floating
 bspc rule -a Pavucontrol desktop='^6' state=floating
 bspc rule -a Lxappearance desktop='^6' state=floating
-
-# external
-bspc rule -a Stremio desktop='^7' state=fullscreen

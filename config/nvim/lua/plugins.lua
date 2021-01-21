@@ -15,32 +15,31 @@ local plugins = {
         'lifepillar/vim-gruvbox8'
     },
     {
+        'nvim-treesitter/nvim-treesitter',
+        run = 'TSUpdate'
+    },
+    {
         -- latex the right way
         'lervag/vimtex',
         ft = {'tex'}
     },
-    -- {
-    --     -- an interesting plugin for syntax
-    --     'nvim-treesitter/nvim-treesitter',
-    --     config = 'require [[config/treesitter]]'
-    -- },
     {
         -- every editor hates julia
         'JuliaEditorSupport/julia-vim'
     },
     {
-        'neovim/nvim-lspconfig',
+        'neovim/nvim-lspconfig'
         --config = 'require [[config/lsp]]'
     },
     {
         -- completion engine
-        'nvim-lua/completion-nvim'
+        'nvim-lua/completion-nvim',
+        requires = {{'SirVer/ultisnips', opt = true}, {'honza/vim-snippets', opt = true}},
     },
-    --{
-    --    -- repls are always nice to have
-    --     'hkupty/iron.nvim',
-    --     config = 'require [[config/iron.lua]]'
-    --},
+    {
+        'luochen1990/rainbow',
+        config = 'vim.cmd[[let g:rainbow_active = 1]]'
+    },
     {
         -- a statusline
         'glepnir/galaxyline.nvim',
@@ -49,8 +48,6 @@ local plugins = {
         -- file icons
         requires = {'kyazdani42/nvim-web-devicons', opt = true}
     },
-    --{
-    --},
     --{
     --},
 }

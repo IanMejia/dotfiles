@@ -1,0 +1,12 @@
+/* colors */
+
+* {
+  al:   #00000000;
+  bg:   #323232EF;
+  bga:  #323232FF;
+  fg:   #928374FF;
+  ac:   #689d6aFF;
+  se:   #689d6a1A;
+}
+
+/* vim: ft=css
