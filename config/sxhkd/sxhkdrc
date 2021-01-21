@@ -36,13 +36,9 @@ XF86Audio{Mute,LowerVolume,RaiseVolume}
 XF86Audio{Play,Prev,Next,Stop}
     playerctl {play-pause,previous,next,stop}
 
-# screenshot to whole screen
-Print
-    scrot -f ~/Pictures/%Y-%m-%d-%T-scrot.png; notify-send "Shot stored in ~/Pictures"
-
 # screenshow current window or selection
-alt + {_,shift + }Print
-    scrot {-s,-u} ~/Pictures/%Y-%m-%d-%T-scrot.png; notify-send "Shot stored in ~/Pictures"
+{super + ,alt + ,_}Print
+    ~/.config/sxhkd/shot.sh {--window,--sel,_}
 
 #
 # bspwm hotkeys
