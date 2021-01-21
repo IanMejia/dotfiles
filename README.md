@@ -11,7 +11,7 @@ this dotfiles to take them with a grain of salt and instead read everything to
 grab ideas on how to construct your own environment based on your needs.
 
 ![alt text](screenshots/term.png?raw=true "Random terminals")
-![alt text](screenshots/zathura?raw=true "PDF reader")
+![alt text](screenshots/zathura.png?raw=true "PDF reader")
 
 ## Dependencies
 
@@ -52,7 +52,7 @@ constructed around what I consider optimal, screenshot for reference:
 
 A basic dmenu-like menu, with a simple color scheme to be compatible with the
 rest:
-![alt text](screenshots/rofi?raw=true "Menu")
+![alt text](screenshots/rofi.png?raw=true "Menu")
 
 
 ## Dotfile Installation
