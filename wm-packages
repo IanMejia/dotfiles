@@ -20,9 +20,11 @@ xorg-xinit
 xorg-xsetroot
 xdotool
 papirus-icon-theme
+picom
 materia-gtk-theme
 bluez-utils
 xdotool
-redshift
 capitaine-cursos
 dunst
+fd
+lsd

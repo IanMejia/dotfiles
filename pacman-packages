@@ -17,9 +17,4 @@ r
 go
 yaegi
 pulseaudio
-xorg-server
-xorg-xinit
-pulseaudio
 fzf
-fd
-lsd
