@@ -2,12 +2,16 @@
 
 ---
 
-This dotfiles are meant to be quite user-independent, but still, in case you end
-up having them, I encourage you not to take them entirely, rather, read them up
-and take whichever it is that works for you. Main terminals and neovim
-colorschemes are Gruvbox.
+This whole repository has been designed to be as user independent as possible,
+in order to achieve this, everything was carefully constructed to guarantee that
+no user directories are used, although most of the system-wide configurations
+are mainly the stuff I consider necessary for my system, they should provide
+everything needed to have an off the box interface. I encourage whoever uses
+this dotfiles to take them with a grain of salt and instead read everything to
+grab ideas on how to construct your own environment based on your needs.
 
-![alt text](screenshots/screenshot.png?raw=true "Random display of power")
+![alt text](screenshots/term.png?raw=true "Random terminals")
+![alt text](screenshots/zathura?raw=true "PDF reader")
 
 ## Dependencies
 
@@ -42,6 +46,15 @@ chmod +x arch-dependencies.sh
 ./arch-dependencies.sh
 ```
 
+Taskbars are bloat, but we cannot live without them. Mine uses polybar and is
+constructed around what I consider optimal, screenshot for reference:
+![alt text](screenshots/polybar.png?raw=true "Taskbar")
+
+A basic dmenu-like menu, with a simple color scheme to be compatible with the
+rest:
+![alt text](screenshots/rofi?raw=true "Menu")
+
+
 ## Dotfile Installation
 
 Installation is quite easy, while on the *dotfiles* folder execute:
@@ -54,25 +67,3 @@ chmod +x bootstrap.sh
 Which is meant to *symlink* all the dotfiles to their respective place. When the
 terminal restarts, everything should start downloading. It might take a couple
 minutes, depending on your internet speed.
-
----
-
-## Device Configuration and Boot rules
-
-I am currently working on a machine with some proprietary hardware, sadly. So
-there are certain configurations that have to be done at startup, this are not
-necessarily useful to anyone else other than me. The *system* folder contains
-every file for my system.
-
-In case someone wonders about the about my *grub* options:
-
-- `i8042.dumbkbd=1`
-
-  - Fixes a weird issue with my mouse-pad.
-
-- `acpi_backlight=vendor`
-  - Just sets the backlight system to the currently working one.
-
-The other files are just meant to set my default keyboard layout and display
-driver options. This extra files get copied with the `arch-dependencies.sh`
-script, a prompt should appear asking if they are needed.
