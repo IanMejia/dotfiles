@@ -4,11 +4,15 @@
 
 # terminal emulator
 super + Return
-	st
+      st
+
+# emacs
+super + shift + Return
+      emacs
 
 # browser
 super + {_,shift +}o
-    firefox {_,-private-window}
+      firefox {_,-private-window}
 
 # file explorer
 super + e
@@ -36,9 +40,13 @@ XF86Audio{Mute,LowerVolume,RaiseVolume}
 XF86Audio{Play,Prev,Next,Stop}
     playerctl {play-pause,previous,next,stop}
 
-# screenshow current window or selection
+# screenshot current window or selection
 {super + ,alt + ,_}Print
     ~/.config/sxhkd/shot.sh {--window,--sel,_}
+
+# session lock
+super + alt + b
+    slock
 
 #
 # bspwm hotkeys

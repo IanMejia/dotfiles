@@ -2,7 +2,6 @@ configuration {
 	font:							"Iosevka 12";
     show-icons:                     true;
     display-run: 					"";
-    run-display-format:            "{name}";
     disable-history:                false;
     fullscreen:                     false;
 	hide-scrollbar: 				true;

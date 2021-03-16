@@ -23,3 +23,7 @@ if hash fd; then
 else
     echo "Make sure you have fzf and fd installed on your system"
 fi
+
+# lsd
+alias ls="lsd"
+alias la="lsd -la"

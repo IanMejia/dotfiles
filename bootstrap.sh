@@ -23,9 +23,13 @@ if [ ! -d "$HOME/.local/share" ]; then
     mkdir $HOME/.local/share
 fi
 
+if [ ! -d "$HOME/.emacs.d" ]; then
+    mkdir $HOME/.config
+fi
+
 # config files
 ln -s $BASEDIR/config/nvim/init.vim $HOME/.config/nvim/init.vim
-ln -s $BASEDIR/config/nvim/coc-settings.json $HOME/.config/nvim/coc-settings.json
+ln -s $BASEDIR/emacs/init.el $HOME/.emacs.d/init.el
 ln -s $BASEDIR/config/nvim/lua $HOME/.config/nvim/
 ln -s $BASEDIR/config/zathura $HOME/.config/
 ln -s $BASEDIR/config/rofi $HOME/.config

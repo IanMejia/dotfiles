@@ -1,6 +1,4 @@
 -- plugins list arranged via packer --
-local vim = vim
-
 vim.cmd [[packadd packer.nvim]]
 local packer = require('packer')
 
@@ -16,12 +14,15 @@ local plugins = {
     },
     {
         'nvim-treesitter/nvim-treesitter',
-        run = 'TSUpdate'
+        config = function() require [[config/treesitter]] end,
+        run = function() vim.cmd[[TSUpdate]] end
     },
     {
         -- latex the right way
-        'lervag/vimtex',
-        ft = {'tex'}
+        'lervag/vimtex'
+    },
+    {
+        'vimwiki/vimwiki'
     },
     {
         -- every editor hates julia
@@ -34,19 +35,30 @@ local plugins = {
     {
         -- completion engine
         'nvim-lua/completion-nvim',
-        requires = {{'SirVer/ultisnips', opt = true}, {'honza/vim-snippets', opt = true}},
+        requires = {{'SirVer/ultisnips'}, {'honza/vim-snippets'}}
     },
     {
         'luochen1990/rainbow',
-        config = 'vim.cmd[[let g:rainbow_active = 1]]'
+        config = function() vim.cmd[[let g:rainbow_active = 1]] end
     },
     {
         -- a statusline
         'glepnir/galaxyline.nvim',
         branch = 'main',
-        config = 'require [[config/galaxyline]]',
+        config = function() require [[config/galaxyline]] end,
         -- file icons
         requires = {'kyazdani42/nvim-web-devicons', opt = true}
+    },
+    {
+        'fatih/vim-go'
+    },
+    {
+        'hkupty/iron.nvim',
+        config = function() require [[config/iron]] end
+    },
+    {
+        'jalvesaq/Nvim-R',
+        branch = 'stable'
     },
     --{
     --},

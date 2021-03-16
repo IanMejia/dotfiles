@@ -2,6 +2,7 @@
 
 # java re-parenting
 export _JAVA_AWT_WM_NONREPARENTING=1
+export CALIBRE_USE_DARK_PALETTE=1
 export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on -Dswing.aatext=true -Dswing.crossplatformlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel -Dswing.defaultlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel'
 
 # variables

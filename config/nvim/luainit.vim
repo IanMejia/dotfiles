@@ -2,7 +2,9 @@
 
 " lua initialization {{{
 lua require("plugins")
-autocmd BufEnter * lua require'completion'.on_attach()
+autocmd BufEnter * lua require"completion".on_attach()
+let g:completion_enable_snippet = 'UltiSnips'
+let g:vimtex_compiler_engine = 'lualatex'
 " }}}
 
 " general {{{
@@ -112,8 +114,11 @@ nnoremap <C-j> :bn<CR>
 nnoremap <C-k> :bp<CR>
 
 " <tab> mapping
-imap <expr><s-tab> pumvisible() ? "\<c-p>" : "\<s-tab>"
-imap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
+inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+
+" termmode
+tnoremap <Esc> <C-\><C-n>
 
 " html keybindings
 augroup htmlMaps
