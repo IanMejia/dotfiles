@@ -2,9 +2,24 @@
 
 " lua initialization {{{
 lua require("plugins")
-autocmd BufEnter * lua require"completion".on_attach()
-let g:completion_enable_snippet = 'UltiSnips'
+
+" plugin configs
+" compe
+inoremap <silent><expr> <C-Space> compe#complete()
+inoremap <silent><expr> <CR>      compe#confirm('<CR>')
+inoremap <silent><expr> <C-e>     compe#close('<C-e>')
+inoremap <silent><expr> <C-f>     compe#scroll({ 'delta': +4 })
+inoremap <silent><expr> <C-d>     compe#scroll({ 'delta': -4 })
+
+" vimtex
 let g:vimtex_compiler_engine = 'lualatex'
+
+" nvim-tree
+let g:nvim_tree_hide_dotfiles = 1
+
+" gruvbox
+let g:gruvbox_contrast_dark = "hard"
+
 " }}}
 
 " general {{{
@@ -60,13 +75,15 @@ augroup END
 set number relativenumber
 augroup numbertoggle
     autocmd!
-    autocmd BufEnter,FocusGained,InsertLeave * setlocal relativenumber
-    autocmd BufLeave,FocusLost,InsertEnter   * setlocal norelativenumber
+    "autocmd BufEnter,FocusGained,InsertLeave * setlocal relativenumber
+    "autocmd BufLeave,FocusLost,InsertEnter   * setlocal norelativenumber
+    autocmd InsertLeave * setlocal relativenumber
+    autocmd InsertEnter * setlocal norelativenumber
 augroup END
 
 " colorscheme
 set background=dark
-colorscheme gruvbox8_hard
+colorscheme gruvbox
 
 " providers
 let g:python3_host_prog = '/usr/bin/python'
@@ -133,6 +150,10 @@ augroup pythonMaps
     " run python script currently on the shell
     au FileType python nnoremap <buffer> <F9> :exec '!python' shellescape(@%, 1)<CR>
 augroup END
+
+"NERDTree
+nnoremap <C-n> :NvimTreeToggle<CR>
+nnoremap <leader>n :NvimTreeFindFile<CR>
 
 " }}}
 

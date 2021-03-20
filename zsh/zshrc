@@ -27,3 +27,6 @@ fi
 # lsd
 alias ls="lsd"
 alias la="lsd -la"
+
+# git thingies
+alias gittree="git log --all --decorate --graph --oneline"
