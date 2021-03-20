@@ -2,10 +2,11 @@
 
 -- local lsp_status = require('lsp-status')
 local nvim_lsp   = require'lspconfig'
-local attach_hook = require'completion'.on_attach
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+
+capabilities.textDocument.completion.completionItem.snippetSupport = true
 
 local installed_lsp = {
-    'sumneko_lua',
     'texlab',
     'bashls'
 }
@@ -14,6 +15,8 @@ nvim_lsp.sumneko_lua.setup{}
 
 for _,lsp in ipairs(installed_lsp) do
     nvim_lsp[lsp].setup{
-        on_attach = attach_hook,
+        capabilities = capabilities;
+        on_attach = on_attach,
     }
 end
+

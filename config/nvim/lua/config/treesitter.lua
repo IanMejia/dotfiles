@@ -1,5 +1,7 @@
 -- treesitter basic configurations for most used languages
-require'nvim-treesitter.configs'.setup{
+local treesitter = require'nvim-treesitter.configs'
+
+treesitter.setup{
     ensure_installed = {
         'julia',
         'go',

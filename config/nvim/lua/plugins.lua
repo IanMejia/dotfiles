@@ -1,6 +1,7 @@
 -- plugins list arranged via packer --
 vim.cmd [[packadd packer.nvim]]
-local packer = require('packer')
+local packer = require'packer'
+
 
 local plugins = {
     {
@@ -9,8 +10,8 @@ local plugins = {
         opt = true
     },
     {
-        -- the best possible gruvbox ever
-        'lifepillar/vim-gruvbox8'
+        'npxbr/gruvbox.nvim',
+        requires = {'rktjmp/lush.nvim'}
     },
     {
         'nvim-treesitter/nvim-treesitter',
@@ -28,14 +29,18 @@ local plugins = {
         -- every editor hates julia
         'JuliaEditorSupport/julia-vim'
     },
-    {
-        'neovim/nvim-lspconfig'
-        --config = 'require [[config/lsp]]'
-    },
+    --{
+    --    'neovim/nvim-lspconfig',
+    --    config = 'require [[config/lsp]]'
+    --},
     {
         -- completion engine
-        'nvim-lua/completion-nvim',
-        requires = {{'SirVer/ultisnips'}, {'honza/vim-snippets'}}
+        'hrsh7th/nvim-compe',
+        config = function() require [[config/compe]] end
+    },
+    {
+        'norcalli/snippets.nvim',
+        config = function() require [[config/snippets]] end
     },
     {
         'luochen1990/rainbow',
@@ -59,6 +64,18 @@ local plugins = {
     {
         'jalvesaq/Nvim-R',
         branch = 'stable'
+    },
+    {
+        'kyazdani42/nvim-tree.lua',
+    },
+    {
+        'tpope/vim-fugitive'
+    },
+    {
+        'tpope/vim-surround'
+    },
+    {
+        'norcalli/nvim-colorizer.lua'
     },
     --{
     --},
