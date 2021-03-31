@@ -20,6 +20,10 @@ let g:nvim_tree_hide_dotfiles = 1
 " gruvbox
 let g:gruvbox_contrast_dark = "hard"
 
+let wiki = {}
+let wiki.nested_syntaxes = {'python': 'python', 'bash': 'bash'}
+let g:vimwiki_list = [wiki]
+
 " }}}
 
 " general {{{
@@ -45,6 +49,7 @@ set tw=0
 set clipboard+=unnamedplus
 set listchars=tab:\ \ ,trail:·
 set list
+set lisp
 
 " addition for performance
 set completeopt=menuone,noinsert,noselect
@@ -151,7 +156,7 @@ augroup pythonMaps
     au FileType python nnoremap <buffer> <F9> :exec '!python' shellescape(@%, 1)<CR>
 augroup END
 
-"NERDTree
+" nvim-tree
 nnoremap <C-n> :NvimTreeToggle<CR>
 nnoremap <leader>n :NvimTreeFindFile<CR>
 

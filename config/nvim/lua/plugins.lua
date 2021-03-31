@@ -43,8 +43,8 @@ local plugins = {
         config = function() require [[config/snippets]] end
     },
     {
-        'luochen1990/rainbow',
-        config = function() vim.cmd[[let g:rainbow_active = 1]] end
+        'p00f/nvim-ts-rainbow',
+        config = function() require [[config/rainbow]] end
     },
     {
         -- a statusline
@@ -67,6 +67,9 @@ local plugins = {
     },
     {
         'kyazdani42/nvim-tree.lua',
+    },
+    {
+        'tpope/vim-sexp-mappings-for-regular-people'
     },
     {
         'tpope/vim-fugitive'

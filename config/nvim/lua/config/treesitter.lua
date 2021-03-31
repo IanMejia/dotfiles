@@ -3,13 +3,18 @@ local treesitter = require'nvim-treesitter.configs'
 
 treesitter.setup{
     ensure_installed = {
-        'julia',
-        'go',
         'bash',
-        'lua',
+        'clojure',
         'dart',
+        'go',
+        'html',
+        'julia',
+        'latex',
+        'lua',
+        'ocaml',
         'python',
-        'ocaml'
+        'r',
+        'rust'
     },
     highlight = {
         enable = true
