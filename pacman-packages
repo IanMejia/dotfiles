@@ -10,13 +10,12 @@ pulseaudio
 python-matplotlib
 python-pynvim
 r
-sxiv
+ripgrep
+ruby
+ruby-gems
 texlive-most
 xf86-input-wacom
 xf86-video-amdgpu
-yaegi
 zathura
 zathura-djvu
-zathura-pdf-mupdf
-ruby
-ruby-gems
+zathura-pdf-poppler

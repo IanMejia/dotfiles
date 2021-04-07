@@ -11,6 +11,7 @@ session=${1:-bspwm}
 
 case $session in
     bspwm    ) exec bspwm;;
+    awesome  ) exec awesome;;
     *        ) exec $1;;
 esac
 

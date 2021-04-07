@@ -44,7 +44,7 @@
 
     ### Text ###
 
-    font = Iosevka 10
+    font =  FiraCode Nerd Font 10
 
     # if multiple lines in the font overlap, change the value
     line_height = 0

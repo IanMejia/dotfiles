@@ -1,5 +1,5 @@
 configuration {
-	font:							"Iosevka 12";
+	font:							"FiraCode Nerd Font 12";
     show-icons:                     true;
     display-run: 					"";
     disable-history:                false;
@@ -28,7 +28,6 @@ prompt {
 	padding: 						0px;
 	background-color: 				@al;
 	text-color: 					@ac;
-	font:							"feather 12";
 }
 
 entry {

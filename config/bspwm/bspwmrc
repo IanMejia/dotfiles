@@ -13,7 +13,6 @@ $HOME/.config/polybar/launch.sh
 #
 # base
 #
-bspc config focus_follows_pointer true
 
 # display
 bspc monitor eDP -d dev web docs img fm conf
