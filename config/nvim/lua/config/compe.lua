@@ -23,6 +23,5 @@ compe.setup{
         nvim_lua = true;
         spell = true;
         tags = true;
-        treesitter = true;
     };
 }

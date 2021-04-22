@@ -27,6 +27,9 @@ fi
 # lsd
 alias ls="lsd"
 alias la="lsd -la"
+alias mouse="sudo modprobe -r i2c_hid ; sudo modprobe i2c_hid"
 
 # git thingies
 alias gittree="git log --all --decorate --graph --oneline"
+
+alias luamake=/home/crash/.lsp/lua-language-server/3rd/luamake/luamake

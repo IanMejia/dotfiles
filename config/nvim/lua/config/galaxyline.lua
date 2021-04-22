@@ -86,14 +86,42 @@ gls.left[6] = {
   }
 }
 
+gls.left[7] = {
+  DiffAdd = {
+    provider = "DiffAdd",
+    condition = checkwidth,
+    icon = "   ",
+    highlight = {colors.green, colors.line_bg}
+  }
+}
+
+gls.left[8] = {
+  DiffModified = {
+    provider = "DiffModified",
+    condition = checkwidth,
+    icon = " ",
+    highlight = {colors.orange, colors.line_bg}
+  }
+}
+
+gls.left[9] = {
+  DiffRemove = {
+    provider = "DiffRemove",
+    condition = checkwidth,
+    icon = " ",
+    highlight = {colors.red, colors.line_bg}
+  }
+}
+
 gls.left[10] = {
   LeftEnd = {
-    provider = function() return '' end,
-    separator = '',
+    provider = function() return ' ' end,
+    separator = '',
     separator_highlight = {colors.bg,colors.line_bg},
     highlight = {colors.line_bg,colors.line_bg}
   }
 }
+
 gls.left[11] = {
   DiagnosticError = {
     provider = 'DiagnosticError',
@@ -101,6 +129,7 @@ gls.left[11] = {
     highlight = {colors.red,colors.bg}
   }
 }
+
 gls.left[13] = {
   DiagnosticWarn = {
     provider = 'DiagnosticWarn',
@@ -112,7 +141,7 @@ gls.left[13] = {
 gls.right[1]= {
   FileFormat = {
     provider = 'FileFormat',
-    separator = ' ',
+    separator = ' ',
     separator_highlight = {colors.bg,colors.line_bg},
     highlight = {colors.fg,colors.line_bg},
   }

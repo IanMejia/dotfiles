@@ -29,10 +29,10 @@ local plugins = {
         -- every editor hates julia
         'JuliaEditorSupport/julia-vim'
     },
-    --{
-    --    'neovim/nvim-lspconfig',
-    --    config = 'require [[config/lsp]]'
-    --},
+    {
+        'neovim/nvim-lspconfig',
+        config = 'require [[config/lsp]]'
+    },
     {
         -- completion engine
         'hrsh7th/nvim-compe',
@@ -61,15 +61,12 @@ local plugins = {
         'hkupty/iron.nvim',
         config = function() require [[config/iron]] end
     },
-    {
-        'jalvesaq/Nvim-R',
-        branch = 'stable'
-    },
+    --{
+    --    'jalvesaq/Nvim-R',
+    --    branch = 'stable'
+    --},
     {
         'kyazdani42/nvim-tree.lua',
-    },
-    {
-        'tpope/vim-sexp-mappings-for-regular-people'
     },
     {
         'tpope/vim-fugitive'

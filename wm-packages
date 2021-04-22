@@ -20,8 +20,8 @@ sxhkd
 thunar
 thunar-archive-plugin
 thunar-volman
-ttf-fira-mono
 ttf-nerd-fonts-symbols-mono
+ttf-jetbrains-mono
 tumbler
 xdotool
 xorg-server

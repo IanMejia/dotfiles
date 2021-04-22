@@ -5,9 +5,9 @@
 #
 sxhkd > /dev/null &
 picom --xrender-sync-fence > /dev/null &
-dunst &
+dunst > /dev/null &
 xsetroot -cursor_name left_ptr &
-feh --bg-fill $HOME/.config/bspwm/wallpaper/groot.png &
+feh --bg-fill $HOME/.config/bspwm/wallpaper/forest.jpg &
 $HOME/.config/polybar/launch.sh
 
 #
