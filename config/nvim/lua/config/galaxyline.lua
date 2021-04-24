@@ -1,7 +1,8 @@
 local gl = require('galaxyline')
+local condition = require('galaxyline.condition')
 local gls = gl.section
 local vim = vim
-gl.short_line_list = {'LuaTree','vista','dbui'}
+gl.short_line_list = {'NvimTree','vista','dbui', 'packer'}
 
 local colors = {
   bg = '#32302f',
@@ -21,19 +22,13 @@ local colors = {
   lightgray = '#a89984'
 }
 
-local buffer_not_empty = function()
-  if vim.fn.empty(vim.fn.expand('%:t')) ~= 1 then
-    return true
-  end
-  return false
-end
-
 gls.left[1] = {
   FirstElement = {
     provider = function() return '▊ ' end,
     highlight = {colors.blue,colors.line_bg}
   },
 }
+
 gls.left[2] = {
   ViMode = {
     provider = function()
@@ -49,77 +44,73 @@ gls.left[2] = {
     highlight = {colors.red,colors.line_bg,'bold'},
   },
 }
+
 gls.left[3] ={
   FileIcon = {
     provider = 'FileIcon',
-    condition = buffer_not_empty,
+    condition = condition.buffer_not_empty,
     highlight = {require('galaxyline.provider_fileinfo').get_file_icon_color,colors.line_bg},
   },
 }
+
 gls.left[4] = {
   FileName = {
     provider = {'FileName','FileSize'},
-    condition = buffer_not_empty,
+    condition = condition.buffer_not_empty,
     highlight = {colors.fg,colors.line_bg,'bold'}
-  }
+  },
 }
-
-local function find_git_root()
-  local path = vim.fn.expand('%:p:h')
-  local get_git_dir = require('galaxyline.provider_vcs').get_git_dir
-  return get_git_dir(path)
-end
 
 gls.left[5] = {
   GitIcon = {
     provider = function() return '  ' end,
-    condition = find_git_root,
+    condition = condition.check_git_workspace,
     highlight = {colors.orange,colors.line_bg},
-  }
+  },
 }
 
 gls.left[6] = {
   GitBranch = {
     provider = 'GitBranch',
-    condition = find_git_root,
+    condition = condition.check_git_workspace,
     highlight = {colors.fg,colors.line_bg,'bold'},
-  }
+  },
 }
 
 gls.left[7] = {
   DiffAdd = {
     provider = "DiffAdd",
-    condition = checkwidth,
+    condition = condition.checkwidth,
     icon = "   ",
     highlight = {colors.green, colors.line_bg}
-  }
+  },
 }
 
 gls.left[8] = {
   DiffModified = {
     provider = "DiffModified",
-    condition = checkwidth,
+    condition = condition.checkwidth,
     icon = " ",
     highlight = {colors.orange, colors.line_bg}
-  }
+  },
 }
 
 gls.left[9] = {
   DiffRemove = {
     provider = "DiffRemove",
-    condition = checkwidth,
+    condition = condition.checkwidth,
     icon = " ",
     highlight = {colors.red, colors.line_bg}
-  }
+  },
 }
 
 gls.left[10] = {
   LeftEnd = {
-    provider = function() return ' ' end,
-    separator = '',
+    provider = function() return '' end,
+    separator = ' ',
     separator_highlight = {colors.bg,colors.line_bg},
     highlight = {colors.line_bg,colors.line_bg}
-  }
+  },
 }
 
 gls.left[11] = {
@@ -127,7 +118,16 @@ gls.left[11] = {
     provider = 'DiagnosticError',
     icon = '  ',
     highlight = {colors.red,colors.bg}
-  }
+  },
+}
+
+gls.left[12] = {
+  LeftEnd = {
+    provider = function() return '' end,
+    separator = '',
+    separator_highlight = {colors.bg,colors.bg},
+    highlight = {colors.bg,colors.bg}
+  },
 }
 
 gls.left[13] = {
@@ -135,7 +135,7 @@ gls.left[13] = {
     provider = 'DiagnosticWarn',
     icon = '  ',
     highlight = {colors.blue,colors.bg},
-  }
+  },
 }
 
 gls.right[1]= {
@@ -144,7 +144,7 @@ gls.right[1]= {
     separator = ' ',
     separator_highlight = {colors.bg,colors.line_bg},
     highlight = {colors.fg,colors.line_bg},
-  }
+  },
 }
 gls.right[2] = {
   LineInfo = {
@@ -161,31 +161,30 @@ gls.right[3] = {
     separator = ' ',
     separator_highlight = {colors.line_bg,colors.line_bg},
     highlight = {colors.fg,colors.darkblue},
-  }
+  },
 }
 
 gls.right[4] = {
   ScrollBar = {
     provider = 'ScrollBar',
     highlight = {colors.lightgray,colors.gray},
-  }
+  },
 }
 
 gls.short_line_left[1] = {
   BufferType = {
     provider = 'FileTypeName',
-    separator = '',
+    separator = '▊ ',
     separator_highlight = {colors.purple,colors.bg},
     highlight = {colors.fg,colors.purple}
-  }
+  },
 }
-
 
 gls.short_line_right[1] = {
   BufferIcon = {
     provider= 'BufferIcon',
-    separator = '',
-    separator_highlight = {colors.purple,colors.bg},
-    highlight = {colors.fg,colors.purple}
-  }
+    separator = '▊',
+    separator_highlight = {colors.bg,colors.purple},
+    highlight = {colors.bg,colors.purple}
+  },
 }

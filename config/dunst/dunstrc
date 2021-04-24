@@ -44,7 +44,7 @@
 
     ### Text ###
 
-    font =  JetBrains Mono 12
+    font =  FiraCode Medium 12
 
     # if multiple lines in the font overlap, change the value
     line_height = 0

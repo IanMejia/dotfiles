@@ -67,15 +67,16 @@ local plugins = {
     --},
     {
         'kyazdani42/nvim-tree.lua',
+        requires = {'kyazdani42/nvim-web-devicons', opt = true}
     },
     {
-        'tpope/vim-fugitive'
+        'tpope/vim-fugitive',
     },
     {
-        'tpope/vim-surround'
+        'tpope/vim-surround',
     },
     {
-        'norcalli/nvim-colorizer.lua'
+        'norcalli/nvim-colorizer.lua',
     },
     --{
     --},

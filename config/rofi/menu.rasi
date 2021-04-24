@@ -1,5 +1,5 @@
 configuration {
-	font:							"JetBrains Mono Bold 14";
+	font:							"FiraCode Medium 14";
     show-icons:                     true;
     display-run: 					"";
     disable-history:                false;

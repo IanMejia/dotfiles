@@ -50,6 +50,7 @@ set clipboard+=unnamedplus
 set listchars=tab:\ \ ,trail:·
 set list
 set lisp
+set autoindent
 
 " addition for performance
 set completeopt=menuone,noinsert,noselect
@@ -92,9 +93,9 @@ colorscheme gruvbox
 
 " providers
 let g:python3_host_prog = '/usr/bin/python'
-let g:ruby_host_prog = '/usr/bin/ruby'
-let g:npm_host_prog = '/usr/bin/npm'
-let g:ruby_host_prog = '/usr/bin/gem'
+"let g:ruby_host_prog = '/usr/bin/ruby'
+"let g:npm_host_prog = '/usr/bin/npm'
+"let g:ruby_host_prog = '/usr/bin/gem'
 
 " latex
 let g:vimtex_compiler_progname = 'nvr'

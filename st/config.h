@@ -5,7 +5,7 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "JuliaMono:style=Medium:size=11:autohint=true:autoalias=true";
+static char *font = "FiraCode Medium:style=Medium:size=11:autohint=true:autoalias=true";
 static int borderpx = 0;
 
 /*
