@@ -14,46 +14,46 @@ cmd('filetype plugin indent on')
 cmd('syntax on')
 
 -- general
+opt('b', 'autoindent', true)
+opt('b', 'expandtab', true)
+opt('b', 'lisp', true)
 opt('b', 'shiftwidth', indent)
+opt('b', 'spelllang', 'en,es')
 opt('b', 'tabstop', indent)
-opt('o', 'autoindent', true)
+opt('o', 'background', 'dark')
 opt('o', 'clipboard', 'unnamedplus')
-opt('o', 'expandtab', true)
-opt('o', 'fileencoding', 'utf-8')
 opt('o', 'ignorecase', true)
 opt('o', 'joinspaces', false)
-opt('o', 'linebreak', true)
-opt('o', 'lisp', true)
 opt('o', 'shortmess', vim.o.shortmess .. 'c')
 opt('o', 'showmatch', true)
 opt('o', 'showmode', false)
 opt('o', 'smartcase', true)
-opt('o', 'spelllang', 'en,es')
 opt('o', 'splitbelow', true)
 opt('o', 'splitright', true)
 opt('o', 'termguicolors', true)
 opt('o', 'title', true)
-opt('o', 'wrap', true)
-opt('w', 'conceallevel', 1)
+opt('w', 'conceallevel', 2)
+opt('w', 'linebreak', true)
 opt('w', 'list', true)
 opt('w', 'listchars', 'tab:<->,trail:·')
+opt('w', 'number', true)
 opt('w', 'relativenumber', true)
+opt('w', 'wrap', true)
 
 -- improve performance
+opt('b', 'synmaxcol', 180)
 opt('o', 'backup', false)
 opt('o', 'cmdheight', 1)
-opt('o', 'completeopt', 'menu,noinsert,noselect')
-opt('o', 'cursorcolumn', false)
-opt('o', 'cursorline', false)
+opt('o', 'completeopt', 'menuone,noinsert,noselect')
 opt('o', 'hidden', true)
 opt('o', 'lazyredraw', true)
 opt('o', 're', 1)
 opt('o', 'scrolljump', 5)
 opt('o', 'shiftround', true)
-opt('o', 'synmaxcol', 180)
 opt('o', 'updatetime', 300)
 opt('o', 'writebackup', false)
-opt('o', 'background', 'dark')
+opt('w', 'cursorcolumn', false)
+opt('w', 'cursorline', false)
 
 -- folding
 opt('o', 'foldlevelstart', 10)
@@ -71,10 +71,10 @@ g.gruvbox_contrast_dark = 'hard'
 --- nvim tree
 g.nvim_tree_hide_dotfiles = 1
 
---- vimtex
+--- julia
 g.latex_to_unicode_auto = 1
 g.latex_to_unicode_tab = 0
-g.tex_conceal = 'abdmg'
-g.tex_flavor = 'latex'
+
+--- vimtex
 g.vimtex_compiler_progname = 'nvr'
 g.vimtex_view_method = 'zathura'

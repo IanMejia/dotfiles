@@ -22,6 +22,7 @@ compe.setup{
         nvim_lsp = true;
         nvim_lua = true;
         spell = true;
+        calc = true;
         tags = true;
     };
 }
