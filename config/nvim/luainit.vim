@@ -28,29 +28,28 @@ let g:vimwiki_list = [wiki]
 
 " general {{{
 " basic
+set autoindent
+set clipboard+=unnamedplus
+set expandtab
+set fileencoding=utf-8
+set ignorecase
+set linebreak
+set lisp
+set list
+set listchars=tab:\ \ ,trail:·
+set nojoinspaces
+set noshowmode
+set shiftwidth=4
+set showmatch
+set smartcase
+set splitbelow
+set splitright
+set tabstop=4
 set tgc
 set title
 set titlestring=nvim:\ %f%m%r
-set showmatch
-set expandtab
-set tabstop=4
-set shiftwidth=4
-set nojoinspaces
-set splitbelow
-set splitright
-set ignorecase
-set smartcase
-set cursorline
-set fileencoding=utf-8
-set noshowmode
-set wrap
-set linebreak
 set tw=0
-set clipboard+=unnamedplus
-set listchars=tab:\ \ ,trail:·
-set list
-set lisp
-set autoindent
+set wrap
 
 " addition for performance
 set completeopt=menuone,noinsert,noselect

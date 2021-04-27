@@ -40,6 +40,9 @@ XF86Audio{Mute,LowerVolume,RaiseVolume}
 XF86Audio{Play,Prev,Next,Stop}
     playerctl {play-pause,previous,next,stop}
 
+shift + XF86AudioPlay # workaround for a laptop
+    playerctl stop
+
 # screenshot current window or selection
 {super + ,alt + ,_}Print
     ~/.config/sxhkd/shot.sh {--window,--sel,_}

@@ -28,7 +28,7 @@ if [ ! -d "$HOME/.emacs.d" ]; then
 fi
 
 # config files
-ln -s $BASEDIR/config/nvim/init.vim $HOME/.config/nvim/init.vim
+ln -s $BASEDIR/config/nvim/init.vim $HOME/.config/nvim/init.lua
 ln -s $BASEDIR/emacs/init.el $HOME/.emacs.d/init.el
 ln -s $BASEDIR/config/nvim/lua $HOME/.config/nvim/
 ln -s $BASEDIR/config/zathura $HOME/.config/

@@ -1,7 +1,7 @@
 -- plugins list arranged via packer --
 vim.cmd [[packadd packer.nvim]]
+vim.cmd [[colorscheme gruvbox]]
 local packer = require'packer'
-
 
 local plugins = {
     {
@@ -61,10 +61,10 @@ local plugins = {
         'hkupty/iron.nvim',
         config = function() require [[config/iron]] end
     },
-    --{
-    --    'jalvesaq/Nvim-R',
-    --    branch = 'stable'
-    --},
+    {
+        'nvim-telescope/telescope.nvim',
+        requires = {{'nvim-lua/popup.nvim'}, {'nvim-lua/plenary.nvim'}}
+    },
     {
         'kyazdani42/nvim-tree.lua',
         requires = {'kyazdani42/nvim-web-devicons', opt = true}
@@ -79,9 +79,10 @@ local plugins = {
         'norcalli/nvim-colorizer.lua',
     },
     --{
+    --    'jalvesaq/Nvim-R',
+    --    branch = 'stable'
     --},
 }
-
 return packer.startup(function()
          for _,val in pairs(plugins) do
            packer.use(val)

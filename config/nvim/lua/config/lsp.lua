@@ -7,7 +7,17 @@ local capabilities = vim.lsp.protocol.make_client_capabilities() capabilities.te
 nvim_lsp.pyright.setup{}
 
 -- Golang
-nvim_lsp.gopls.setup{}
+nvim_lsp.gopls.setup{
+  cmd = {"gopls", "serve"},
+  settings = {
+      gopls = {
+          analyses = {
+              unusedparams = true,
+          },
+          staticcheck = true,
+      },
+  },
+}
 
 -- Lua
 local sumneko_root_path = '/home/crash/.lsp/lua-language-server'
