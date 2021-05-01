@@ -1,7 +1,7 @@
 local gl = require('galaxyline')
 local condition = require('galaxyline.condition')
 local gls = gl.section
-local vim = vim
+
 gl.short_line_list = {'NvimTree','vista','dbui', 'packer'}
 
 local colors = {
@@ -90,7 +90,7 @@ gls.left[8] = {
   DiffModified = {
     provider = "DiffModified",
     condition = condition.checkwidth,
-    icon = " ",
+    icon = "   ",
     highlight = {colors.orange, colors.line_bg}
   },
 }
@@ -99,42 +99,24 @@ gls.left[9] = {
   DiffRemove = {
     provider = "DiffRemove",
     condition = condition.checkwidth,
-    icon = " ",
+    icon = "   ",
     highlight = {colors.red, colors.line_bg}
   },
 }
 
 gls.left[10] = {
-  LeftEnd = {
-    provider = function() return '' end,
-    separator = ' ',
-    separator_highlight = {colors.bg,colors.line_bg},
-    highlight = {colors.line_bg,colors.line_bg}
+  DiagnosticError = {
+    provider = 'DiagnosticError',
+    icon = '   ',
+    highlight = {colors.red,colors.line_bg}
   },
 }
 
 gls.left[11] = {
-  DiagnosticError = {
-    provider = 'DiagnosticError',
-    icon = '  ',
-    highlight = {colors.red,colors.bg}
-  },
-}
-
-gls.left[12] = {
-  LeftEnd = {
-    provider = function() return '' end,
-    separator = '',
-    separator_highlight = {colors.bg,colors.bg},
-    highlight = {colors.bg,colors.bg}
-  },
-}
-
-gls.left[13] = {
   DiagnosticWarn = {
     provider = 'DiagnosticWarn',
-    icon = '  ',
-    highlight = {colors.blue,colors.bg},
+    icon = '   ',
+    highlight = {colors.blue,colors.line_bg},
   },
 }
 
@@ -142,7 +124,7 @@ gls.right[1]= {
   FileFormat = {
     provider = 'FileFormat',
     separator = ' ',
-    separator_highlight = {colors.bg,colors.line_bg},
+    separator_highlight = {colors.line_bg,colors.line_bg},
     highlight = {colors.fg,colors.line_bg},
   },
 }
@@ -174,17 +156,23 @@ gls.right[4] = {
 gls.short_line_left[1] = {
   BufferType = {
     provider = 'FileTypeName',
-    separator = '▊ ',
-    separator_highlight = {colors.purple,colors.bg},
-    highlight = {colors.fg,colors.purple}
-  },
+    separator = ' ',
+    separator_highlight = {'NONE',colors.line_bg},
+    highlight = {colors.blue,colors.line_bg,'bold'}
+  }
+}
+
+gls.short_line_left[2] = {
+  SFileName = {
+    provider =  'SFileName',
+    condition = condition.buffer_not_empty,
+    highlight = {colors.fg,colors.line_bg,'bold'}
+  }
 }
 
 gls.short_line_right[1] = {
   BufferIcon = {
     provider= 'BufferIcon',
-    separator = '▊',
-    separator_highlight = {colors.bg,colors.purple},
-    highlight = {colors.bg,colors.purple}
-  },
+    highlight = {colors.fg,colors.line_bg}
+  }
 }

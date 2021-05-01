@@ -58,6 +58,11 @@ local plugins = {
         'fatih/vim-go'
     },
     {
+        'akinsho/flutter-tools.nvim',
+        requires = 'nvim-lua/plenary.nvim',
+        config = function() require [[config/fluttertools]] end
+    },
+    {
         'hkupty/iron.nvim',
         config = function() require [[config/iron]] end
     },
@@ -78,10 +83,6 @@ local plugins = {
     {
         'norcalli/nvim-colorizer.lua',
     },
-    --{
-    --    'jalvesaq/Nvim-R',
-    --    branch = 'stable'
-    --},
 }
 return packer.startup(function()
          for _,val in pairs(plugins) do

@@ -32,4 +32,10 @@ alias mouse="sudo modprobe -r i2c_hid ; sudo modprobe i2c_hid"
 # git thingies
 alias gittree="git log --all --decorate --graph --oneline"
 
+# flutter
+#export JAVA_OPTS='-XX:+IgnoreUnrecognizedVMOptions --add-modules java.se.ee'
+export JAVA_HOME='/usr/lib/jvm/java-8-openjdk'
+export ANDROID_SDK_ROOT='/opt/android-sdk'
+
+# lua
 alias luamake=/home/crash/.lsp/lua-language-server/3rd/luamake/luamake

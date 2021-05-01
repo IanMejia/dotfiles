@@ -44,7 +44,7 @@
 
     ### Text ###
 
-    font =  FiraCode Medium 12
+    font =  FiraCode Medium 9
 
     # if multiple lines in the font overlap, change the value
     line_height = 0

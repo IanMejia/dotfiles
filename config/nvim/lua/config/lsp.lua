@@ -6,6 +6,9 @@ local capabilities = vim.lsp.protocol.make_client_capabilities() capabilities.te
 -- Python
 nvim_lsp.pyright.setup{}
 
+-- Rust
+nvim_lsp.rust_analyzer.setup{}
+
 -- Golang
 nvim_lsp.gopls.setup{
   cmd = {"gopls", "serve"},

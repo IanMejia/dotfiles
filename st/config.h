@@ -5,7 +5,9 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "FiraCode Medium:style=Medium:size=11:autohint=true:autoalias=true";
+static char *font = "Fira Code Medium:size=12:autohint=true:autoalias=true";
+static char *font2[] = {"Symbols Nerd Font:size=12:autohint=true:autoalias=true",
+                        "Symbola:size=14:autohint=true:autoalias=true"};
 static int borderpx = 0;
 
 /*
@@ -16,7 +18,7 @@ static int borderpx = 0;
  * 4: value of shell in /etc/passwd
  * 5: value of shell in config.h
  */
-static char *shell = "/bin/sh";
+static char *shell = "/bin/bash";
 char *utmp = NULL;
 /* scroll program: to enable use a string like "scroll" */
 char *scroll = NULL;
@@ -97,7 +99,7 @@ float alpha = 1.0;
 
 /* Terminal colors (16 first used in escape sequence) */
 static const char *colorname[] = {
-	/* 8 normal colors */
+    /* 8 normal colors */
     "#1d2021",
     "#cc241d",
     "#98971a",
@@ -107,7 +109,7 @@ static const char *colorname[] = {
     "#689d6a",
     "#a89984",
 
-	/* 8 bright colors */
+    /* 8 bright colors */
     "#928374",
     "#fb4934",
     "#b8bb26",
@@ -117,10 +119,10 @@ static const char *colorname[] = {
     "#8ec07c",
     "#ebdbb2",
 
-	[255] = 0,
+    [255] = 0,
 
-	/* more colors can be added after 255 to use with DefaultXX */
-	"#555555",
+    /* more colors can be added after 255 to use with DefaultXX */
+    "#555555",
 };
 
 

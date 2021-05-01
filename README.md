@@ -1,7 +1,5 @@
 # Ian's Dotfiles
 
----
-
 This whole repository has been designed to be as user independent as possible,
 in order to achieve this, everything was carefully constructed to guarantee that
 no user directories are used, although most of the system-wide configurations
@@ -11,13 +9,12 @@ this dotfiles to take them with a grain of salt and instead read everything to
 grab ideas on how to construct your own environment based on your needs.
 
 ![alt text](screenshots/term.png?raw=true "Random terminals")
-![alt text](screenshots/zathura.png?raw=true "PDF reader")
 
 ## Dependencies
 
 - *Window Manager:*
 
-  - Bspwm with polybar.
+  - Bspwm with Polybar.
 
 - *Shell:*
 
@@ -29,14 +26,14 @@ grab ideas on how to construct your own environment based on your needs.
 
 - *Editor:*
 
-  - Neovim. Vim-like bindings for zsh also.
+  - Neovim (lua). Vim-like bindings for zsh also.
 
 - *Document Viewer:*
 
   - Zathura, with sane defaults.
 
 - *Font:*
-  - JuliaMono, I love Julia and the access to unicodefonts
+  - Firacode, ligature paradise. (nerd fonts for extra spiciness)
 
 For arch-like distros, a dependency list is also included to autoinstall.
 It should be as easy as `cd` to the dotfiles directory and executing.
