@@ -27,7 +27,7 @@ fi
 # lsd
 alias ls="lsd"
 alias la="lsd -la"
-alias mouse="sudo modprobe -r i2c_hid ; sudo modprobe i2c_hid"
+alias mouse="sudo modprobe -r i2c_hid_acpi ; sudo modprobe i2c_hid_acpi"
 
 # git thingies
 alias gittree="git log --all --decorate --graph --oneline"
