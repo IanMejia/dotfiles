@@ -5,11 +5,12 @@ treesitter.setup{
     ensure_installed = {
         'bash',
         'clojure',
+        'commonlisp',
         'dart',
         'go',
+        'haskell',
         'html',
         'julia',
-        'latex',
         'lua',
         'ocaml',
         'python',

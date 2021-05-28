@@ -10,6 +10,11 @@ local plugins = {
         opt = true
     },
     {
+        -- debuging seems nice(ish)
+        'mfussenegger/nvim-dap',
+        config = function() require [[config/dap]] end,
+    },
+    {
         'npxbr/gruvbox.nvim',
         requires = {'rktjmp/lush.nvim'}
     },

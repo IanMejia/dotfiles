@@ -82,6 +82,7 @@ theme.titlebar_bg_normal = theme.colors.background
 -- tooltip_[font|opacity|fg_color|bg_color|border_width|border_color]
 -- Example:
 --theme.taglist_bg_focus = "#CC9393"
+theme.tasklist_disable_icon = true
 -- }}}
 
 -- {{{ Widgets
@@ -110,6 +111,19 @@ theme.menu_bg_focus = theme.colors.linebackground
 theme.menu_bg_normal = theme.colors.background2
 theme.menu_fg_focus = theme.colors.foreground
 theme.menu_fg_normal = theme.colors.foreground
+-- }}}
+
+-- {{{ Hotkeys
+theme.hotkeys_font = theme.font
+theme.hotkeys_border_width = dpi(1)
+-- }}}
+
+-- {{{ Notifications
+theme.notification_font = theme.font
+theme.notification_max_width = dpi(400)
+theme.notification_icon_size = dpi(64)
+theme.notification_border_width = dpi(1)
+theme.notification_border_color = theme.colors.color7
 -- }}}
 
 -- {{{ Icons

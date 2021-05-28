@@ -79,7 +79,7 @@ local mylauncher = awful.widget.launcher({ image = beautiful.awesome_icon,
                                            menu = menus.main })
 
 -- Menubar configuration
-menubar.utils.terminal = global.terminal -- Set the terminal for applications that require it
+menubar.utils.terminal = global.terminal
 -- }}}
 
 -- Keyboard map indicator and switcher
@@ -99,10 +99,14 @@ lain.widget.cal {
 
 -- Create a battery widget
 local mybattery = lain.widget.bat({ battery = "BAT0",
-                                    ac = "AC", settings = function ()
-                                        widget:set_markup("Bat " .. bat_now.perc)
+                                    ac = "AC",
+                                    settings = function ()
+                                        widget:set_markup("Bat " .. bat_now.perc .. " ")
                                     end })
-
+-- Create memory widget
+local mymemory = lain.widget.mem({ settings = function ()
+                                       widget:set_markup("Mem " .. mem_now.used)
+                                   end })
 
 -- Create a wibox for each screen and add it
 local taglist_buttons = bindings.taglist_mouse
@@ -170,6 +174,7 @@ awful.screen.connect_for_each_screen(function(s)
         { -- Right widgets
             layout = wibox.layout.fixed.horizontal,
             mybattery,
+            mymemory,
             mykeyboardlayout,
             wibox.widget.systray(),
             mytextclock,

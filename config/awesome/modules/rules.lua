@@ -21,9 +21,10 @@ local rules = {
     -- floating clients
     { rule_any = {
         instance = {
-          "calibre-ebookb-viewer",
+          "calibre",
         },
         class = {
+          "calibre-ebookb-viewer",
           "Arandr",
           "Pavucontrol",
           "Lxappearance",
@@ -31,7 +32,8 @@ local rules = {
           "Sxiv",
           "Zathura",
           "feh",
-          "Thunar"
+          "Thunar",
+          "Makie",
         },
         role = {
           "nvim",
@@ -65,10 +67,11 @@ local rules = {
     { rule_any = {
         class = {
           "calibre-ebookb-viewer",
+          "calibre",
           "Stremio",
           "discord",
           "freezer",
-          "calibre"
+          "calibre",
         },
       },
       properties = {
@@ -77,10 +80,23 @@ local rules = {
       }
     },
 
+    -- tag 4
+    { rule_any = {
+        class = {
+          "Inkscape",
+          "Gimp",
+        },
+      },
+      properties = {
+        screen = 1,
+        tag = "img",
+      }
+    },
+
     -- tag 5
     { rule_any = {
         class = {
-          "Thunar",
+            "Thunar",
         },
       },
       properties = {
@@ -93,6 +109,7 @@ local rules = {
     { rule_any = {
         class = {
           "Lxappearance",
+          "Pavucontrol"
         },
       },
       properties = {

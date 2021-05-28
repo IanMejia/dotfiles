@@ -3,6 +3,7 @@
 #
 
 export BROWSER='firefox'
+export CHROME_EXECUTABLE='chromium'
 export EDITOR='nvim'
 export VISUAL='nvim'
 export PAGER='less'
@@ -26,6 +27,7 @@ typeset -gU cdpath fpath mailpath path
 # Set the list of directories that Zsh searches for programs.
 path=(
   /usr/local/{bin,sbin}
+  $HOME/.local/bin
   $HOME/.local/share/gem/ruby/3.0.0/bin
   $path
 )

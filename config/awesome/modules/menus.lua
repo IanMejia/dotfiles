@@ -8,7 +8,8 @@ local menu = {}
 
 local launcher_power = {
    { "Shutdown", "poweroff"},
-   { "Reboot",   "reboot" },
+   { "Reboot",   "reboot"  },
+   { "Lock",     "slock"   }
 }
 
 local launcher_awesome = {

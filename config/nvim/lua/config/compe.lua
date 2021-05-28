@@ -21,6 +21,7 @@ compe.setup{
         snippets_nvim = true;
         nvim_lsp = true;
         nvim_lua = true;
+        treesitter = true;
         spell = true;
         calc = true;
         tags = true;
