@@ -15,6 +15,10 @@ local plugins = {
         config = function() require [[config/dap]] end,
     },
     {
+        -- repls and arbitrary calls
+        'Olical/conjure',
+    },
+    {
         'npxbr/gruvbox.nvim',
         requires = {'rktjmp/lush.nvim'}
     },

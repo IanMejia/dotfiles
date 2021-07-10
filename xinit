@@ -7,7 +7,7 @@ export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on -Dswing.aatext=true -Dswi
 
 # variables
 xresources=$HOME/.Xresources
-session=${1:-awesome}
+session=${1:-bspwm}
 
 case $session in
     bspwm    ) exec bspwm;;

@@ -1,5 +1,5 @@
 #! /bin/bash
-NAME=~/Pictures/$(date +%y-%m-%d-%T)-shot.png
+NAME=~/Pictures/Screenshots/$(date +%y-%m-%d-%T)-shot.png
 
 case "$1" in
     --window)

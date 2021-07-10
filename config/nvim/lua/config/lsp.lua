@@ -9,6 +9,9 @@ nvim_lsp.pyright.setup{}
 -- Rust
 nvim_lsp.rust_analyzer.setup{}
 
+-- Clojure
+require'lspconfig'.clojure_lsp.setup{}
+
 -- Golang
 nvim_lsp.gopls.setup{
   cmd = {"gopls", "serve"},

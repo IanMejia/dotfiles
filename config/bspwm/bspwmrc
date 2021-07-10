@@ -3,11 +3,11 @@
 #
 # startup
 #
-sxhkd > /dev/null &
+sxhkd -m -1 > /dev/null &
 picom --xrender-sync-fence > /dev/null &
 dunst > /dev/null &
 xsetroot -cursor_name left_ptr &
-feh --bg-fill $HOME/.config/bspwm/wallpaper/forest.jpg &
+feh --bg-fill $HOME/.config/bspwm/wallpaper/space.jpg &
 $HOME/.config/polybar/launch.sh
 
 #

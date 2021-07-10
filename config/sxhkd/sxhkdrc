@@ -23,7 +23,7 @@ super + z
     zathura
 
 # program launcher
-super + @space
+super + p
     rofi -show run -theme menu
 
 # make sxhkd reload its configuration files:
