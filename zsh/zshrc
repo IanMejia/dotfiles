@@ -15,6 +15,7 @@ fi
 # fzf + ripgrep
 source "/usr/share/fzf/key-bindings.zsh"
 source "/usr/share/fzf/completion.zsh"
+#source "/usr/share/nvm/init-nvm.sh"
 
 if hash fd; then
     export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git'
@@ -24,6 +25,10 @@ else
     echo "Make sure you have fzf and fd installed on your system"
 fi
 
+# flutter
+#export JAVA_OPTS='-XX:+IgnoreUnrecognizedVMOptions --add-modules java.se.ee'
+export ANDROID_SDK_ROOT='/opt/android-sdk'
+
 # lsd
 alias ls="lsd"
 alias la="lsd -la"
@@ -32,10 +37,21 @@ alias mouse="sudo modprobe -r i2c_hid_acpi ; sudo modprobe i2c_hid_acpi"
 # git thingies
 alias gittree="git log --all --decorate --graph --oneline"
 
-# flutter
-#export JAVA_OPTS='-XX:+IgnoreUnrecognizedVMOptions --add-modules java.se.ee'
-export JAVA_HOME='/usr/lib/jvm/java-8-openjdk'
-export ANDROID_SDK_ROOT='/opt/android-sdk'
-
 # lua
 alias luamake=/home/crash/.lsp/lua-language-server/3rd/luamake/luamake
+
+# clojure
+alias nrepl='clj -m nrepl.cmdline --middleware "[cider.nrepl/cider-middleware]"--interactive'
+
+# git
+alias gitdataico='git config user.name "Ian Mejia" ; git config user.email "ian@dataico.com"'
+alias gitian='git config user.name "Ian Mejia" ; git config user.email "iankilljoy23@gmail.com"'
+
+# makeui
+alias makeui='clj -J-Dtest -J-Duser.timezone=UTC -M:dev:clj-tests --watch --fail-fast'
+
+# nayya
+alias nayya='source ~/gogrow/festivus-claims-integrations-core/.venv/festivus-claims-integrations-core/bin/activate'
+
+# vpn
+alias vpn='sudo openvpn /etc/openvpn/us-clt.prod.surfshark.comsurfshark_openvpn_tcp.ovpn'

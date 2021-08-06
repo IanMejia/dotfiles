@@ -14,6 +14,10 @@ super + shift + Return
 super + {_,shift +}o
       firefox {_,-private-window}
 
+# proxied chrome
+super + shift + p
+    chromium --proxy-server=http://127.0.0.1:8888
+
 # file explorer
 super + e
     thunar

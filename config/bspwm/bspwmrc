@@ -9,6 +9,7 @@ dunst > /dev/null &
 xsetroot -cursor_name left_ptr &
 feh --bg-fill $HOME/.config/bspwm/wallpaper/space.jpg &
 $HOME/.config/polybar/launch.sh
+#blueman-applet &
 
 #
 # base
@@ -47,6 +48,7 @@ bspc rule -a matplotlib state=floating
 bspc rule -a __main__.py state=floating
 bspc rule -a calibre:calibre-ebook-viewer state=floating
 bspc rule -a Emacs state=tiled
+bspc rule -a Blueman-manager state=floating
 
 # desktop 1
 bspc rule -a love desktop='^1' state=floating

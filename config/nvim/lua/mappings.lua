@@ -8,6 +8,7 @@ local function map(mode, lhs, rhs, opts)
 end
 
 g.mapleader = ','
+g.maplocalleader = '\\'
 
 -- remove arrows
 map('n', '<Up>', '<Nop>')
@@ -38,7 +39,7 @@ map('t', '<Esc>', '<C-\\><C-n>')
 
 -- nvim-tree
 map('n', '<C-n>', ':NvimTreeToggle<CR>')
-map('n', '<leader>', ':NvimTreeFindFile<CR>')
+map('n', '<leader>f', ':NvimTreeFindFile<CR>')
 
 -- folding
 map('n', '<space>', 'za')
