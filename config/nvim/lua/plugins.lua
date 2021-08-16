@@ -15,12 +15,25 @@ local plugins = {
         config = function() require [[config/dap]] end,
     },
     {
+        'olical/aniseed',
+        requires = 'mnacamura/vim-fennel-syntax'
+    },
+    {
         -- repls and arbitrary calls
         'Olical/conjure',
     },
     {
+        'clojure-vim/vim-jack-in',
+	requires = {{'tpope/vim-dispatch'},
+		    {'radenling/vim-dispatch-neovim'}}
+    },
+    {
+        'tpope/vim-sexp-mappings-for-regular-people',
+        requires = 'guns/vim-sexp'
+    },
+    {
         'npxbr/gruvbox.nvim',
-        requires = {'rktjmp/lush.nvim'}
+        requires = 'rktjmp/lush.nvim'
     },
     {
         'nvim-treesitter/nvim-treesitter',

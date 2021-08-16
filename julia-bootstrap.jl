@@ -4,7 +4,7 @@ packages = [
  "Agents",
  "AgentsPlots",
  "Crayons",
- "DSP"
+ "DSP",
  "DataFrames",
  "DelimitedFiles",
  "DifferentialEquations",
@@ -16,6 +16,7 @@ packages = [
  "Images",
  "InteractiveChaos",
  "KernelDensity",
+ "LanguageServer",
  "LightGraphs",
  "LinearAlgebra",
  "Plots",

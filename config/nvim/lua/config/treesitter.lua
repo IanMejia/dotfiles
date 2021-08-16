@@ -7,6 +7,7 @@ treesitter.setup{
         'clojure',
         'commonlisp',
         'dart',
+	'fennel',
         'go',
         'haskell',
         'html',
