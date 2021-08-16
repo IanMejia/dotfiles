@@ -66,7 +66,7 @@ g.python3_host_prog = '/usr/bin/python'
 
 -- Plugin settings
 --- gruvbox
-g.gruvbox_contrast_dark = 'hard'
+-- g.gruvbox_contrast_dark = 'hard'
 
 --- nvim tree
 g.nvim_tree_hide_dotfiles = 1

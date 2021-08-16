@@ -8,11 +8,11 @@ BASEDIR=$(pwd)
 #create config and neovim dirs
 if [ ! -d "$HOME/.config" ]; then
     mkdir $HOME/.config
+    mkdir $HOME/.config/nvim/pack
 fi
 
 if [ ! -d "$HOME/.config/nvim" ]; then
     mkdir $HOME/.config/nvim
-    mkdir $HOME/.config/nvim/pack
 fi
 
 if [ ! -d "$HOME/.local" ]; then
@@ -23,13 +23,8 @@ if [ ! -d "$HOME/.local/share" ]; then
     mkdir $HOME/.local/share
 fi
 
-if [ ! -d "$HOME/.emacs.d" ]; then
-    mkdir $HOME/.config
-fi
-
 # config files
-ln -s $BASEDIR/config/nvim/init.vim $HOME/.config/nvim/init.lua
-ln -s $BASEDIR/emacs/init.el $HOME/.emacs.d/init.el
+ln -s $BASEDIR/config/nvim/init.lua $HOME/.config/nvim/init.lua
 ln -s $BASEDIR/config/nvim/lua $HOME/.config/nvim/
 ln -s $BASEDIR/config/zathura $HOME/.config/
 ln -s $BASEDIR/config/rofi $HOME/.config
