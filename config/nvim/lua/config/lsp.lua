@@ -26,8 +26,8 @@ nvim_lsp.gopls.setup{
 }
 
 -- Lua
-local sumneko_root_path = '/home/crash/.lsp/lua-language-server'
-local sumneko_binary = sumneko_root_path .. '/bin/Linux/lua-language-server'
+local sumneko_root_path = '/usr/share/lua-language-server'
+local sumneko_binary = '/usr/bin/lua-language-server'
 nvim_lsp.sumneko_lua.setup {
   cmd = {sumneko_binary, "-E", sumneko_root_path .. "/main.lua"};
   capabilities = capabilities;

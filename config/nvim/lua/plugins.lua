@@ -1,6 +1,5 @@
 -- plugins list arranged via packer --
 vim.cmd [[packadd packer.nvim]]
-vim.cmd [[colorscheme gruvbox]]
 local packer = require'packer'
 
 local plugins = {
@@ -24,16 +23,16 @@ local plugins = {
     },
     {
         'clojure-vim/vim-jack-in',
-	requires = {{'tpope/vim-dispatch'},
-		    {'radenling/vim-dispatch-neovim'}}
+        requires = {{'tpope/vim-dispatch'},
+		            {'radenling/vim-dispatch-neovim'}}
     },
     {
         'tpope/vim-sexp-mappings-for-regular-people',
         requires = 'guns/vim-sexp'
     },
     {
-        'npxbr/gruvbox.nvim',
-        requires = 'rktjmp/lush.nvim'
+        'EdenEast/nightfox.nvim',
+        config = function() require('nightfox').load() end
     },
     {
         'nvim-treesitter/nvim-treesitter',

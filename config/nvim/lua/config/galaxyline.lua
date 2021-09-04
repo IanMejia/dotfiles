@@ -5,21 +5,21 @@ local gls = gl.section
 gl.short_line_list = {'NvimTree','vista','dbui', 'packer'}
 
 local colors = {
-  bg = '#32302f',
-  line_bg = '#282828',
-  fg = '#ebdbb2',
+  bg = '#2e3440',
+  line_bg = '#3e4655',
+  fg = '#b9bfca',
 
-  yellow = '#fabd2f',
-  cyan = '#8ec07c',
+  yellow = '#ebcb8b',
+  cyan = '#88c0d0',
   darkblue = '#458588',
-  green = '#b8bb26',
+  green = '#a3be8c',
   orange = '#fe8019',
-  purple = '#b16286',
-  magenta = '#d3869b',
-  blue = '#83a598',
-  red = '#fb4934',
-  gray = '#1d2021',
-  lightgray = '#a89984'
+  purple = '#c895bf',
+  magenta = '#b48ead',
+  blue = '#81a1c1',
+  red = '#bf616a',
+  gray = '#465780',
+  lightgray = '#e7ecf4'
 }
 
 gls.left[1] = {
