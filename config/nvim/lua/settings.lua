@@ -62,19 +62,13 @@ opt('w', 'foldmethod', 'syntax')
 opt('w', 'foldnestmax', 10)
 
 -- Providers
-g.python3_host_prog = '/usr/bin/python'
+g.python3_host_prog = '/usr/bin/python3'
 
 -- Plugin settings
---- gruvbox
--- g.gruvbox_contrast_dark = 'hard'
-
---- nvim tree
-g.nvim_tree_hide_dotfiles = 1
-
 --- julia
 g.latex_to_unicode_auto = 1
 g.latex_to_unicode_tab = 0
 
 --- vimtex
 g.vimtex_compiler_progname = 'nvr'
-g.vimtex_view_method = 'zathura'
+-- g.vimtex_view_method = 'zathura'

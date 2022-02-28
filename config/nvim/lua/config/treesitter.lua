@@ -7,16 +7,19 @@ treesitter.setup{
         'clojure',
         'commonlisp',
         'dart',
-	'fennel',
+        'fennel',
         'go',
-        'haskell',
+        'graphql',
         'html',
         'julia',
+        'javascript',
         'lua',
         'ocaml',
         'python',
         'r',
-        'rust'
+        'ruby',
+        'rust',
+        'typescript'
     },
     highlight = {
         enable = true

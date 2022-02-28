@@ -2,9 +2,13 @@
 -- local lsp_status = require('lsp-status')
 local nvim_lsp   = require'lspconfig'
 local capabilities = vim.lsp.protocol.make_client_capabilities() capabilities.textDocument.completion.completionItem.snippetSupport = true
+capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
 
 -- Python
 nvim_lsp.pyright.setup{}
+
+-- Typescript
+require'lspconfig'.tsserver.setup{}
 
 -- Rust
 nvim_lsp.rust_analyzer.setup{}
@@ -26,8 +30,8 @@ nvim_lsp.gopls.setup{
 }
 
 -- Lua
-local sumneko_root_path = '/usr/share/lua-language-server'
-local sumneko_binary = '/usr/bin/lua-language-server'
+local sumneko_root_path = '/opt/homebrew/Cellar/lua-language-server/2.6.5/libexec'
+local sumneko_binary = '/opt/homebrew/Cellar/lua-language-server/2.6.5/libexec/bin/lua-language-server'
 nvim_lsp.sumneko_lua.setup {
   cmd = {sumneko_binary, "-E", sumneko_root_path .. "/main.lua"};
   capabilities = capabilities;

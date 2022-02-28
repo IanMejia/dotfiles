@@ -14,10 +14,6 @@ local plugins = {
         config = function() require [[config/dap]] end,
     },
     {
-        'olical/aniseed',
-        requires = 'mnacamura/vim-fennel-syntax'
-    },
-    {
         -- repls and arbitrary calls
         'Olical/conjure',
     },
@@ -54,26 +50,33 @@ local plugins = {
         'neovim/nvim-lspconfig',
         config = 'require [[config/lsp]]'
     },
+    --{
+    --    -- completion engine
+    --    'hrsh7th/nvim-compe',
+    --    config = function() require [[config/compe]] end
+    --},
     {
-        -- completion engine
-        'hrsh7th/nvim-compe',
-        config = function() require [[config/compe]] end
+        'hrsh7th/nvim-cmp',
+        requires = {{'hrsh7th/cmp-nvim-lsp'},
+                    {'hrsh7th/cmp-buffer'},
+                    {'hrsh7th/cmp-path'},
+                    {'hrsh7th/cmp-cmdline'},
+                    {'hrsh7th/cmp-nvim-lua'},
+                    {'saadparwaiz1/cmp_luasnip'}},
+        config = function() require [[config/cmp]] end
+
     },
     {
-        'norcalli/snippets.nvim',
-        config = function() require [[config/snippets]] end
+        'L3MON4D3/LuaSnip'
     },
     {
         'p00f/nvim-ts-rainbow',
         config = function() require [[config/rainbow]] end
     },
     {
-        -- a statusline
-        'glepnir/galaxyline.nvim',
-        branch = 'main',
-        config = function() require [[config/galaxyline]] end,
-        -- file icons
-        requires = {'kyazdani42/nvim-web-devicons', opt = true}
+        'nvim-lualine/lualine.nvim',
+        requires = {'kyazdani42/nvim-web-devicons', opt = true},
+        config = function() require [[config/lualine]] end
     },
     {
         'fatih/vim-go'
@@ -82,6 +85,34 @@ local plugins = {
         'akinsho/flutter-tools.nvim',
         requires = 'nvim-lua/plenary.nvim',
         config = function() require [[config/fluttertools]] end
+    },
+    {
+        'NTBBloodbath/rest.nvim',
+        requires = { "nvim-lua/plenary.nvim" },
+        config = function()
+            require("rest-nvim").setup({
+            -- Open request results in a horizontal split
+            result_split_horizontal = false,
+            -- Skip SSL verification, useful for unknown certificates
+            skip_ssl_verification = false,
+            -- Highlight request on run
+            highlight = {
+                enabled = true,
+                timeout = 150,
+            },
+            result = {
+                -- toggle showing URL, HTTP info, headers at top the of result window
+                show_url = true,
+                show_http_info = true,
+                show_headers = true,
+            },
+            -- Jump to request line on run
+            jump_to_request = false,
+            env_file = '.env',
+            custom_dynamic_variables = {},
+            yank_dry_run = true,
+            })
+        end,
     },
     {
         'hkupty/iron.nvim',
@@ -93,7 +124,8 @@ local plugins = {
     },
     {
         'kyazdani42/nvim-tree.lua',
-        requires = {'kyazdani42/nvim-web-devicons', opt = true}
+        requires = {'kyazdani42/nvim-web-devicons', opt = true},
+        config = function() require'nvim-tree'.setup {} end
     },
     {
         'tpope/vim-fugitive',

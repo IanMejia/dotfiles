@@ -53,18 +53,25 @@ map('n', '<space>', 'za')
 map('i', '<S-Tab>', 'pumvisible() ? "\\<C-p>" : "\\<Tab>"', {expr = true})
 map('i', '<Tab>', 'pumvisible() ? "\\<C-n>" : "\\<Tab>"', {expr = true})
 
--- compe
-map('i', '<C-f>', 'compe#scroll({ "delta": +4)', {expr = true, silent = true})
-map('i', '<C-d>', 'compe#scroll({ "delta": -4)', {expr = true, silent = true})
-map('i', '<C-Space>', 'compe#complete()', {expr = true, silent = true})
-map('i', '<CR>', 'compe#confirm("<CR>")', {expr = true, silent = true})
-map('i', '<C-e>', 'compe#close("<C-e>")', {expr = true, silent = true})
-
 -- telescope
 map('n', '<leader>ff', ':Telescope find_files<CR>')
 map('n', '<leader>fg', ':Telescope live_grep<CR>')
 map('n', '<leader>fb', ':Telescope buffers<CR>')
 map('n', '<leader>fh', ':Telescope help_tags<CR>')
+
+-- dap
+map('n', '<leader>dc', ':lua require"dap".continue()<CR>')
+map('n', '<leader>dr', ':lua require"dap".repl.open()<CR>')
+map('n', '<leader>db', ':lua require"dap".toggle_breakpoint()<CR>')
+map('n', '<leader>dsn', ':lua require"dap".step_over()<CR>')
+map('n', '<leader>dsi', ':lua require"dap".step_into()<CR>')
+
+-- git
+map('n', '<leader>gg', ':Git<CR>')
+map('n', '<leader>gp', ':Git push<CR>')
+
+-- rest
+map('n', '<leader>rr', '<cmd>lua require("rest-nvim").run()<CR>', opts)
 
 -- lsp
 map('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<CR>', opts)
@@ -79,7 +86,7 @@ map('n', '<space>D', '<cmd>lua vim.lsp.buf.type_definition()<CR>', opts)
 map('n', '<space>rn', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
 map('n', '<space>ca', '<cmd>lua vim.lsp.buf.code_action()<CR>', opts)
 map('n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', opts)
-map('n', '<space>e', '<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>', opts)
+map('n', '<space>e', '<cmd>lua vim.diagnostic.open_float()<CR>', opts)
 map('n', '[d', '<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>', opts)
 map('n', ']d', '<cmd>lua vim.lsp.diagnostic.goto_next()<CR>', opts)
 map('n', '<space>q', '<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>', opts)
