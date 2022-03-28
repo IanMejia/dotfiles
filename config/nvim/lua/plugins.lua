@@ -2,7 +2,12 @@
 vim.cmd [[packadd packer.nvim]]
 local packer = require'packer'
 
+require'impatient'
+
 local plugins = {
+    {
+        'lewis6991/impatient.nvim'
+    },
     {
         -- recurrent dependency [?]
         'wbthomason/packer.nvim',
@@ -20,7 +25,7 @@ local plugins = {
     {
         'clojure-vim/vim-jack-in',
         requires = {{'tpope/vim-dispatch'},
-		            {'radenling/vim-dispatch-neovim'}}
+		    {'radenling/vim-dispatch-neovim'}}
     },
     {
         'tpope/vim-sexp-mappings-for-regular-people',
@@ -28,12 +33,18 @@ local plugins = {
     },
     {
         'EdenEast/nightfox.nvim',
-        config = function() require('nightfox').load() end
+        config = function() vim.cmd("colorscheme nightfox") end
+    },
+    {
+        'ggandor/lightspeed.nvim'
     },
     {
         'nvim-treesitter/nvim-treesitter',
         config = function() require [[config/treesitter]] end,
         run = function() vim.cmd[[TSUpdate]] end
+    },
+    {
+	'nvim-treesitter/nvim-treesitter-textobjects'
     },
     {
         -- latex the right way
@@ -50,11 +61,9 @@ local plugins = {
         'neovim/nvim-lspconfig',
         config = 'require [[config/lsp]]'
     },
-    --{
-    --    -- completion engine
-    --    'hrsh7th/nvim-compe',
-    --    config = function() require [[config/compe]] end
-    --},
+    {
+        'nathom/filetype.nvim'
+    },
     {
         'hrsh7th/nvim-cmp',
         requires = {{'hrsh7th/cmp-nvim-lsp'},
@@ -79,7 +88,15 @@ local plugins = {
         config = function() require [[config/lualine]] end
     },
     {
+	    'romgrk/barbar.nvim',
+	    requires = {'kyazdani42/nvim-web-devicons'}
+    },
+    {
         'fatih/vim-go'
+    },
+    {
+        'simrat39/rust-tools.nvim',
+        config = function() require [[config/rusttools]] end
     },
     {
         'akinsho/flutter-tools.nvim',
@@ -89,30 +106,7 @@ local plugins = {
     {
         'NTBBloodbath/rest.nvim',
         requires = { "nvim-lua/plenary.nvim" },
-        config = function()
-            require("rest-nvim").setup({
-            -- Open request results in a horizontal split
-            result_split_horizontal = false,
-            -- Skip SSL verification, useful for unknown certificates
-            skip_ssl_verification = false,
-            -- Highlight request on run
-            highlight = {
-                enabled = true,
-                timeout = 150,
-            },
-            result = {
-                -- toggle showing URL, HTTP info, headers at top the of result window
-                show_url = true,
-                show_http_info = true,
-                show_headers = true,
-            },
-            -- Jump to request line on run
-            jump_to_request = false,
-            env_file = '.env',
-            custom_dynamic_variables = {},
-            yank_dry_run = true,
-            })
-        end,
+        config = function() require [[config/rest]] end,
     },
     {
         'hkupty/iron.nvim',
@@ -132,6 +126,9 @@ local plugins = {
     },
     {
         'tpope/vim-surround',
+    },
+    {
+	'tpope/vim-repeat'
     },
     {
         'norcalli/nvim-colorizer.lua',

@@ -4,6 +4,26 @@ local vim = vim
 --local py_dap = require('dap-python')
 --py_dap.setup('~/.virtualenvs/debugpy/bin/python')
 
+local function festivus_debug(type, integration, needs_proxy, creds)
+    local base_args = {creds}
+    if type == 'auth' then
+        table.insert(base_args, 1, integration .. '::auth')
+    elseif type == 'claims' then
+        table.insert(base_args, 1, integration .. '::fetch_claims')
+        local with_mama_nayya = vim.fn.input('Need Mama Nayya?(y/n): ')
+        if with_mama_nayya == 'y' then
+            table.insert(base_args, 1, '--integration_options_path=mama_nayyacreds.json')
+        end
+    else
+        table.insert(base_args, 1, integration .. '::fetch_plan_summary')
+    end
+
+    if needs_proxy == 'y' then
+        table.insert(base_args, 1, '--proxy=http://localhost:8888')
+    end
+    return base_args
+end
+
 dap.adapters.python = {
     type = 'executable',
     command = os.getenv('HOME') .. '/.virtualenvs/debugpy/bin/python',
@@ -21,14 +41,7 @@ dap.configurations.python = {
             local integration = vim.fn.input('Integration Name: ')
             local creds = integration .. 'creds.json'
             local with_proxy = vim.fn.input('Need proxy?(y/n): ')
-            if with_proxy == 'y' then
-                return {'--proxy=http://localhost:8888',
-                        integration .. '::auth',
-                        creds}
-            else
-                return {integration .. '::auth',
-                        creds}
-            end
+            return festivus_debug('auth', integration, with_proxy, creds)
         end,
         pythonPath = vim.fn.getcwd() .. '/.venv/festivus-claims-integrations/bin/python3',
     },
@@ -42,14 +55,7 @@ dap.configurations.python = {
             local integration = vim.fn.input('Integration Name: ')
             local creds = integration .. 'creds.json'
             local with_proxy = vim.fn.input('Need proxy?(y/n): ')
-            if with_proxy == 'y' then
-                return {'--proxy=http://localhost:8888',
-                        integration .. '::fetch_claims',
-                        creds}
-            else
-                return {integration .. '::fetch_claims',
-                        creds}
-            end
+            return festivus_debug('claims', integration, with_proxy, creds)
         end,
 
         pythonPath = vim.fn.getcwd() .. '/.venv/festivus-claims-integrations/bin/python3',
@@ -64,14 +70,7 @@ dap.configurations.python = {
             local integration = vim.fn.input('Integration Name: ')
             local creds = integration .. 'creds.json'
             local with_proxy = vim.fn.input('Need proxy?(y/n): ')
-            if with_proxy == 'y' then
-                return {'--proxy=http://localhost:8888',
-                        integration .. '::fetch_plan_summary',
-                        creds}
-            else
-                return {integration .. '::fetch_plan_summary',
-                        creds}
-            end
+            return festivus_debug('summary', integration, with_proxy, creds)
         end,
         pythonPath = vim.fn.getcwd() .. '/.venv/festivus-claims-integrations/bin/python3',
     },

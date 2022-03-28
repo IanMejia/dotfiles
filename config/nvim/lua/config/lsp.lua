@@ -7,14 +7,23 @@ capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
 -- Python
 nvim_lsp.pyright.setup{}
 
--- Typescript
-require'lspconfig'.tsserver.setup{}
+-- eslint
+nvim_lsp.eslint.setup{}
+
+--- Typescript
+nvim_lsp.tsserver.setup{}
 
 -- Rust
 nvim_lsp.rust_analyzer.setup{}
 
 -- Clojure
-require'lspconfig'.clojure_lsp.setup{}
+nvim_lsp.clojure_lsp.setup{}
+
+-- Bash
+nvim_lsp.bashls.setup{}
+
+-- Haskell
+nvim_lsp.hls.setup{}
 
 -- Golang
 nvim_lsp.gopls.setup{
@@ -28,10 +37,9 @@ nvim_lsp.gopls.setup{
       },
   },
 }
-
 -- Lua
-local sumneko_root_path = '/opt/homebrew/Cellar/lua-language-server/2.6.5/libexec'
-local sumneko_binary = '/opt/homebrew/Cellar/lua-language-server/2.6.5/libexec/bin/lua-language-server'
+local sumneko_root_path = '/opt/homebrew/Cellar/lua-language-server/2.6.7/libexec'
+local sumneko_binary = sumneko_root_path .. '/bin/lua-language-server'
 nvim_lsp.sumneko_lua.setup {
   cmd = {sumneko_binary, "-E", sumneko_root_path .. "/main.lua"};
   capabilities = capabilities;
