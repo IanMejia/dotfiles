@@ -4,7 +4,7 @@ local cmd = vim.cmd
 local scopes = {o = vim.o, b = vim.bo, w = vim.wo}
 local function opt(scope, key, value)
   scopes[scope][key] = value
-  --if scope ~= 'o' then scopes['o'][key] = value end
+  if scope ~= 'o' then scopes['o'][key] = value end
 end
 
 local indent = 4
@@ -67,7 +67,7 @@ g.python3_host_prog = '/usr/bin/python3'
 -- Plugin settings
 --- julia
 g.latex_to_unicode_auto = 1
-g.latex_to_unicode_tab = 0
+g.latex_to_unicode_tab = 1
 
 --- vimtex
 g.vimtex_compiler_progname = 'nvr'

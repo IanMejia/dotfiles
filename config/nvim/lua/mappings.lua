@@ -1,10 +1,11 @@
 -- mappings
 local g = vim.g
+local vim = vim
 
 local function map(mode, lhs, rhs, opts)
   local options = {noremap = true}
   if opts then options = vim.tbl_extend('force', options, opts) end
-  vim.api.nvim_set_keymap(mode, lhs, rhs, options)
+  vim.keymap.set(mode, lhs, rhs, options)
 end
 
 g.mapleader = ','
@@ -37,7 +38,6 @@ map('n', '<leader>tx', ':tabclose<CR>', {silent=true})
 -- split
 map('n', '<leader>sr', ':vsplit<CR>', {silent=true})
 map('n', '<leader>sd', ':split<CR>', {silent=true})
-
 
 -- termmode
 map('t', '<Esc>', '<C-\\><C-n>')
