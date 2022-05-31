@@ -1,6 +1,24 @@
--- repl config
-local iron = require'iron'
+local iron = require("iron.core")
 
-iron.core.set_config {
-    repl_open_cmd = 'rightbelow 10 split'
+iron.setup {
+  config = {
+    repl_open_cmd = "botright 40 split",
+    should_map_plug = false,
+    scratch_repl = true,
+    repl_definition = {
+      sh = {
+        command = { "zsh" }
+      }
+    }
+  },
+  keymaps = {
+    send_motion = "<space>sc",
+    visual_send = "<space>sc",
+    send_line = "<space>sl",
+    repeat_cmd = "<space>s.",
+    cr = "<space>s<cr>",
+    interrupt = "<space>s<space>",
+    exit = "<space>sq",
+    clear = "<space>cl",
+  }
 }
