@@ -2,62 +2,58 @@
 local g = vim.g
 local vim = vim
 
-local function map(mode, lhs, rhs, opts)
-  local options = {noremap = true}
-  if opts then options = vim.tbl_extend('force', options, opts) end
-  vim.keymap.set(mode, lhs, rhs, options)
-end
+local map = vim.api.nvim_set_keymap
+local opts = { noremap = true, silent = true }
 
 g.mapleader = ','
 g.maplocalleader = '\\'
-local opts = {silent=true, noremap=true}
 
 -- buffers
 map('n', '<leader>bd', ':BufferClose<CR>', opts)
 map('n', '<leader>bb', ':BufferOrderByBufferNumber<CR>', opts)
 map('n', '<leader>bg', ':BufferPick<CR>', opts)
-map('n', '<C-j>', ':bn<CR>', {silent=true})
-map('n', '<C-k>', ':bp<CR>', {silent=true})
+map('n', '<C-j>', ':bn<CR>', opts)
+map('n', '<C-k>', ':bp<CR>', opts)
 
 -- remove arrows
-map('n', '<Up>', '<Nop>')
-map('n', '<Down>','<Nop>')
-map('n', '<Left>', '<Nop>')
-map('n', '<Right>', '<Nop>')
+map('n', '<Up>', '<Nop>', opts)
+map('n', '<Down>','<Nop>', opts)
+map('n', '<Left>', '<Nop>', opts)
+map('n', '<Right>', '<Nop>', opts)
 
 -- init.lua
-map('n', '<leader>ve', ':e $MYVIMRC<CR>', {silent=true})
-map('n', '<leader>vs', ':source $MYVIMRC<CR>', {silent=true})
+map('n', '<leader>ve', ':e $MYVIMRC<CR>', opts)
+map('n', '<leader>vs', ':source $MYVIMRC<CR>', opts)
 
 -- tab movement
-map('n', '<leader>tp', ':tabp<CR>', {silent=true})
-map('n', '<leader>tn', ':tabn<CR>', {silent=true})
-map('n', '<leader>tc', ':tabe<CR>', {silent=true})
-map('n', '<leader>tx', ':tabclose<CR>', {silent=true})
+map('n', '<leader>tp', ':tabp<CR>', opts)
+map('n', '<leader>tn', ':tabn<CR>', opts)
+map('n', '<leader>tc', ':tabe<CR>', opts)
+map('n', '<leader>tx', ':tabclose<CR>', opts)
 
 -- split
-map('n', '<leader>sr', ':vsplit<CR>', {silent=true})
-map('n', '<leader>sd', ':split<CR>', {silent=true})
+map('n', '<leader>sr', ':vsplit<CR>', opts)
+map('n', '<leader>sd', ':split<CR>', opts)
 
 -- termmode
-map('t', '<Esc>', '<C-\\><C-n>')
+map('t', '<Esc>', '<C-\\><C-n>', opts)
 
 -- nvim-tree
 map('n', '<C-n>', ':NvimTreeToggle<CR>', opts)
 map('n', '<leader>f', ':NvimTreeFindFile<CR>', opts)
 
 -- folding
-map('n', '<space>', 'za')
+map('n', '<space>', 'za', opts)
 
 -- <tab>
 map('i', '<S-Tab>', 'pumvisible() ? "\\<C-p>" : "\\<Tab>"', {expr = true})
 map('i', '<Tab>', 'pumvisible() ? "\\<C-n>" : "\\<Tab>"', {expr = true})
 
 -- telescope
-map('n', '<leader>ff', ':Telescope find_files<CR>')
-map('n', '<leader>fg', ':Telescope live_grep<CR>')
-map('n', '<leader>fb', ':Telescope buffers<CR>')
-map('n', '<leader>fh', ':Telescope help_tags<CR>')
+map('n', '<leader>ff', ':Telescope find_files<CR>', opts)
+map('n', '<leader>fg', ':Telescope live_grep<CR>', opts)
+map('n', '<leader>fb', ':Telescope buffers<CR>', opts)
+map('n', '<leader>fh', ':Telescope help_tags<CR>', opts)
 
 map('n', '<Space>ld', ':Telescope diagnostics<CR>', opts)
 map('n', '<Space>ca', ':Telescope lsp_code_actions<CR>', opts)
@@ -67,16 +63,16 @@ map('n', '<Space>ld', ':Telescope lsp_type_definitions<CR>', opts)
 map('n', '<Space>li', ':Telescope lsp_implementations<CR>', opts)
 
 -- dap
-map('n', '<leader>dc', ':lua require"dap".continue()<CR>')
-map('n', '<leader>dr', ':lua require"dap".repl.open()<CR>')
-map('n', '<leader>db', ':lua require"dap".toggle_breakpoint()<CR>')
-map('n', '<leader>dsn', ':lua require"dap".step_over()<CR>')
-map('n', '<leader>dsi', ':lua require"dap".step_into()<CR>')
+map('n', '<leader>dc', ':lua require"dap".continue()<CR>', opts)
+map('n', '<leader>dr', ':lua require"dap".repl.open()<CR>', opts)
+map('n', '<leader>db', ':lua require"dap".toggle_breakpoint()<CR>', opts)
+map('n', '<leader>dsn', ':lua require"dap".step_over()<CR>', opts)
+map('n', '<leader>dsi', ':lua require"dap".step_into()<CR>', opts)
 
 -- git
-map('n', '<leader>gg', ':Git<CR>')
-map('n', '<leader>gp', ':Git push<CR>')
-map('n', '<leader>gpp', ':Git -c push.default=current push<CR>')
+map('n', '<leader>gg', ':Git<CR>', opts)
+map('n', '<leader>gp', ':Git push<CR>', opts)
+map('n', '<leader>gpp', ':Git -c push.default=current push<CR>', opts)
 
 -- rest
 map('n', '<leader>rr', '<cmd>lua require("rest-nvim").run()<CR>', opts)
