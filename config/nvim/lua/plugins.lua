@@ -27,10 +27,13 @@ local plugins = {
     },
     {
         'EdenEast/nightfox.nvim',
-        config = function() vim.cmd("colorscheme nightfox") end
+        config = function() vim.cmd('colorscheme nightfox') end
     },
     {
-        'ggandor/lightspeed.nvim'
+        'catppuccin/nvim', as = 'catppuccin'
+    },
+    {
+        'ggandor/leap.nvim'
     },
     {
         'nvim-treesitter/nvim-treesitter',
@@ -115,7 +118,7 @@ local plugins = {
     },
     {
         'kylechui/nvim-surround',
-        config = function() require("nvim-surround").setup({}) end,
+        config = function() require 'nvim-surround'.setup {} end,
     },
     {
         'norcalli/nvim-colorizer.lua',

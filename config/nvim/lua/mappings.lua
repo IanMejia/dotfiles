@@ -50,16 +50,16 @@ map('i', '<S-Tab>', 'pumvisible() ? "\\<C-p>" : "\\<Tab>"', {expr = true})
 map('i', '<Tab>', 'pumvisible() ? "\\<C-n>" : "\\<Tab>"', {expr = true})
 
 -- telescope
-map('n', '<leader>ff', ':Telescope find_files<CR>', opts)
-map('n', '<leader>fg', ':Telescope live_grep<CR>', opts)
-map('n', '<leader>fb', ':Telescope buffers<CR>', opts)
-map('n', '<leader>fh', ':Telescope help_tags<CR>', opts)
+map('n', '<leader>tf', ':Telescope find_files<CR>', opts)
+map('n', '<leader>tg', ':Telescope live_grep<CR>', opts)
+map('n', '<leader>tb', ':Telescope buffers<CR>', opts)
+map('n', '<leader>th', ':Telescope help_tags<CR>', opts)
 
-map('n', '<Space>ld', ':Telescope diagnostics<CR>', opts)
+map('n', '<Space>td', ':Telescope diagnostics<CR>', opts)
 map('n', '<Space>ca', ':Telescope lsp_code_actions<CR>', opts)
 map('n', '<Space>lr', ':Telescope lsp_references<CR>', opts)
 map('n', '<Space>ld', ':Telescope lsp_definitions<CR>', opts)
-map('n', '<Space>ld', ':Telescope lsp_type_definitions<CR>', opts)
+map('n', '<Space>td', ':Telescope lsp_type_definitions<CR>', opts)
 map('n', '<Space>li', ':Telescope lsp_implementations<CR>', opts)
 
 -- dap

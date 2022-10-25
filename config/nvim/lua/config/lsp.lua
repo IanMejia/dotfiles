@@ -1,41 +1,57 @@
 -- lsp configuration --
 -- local lsp_status = require('lsp-status')
 local nvim_lsp = require 'lspconfig'
-local capabilities = vim.lsp.protocol.make_client_capabilities()
-capabilities.textDocument.completion.completionItem.snippetSupport = true
-capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
+local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
 -- Python
-nvim_lsp.pyright.setup {}
+nvim_lsp.pyright.setup {
+  capabilities = capabilities,
+}
 -- nvim_lsp.jedi_language_server.setup{}
 
 -- eslint
-nvim_lsp.eslint.setup {}
+nvim_lsp.eslint.setup {
+  capabilities = capabilities,
+}
 
 --- Typescript
-nvim_lsp.tsserver.setup {}
+nvim_lsp.tsserver.setup {
+  capabilities = capabilities,
+}
 
 -- Rust
-nvim_lsp.rust_analyzer.setup {}
+nvim_lsp.rust_analyzer.setup {
+  capabilities = capabilities,
+}
 
 -- Clojure
-nvim_lsp.clojure_lsp.setup {}
+nvim_lsp.clojure_lsp.setup {
+  capabilities = capabilities,
+}
 
 -- Bash
-nvim_lsp.bashls.setup {}
+nvim_lsp.bashls.setup {
+  capabilities = capabilities,
+}
 
 -- Haskell
-nvim_lsp.hls.setup {}
+nvim_lsp.hls.setup {
+  capabilities = capabilities,
+}
 
 -- Julia
-nvim_lsp.julials.setup{}
+nvim_lsp.julials.setup{
+  capabilities = capabilities,
+}
 
 -- Golang
-nvim_lsp.gopls.setup {}
+nvim_lsp.gopls.setup {
+  capabilities = capabilities,
+}
 
 -- Lua
 nvim_lsp.sumneko_lua.setup {
-  capabilities = capabilities;
+  capabilities = capabilities,
   settings = { Lua = {
     runtime = {
       version = 'LuaJIT',
