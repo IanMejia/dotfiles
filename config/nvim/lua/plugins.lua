@@ -33,7 +33,8 @@ local plugins = {
         'catppuccin/nvim', as = 'catppuccin'
     },
     {
-        'ggandor/leap.nvim'
+        'ggandor/leap.nvim',
+        config = function() require('leap').add_default_mappings() end,
     },
     {
         'nvim-treesitter/nvim-treesitter',
@@ -77,7 +78,7 @@ local plugins = {
         'L3MON4D3/LuaSnip'
     },
     {
-        'p00f/nvim-ts-rainbow',
+        'mrjones2014/nvim-ts-rainbow',
         config = function() require [[config/rainbow]] end
     },
     {
@@ -132,6 +133,9 @@ local plugins = {
     },
     {
         'tpope/vim-repeat'
+    },
+    {
+        'jalvesaq/Nvim-R',
     },
 }
 return packer.startup(function()

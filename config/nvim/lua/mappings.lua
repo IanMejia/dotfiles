@@ -68,6 +68,8 @@ map('n', '<leader>dr', ':lua require"dap".repl.open()<CR>', opts)
 map('n', '<leader>db', ':lua require"dap".toggle_breakpoint()<CR>', opts)
 map('n', '<leader>dsn', ':lua require"dap".step_over()<CR>', opts)
 map('n', '<leader>dsi', ':lua require"dap".step_into()<CR>', opts)
+map('n', '<leader>dsb', ':lua require"dap".step_back()<CR>', opts)
+map('n', '<leader>dso', ':lua require"dap".step_out()<CR>', opts)
 
 -- git
 map('n', '<leader>gg', ':Git<CR>', opts)
