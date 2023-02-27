@@ -49,6 +49,9 @@ nvim_lsp.gopls.setup {
   capabilities = capabilities,
 }
 
+-- R
+nvim_lsp.r_language_server.setup{}
+
 -- Lua
 nvim_lsp.lua_ls.setup {
   capabilities = capabilities,
@@ -73,4 +76,3 @@ nvim_lsp.lua_ls.setup {
   },
   },
 }
-
