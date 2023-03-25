@@ -74,3 +74,6 @@ g.latex_to_unicode_tab = 1
 --- vimtex
 g.vimtex_compiler_progname = 'nvr'
 -- g.vimtex_view_method = 'zathura'
+
+--- nvim-r
+g.R_assign = 2

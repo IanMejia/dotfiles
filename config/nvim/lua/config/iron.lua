@@ -3,7 +3,7 @@ local view = require("iron.view")
 
 iron.setup {
   config = {
-    repl_open_cmd = view.bottom(30),
+    repl_open_cmd = view.split(20),
     should_map_plug = false,
     scratch_repl = true,
     repl_definition = {
