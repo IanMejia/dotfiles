@@ -29,6 +29,7 @@ treesitter.setup{
   },
   ensure_installed = {
     'bash',
+    'c_sharp',
     'clojure',
     'commonlisp',
     'dart',

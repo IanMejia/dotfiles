@@ -60,9 +60,6 @@ local plugins = {
         config = 'require [[config/lsp]]'
     },
     {
-        'nathom/filetype.nvim'
-    },
-    {
         'hrsh7th/nvim-cmp',
         requires = {
             { 'hrsh7th/cmp-nvim-lsp' },
