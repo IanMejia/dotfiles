@@ -14,6 +14,7 @@ fi
 
 # fzf + ripgrep
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+[ -f /usr/share/fzf/key-bindings.zsh ] && source /usr/share/fzf/key-bindings.zsh
 
 if hash fd; then
     export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git'
@@ -35,7 +36,7 @@ alias la="lsd -la"
 alias gittree="git log --all --decorate --graph --oneline"
 
 # lua
-alias luamake=/home/crash/.lsp/lua-language-server/3rd/luamake/luamake
+alias luamake="~/.lsp/lua-language-server/3rd/luamake/luamake"
 
 # clojure
 alias nrepl='clj -m nrepl.cmdline --middleware "[cider.nrepl/cider-middleware]"--interactive'
@@ -49,4 +50,4 @@ alias nayya='source `pwd`/.venv/festivus-claims-integrations/bin/activate'
 
 # chruby
 # source /opt/homebrew/opt/chruby/share/chruby/chruby.sh
-export PATH="/opt/homebrew/opt/python@3.10/bin:$PATH"
+# export PATH="/opt/homebrew/opt/python@3.10/bin:$PATH"

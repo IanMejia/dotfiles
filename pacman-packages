@@ -1,4 +1,6 @@
+bat
 cmus
+fd
 firefox
 fzf
 gimp
@@ -6,17 +8,15 @@ go
 inkscape
 julia
 neovim
-pulseaudio
+pipewire-pulse
 python-matplotlib
 python-pynvim
 r
 ripgrep
 ruby
-ruby-gems
-texlive-most
-xf86-input-wacom
+texlive
+ttf-fira-code
 xf86-video-amdgpu
 zathura
 zathura-djvu
 zathura-pdf-poppler
-bat

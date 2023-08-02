@@ -86,7 +86,8 @@ local plugins = {
         'romgrk/barbar.nvim',
     },
     {
-        'ray-x/go.nvim'
+        'ray-x/go.nvim',
+        config = function() require 'go'.setup() end
     },
     {
         'simrat39/rust-tools.nvim',
