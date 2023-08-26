@@ -14,7 +14,7 @@ local plugins = {
         opt = true
     },
     {
-        'kyazdani42/nvim-web-devicons',
+        'nvim-tree/nvim-web-devicons',
     },
     {
         -- debuging seems nice(ish)
@@ -26,11 +26,8 @@ local plugins = {
         'Olical/conjure',
     },
     {
-        'EdenEast/nightfox.nvim',
-        config = function() vim.cmd('colorscheme nightfox') end
-    },
-    {
-        'catppuccin/nvim', as = 'catppuccin'
+        'catppuccin/nvim', as = 'catppuccin',
+        config = function() vim.cmd('colorscheme catppuccin-mocha') end
     },
     {
         'ggandor/leap.nvim',

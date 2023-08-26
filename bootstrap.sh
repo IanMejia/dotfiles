@@ -46,6 +46,9 @@ ln -s $BASEDIR/config/bspwm $HOME/.config/
 ln -s $BASEDIR/config/sxhkd $HOME/.config/
 ln -s $BASEDIR/config/polybar $HOME/.config/
 
+# kitty
+ln -s $BASEDIR/config/kitty $HOME/.config/
+
 # fonts
 ln -s $BASEDIR/fonts $HOME/.local/share/
 
