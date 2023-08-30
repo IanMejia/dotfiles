@@ -40,9 +40,9 @@ nvim_lsp.hls.setup {
 }
 
 -- Julia
-nvim_lsp.julials.setup{
-  capabilities = capabilities,
-}
+-- nvim_lsp.julials.setup{
+--   capabilities = capabilities,
+-- }
 
 -- Golang
 nvim_lsp.gopls.setup {

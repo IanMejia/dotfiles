@@ -64,16 +64,15 @@ opt('w', 'foldmethod', 'syntax')
 opt('w', 'foldnestmax', 10)
 
 -- Providers
-g.python3_host_prog = '/usr/bin/python3'
+g.loaded_python3_provider = 0
+g.loaded_node_provider = 0
+g.loaded_perl_provider = 0
+g.loaded_ruby_provider = 0
 
 -- Plugin settings
---- julia
-g.latex_to_unicode_auto = 1
-g.latex_to_unicode_tab = 1
-
 --- vimtex
 g.vimtex_compiler_progname = 'nvr'
--- g.vimtex_view_method = 'zathura'
+g.vimtex_view_method = 'zathura'
 
 --- nvim-r
 g.R_assign = 2

@@ -17,7 +17,7 @@ map('n', '<C-k>', ':bp<CR>', opts)
 
 -- remove arrows
 map('n', '<Up>', '<Nop>', opts)
-map('n', '<Down>','<Nop>', opts)
+map('n', '<Down>', '<Nop>', opts)
 map('n', '<Left>', '<Nop>', opts)
 map('n', '<Right>', '<Nop>', opts)
 
@@ -46,8 +46,8 @@ map('n', '<leader>f', ':NvimTreeFindFile<CR>', opts)
 map('n', '<space>', 'za', opts)
 
 -- <tab>
-map('i', '<S-Tab>', 'pumvisible() ? "\\<C-p>" : "\\<Tab>"', {expr = true})
-map('i', '<Tab>', 'pumvisible() ? "\\<C-n>" : "\\<Tab>"', {expr = true})
+map('i', '<S-Tab>', 'pumvisible() ? "\\<C-p>" : "\\<Tab>"', { expr = true })
+map('i', '<Tab>', 'pumvisible() ? "\\<C-n>" : "\\<Tab>"', { expr = true })
 
 -- telescope
 map('n', '<leader>tf', ':Telescope find_files<CR>', opts)
@@ -75,9 +75,6 @@ map('n', '<leader>dso', ':lua require"dap".step_out()<CR>', opts)
 map('n', '<leader>gg', ':Git<CR>', opts)
 map('n', '<leader>gp', ':Git push<CR>', opts)
 map('n', '<leader>gpp', ':Git -c push.default=current push<CR>', opts)
-
--- rest
-map('n', '<leader>rr', '<cmd>lua require("rest-nvim").run()<CR>', opts)
 
 -- lsp
 map('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<CR>', opts)

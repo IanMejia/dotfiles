@@ -1,11 +1,14 @@
 local cmp = require 'cmp'
 local luasnip = require 'luasnip'
 
+local cmd = vim.cmd
+cmd('set regexpengine=0')
+
 local t = function(str)
   return vim.api.nvim_replace_termcodes(str, true, true, true)
 end
 
-cmp.setup({
+cmp.setup {
   snippet = {
     expand = function(args)
       require('luasnip').lsp_expand(args.body)
@@ -113,7 +116,7 @@ cmp.setup({
   }, {
     { name = 'buffer' },
   })
-})
+}
 
 cmp.setup.cmdline('/', {
   mapping = cmp.mapping.preset.cmdline(),

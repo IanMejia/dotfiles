@@ -1,7 +1,4 @@
--- treesitter basic configurations for most used languages
-local treesitter = require'nvim-treesitter.configs'
-
-treesitter.setup{
+return {
   textobjects = {
     swap = {
       enable = true,

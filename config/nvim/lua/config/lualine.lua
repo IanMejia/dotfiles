@@ -217,5 +217,4 @@ ins_right({
   padding = { left = 1 },
 })
 
--- Now don't forget to initialize lualine
 lualine.setup(config)

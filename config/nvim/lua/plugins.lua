@@ -1,140 +1,156 @@
--- plugins list arranged via packer --
-vim.cmd [[packadd packer.nvim]]
-local packer = require 'packer'
+-- Lazy validation
+local lazypath = vim.fn.stdpath('data') .. '/lazy/lazy.nvim'
+if not vim.loop.fs_stat(lazypath) then
+    vim.fn.system({
+        'git',
+        'clone',
+        '--filter=blob:none',
+        'https://github.com/folke/lazy.nvim.git',
+        '--branch=stable', -- latest stable release
+        lazypath,
+    })
+end
+vim.opt.rtp:prepend(lazypath)
+vim.loader.enable()
 
-require 'impatient'
 
 local plugins = {
     {
-        'lewis6991/impatient.nvim'
-    },
-    {
-        -- recurrent dependency [?]
-        'wbthomason/packer.nvim',
-        opt = true
-    },
-    {
-        'nvim-tree/nvim-web-devicons',
-    },
-    {
         -- debuging seems nice(ish)
         'mfussenegger/nvim-dap',
-        config = function() require [[config/dap]] end,
+        config = function() require 'config.dap' end,
     },
     {
         -- repls and arbitrary calls
         'Olical/conjure',
+        ft = { 'clojure', 'lisp', 'commonlistp' }
     },
     {
-        'catppuccin/nvim', as = 'catppuccin',
+        'catppuccin/nvim',
+        priority = 1000,
+        lazy = false,
         config = function() vim.cmd('colorscheme catppuccin-mocha') end
     },
     {
         'ggandor/leap.nvim',
+        lazy = false,
         config = function() require('leap').add_default_mappings() end,
     },
     {
         'nvim-treesitter/nvim-treesitter',
-        config = function() require [[config/treesitter]] end,
-        run = function() vim.cmd [[TSUpdate]] end
-    },
-    {
-        'nvim-treesitter/nvim-treesitter-textobjects'
-    },
-    {
-        -- latex the right way
-        'lervag/vimtex'
-    },
-    {
-        'vimwiki/vimwiki'
-    },
-    {
-        -- every editor hates julia
-        'JuliaEditorSupport/julia-vim'
+        opts = function() require 'config.treesitter' end,
+        -- run = function() vim.cmd [[TSUpdate]] end
     },
     {
         'neovim/nvim-lspconfig',
-        config = 'require [[config/lsp]]'
+        lazy = false,
+        config = function() require 'config.lsp' end,
     },
     {
         'hrsh7th/nvim-cmp',
-        requires = {
-            { 'hrsh7th/cmp-nvim-lsp' },
-            { 'hrsh7th/cmp-buffer' },
-            { 'hrsh7th/cmp-path' },
-            { 'hrsh7th/cmp-cmdline' },
-            { 'saadparwaiz1/cmp_luasnip' },
+        lazy = false,
+        dependencies = {
+            'hrsh7th/cmp-nvim-lsp',
+            'hrsh7th/cmp-buffer',
+            'hrsh7th/cmp-path',
+            'hrsh7th/cmp-cmdline',
+            'L3MON4D3/LuaSnip',
+            'saadparwaiz1/cmp_luasnip',
         },
-        config = function() require [[config/cmp]] end
+        config = function() require 'config.cmp' end
 
     },
     {
-        'L3MON4D3/LuaSnip'
-    },
-    {
-        'mrjones2014/nvim-ts-rainbow',
-        config = function() require [[config/rainbow]] end
-    },
-    {
         'nvim-lualine/lualine.nvim',
-        config = function() require [[config/lualine]] end
-    },
-    {
-        'romgrk/barbar.nvim',
+        lazy = false,
+        config = function() require 'config.lualine' end
     },
     {
         'ray-x/go.nvim',
-        config = function() require 'go'.setup() end
+        ft = 'go',
+        opts = {}
     },
     {
         'simrat39/rust-tools.nvim',
-        config = function() require [[config/rusttools]] end
-    },
-    {
-        'akinsho/flutter-tools.nvim',
-        requires = 'nvim-lua/plenary.nvim',
-        config = function() require [[config/fluttertools]] end
+        opts = function() require 'config.rusttools' end,
+        ft = "rust"
     },
     {
         'NTBBloodbath/rest.nvim',
-        requires = { "nvim-lua/plenary.nvim" },
-        config = function() require [[config/rest]] end,
-    },
-    {
-        'hkupty/iron.nvim',
-        config = function() require [[config/iron]] end,
+        dependencies = 'nvim-lua/plenary.nvim',
+        -- config = function() require [[config/rest]] end,
+        opts = {}
     },
     {
         'nvim-telescope/telescope.nvim',
-        requires = { { 'nvim-lua/popup.nvim' }, { 'nvim-lua/plenary.nvim' } }
+        lazy = false,
+        dependencies = { 'nvim-lua/popup.nvim', 'nvim-lua/plenary.nvim' },
     },
     {
         'kyazdani42/nvim-tree.lua',
-        config = function() require 'nvim-tree'.setup {} end
+        lazy = false,
+        opts = {}
     },
     {
         'kylechui/nvim-surround',
-        config = function() require 'nvim-surround'.setup {} end,
+        lazy = false,
+        opts = {}
     },
     {
-        'norcalli/nvim-colorizer.lua',
-    },
-    {
-        'tpope/vim-fugitive',
+        'romgrk/barbar.nvim',
+        lazy = false
     },
     {
         'tpope/vim-sexp-mappings-for-regular-people',
-        requires = 'guns/vim-sexp'
+        dependencies = 'guns/vim-sexp'
     },
     {
-        'tpope/vim-repeat'
+        'akinsho/flutter-tools.nvim',
+        ft = "flutter",
+        opts = {}
     },
     {
-        'jalvesaq/Nvim-R',
+        'hkupty/iron.nvim',
+        config = function() require 'config.iron' end,
     },
+    {
+        'tpope/vim-fugitive',
+        cmd = "Git",
+    },
+    -- {
+    --     -- every editor hates julia
+    --     'JuliaEditorSupport/julia-vim',
+    --     ft = {'julia', 'jl'},
+    --     lazy = true
+    -- },
+
+    'tpope/vim-repeat',
+    'jalvesaq/Nvim-R',
+    'norcalli/nvim-colorizer.lua',
+    'nvim-treesitter/nvim-treesitter-textobjects',
+    'vimwiki/vimwiki',
+    'nvim-tree/nvim-web-devicons',
+
+    -- latex the right way
+    'lervag/vimtex',
 }
-return packer.startup(function()
-    for _, val in pairs(plugins) do
-        packer.use(val)
-    end
-end)
+
+require('lazy').setup(plugins, {
+    defaults = { lazy = true },
+    performance = {
+        cache = { enabled = true },
+        rtp = {
+            disabled_plugins = {
+                'gzip',
+                'matchit',
+                'matchparen',
+                'netrwPlugin',
+                'rplugin',
+                'tarPlugin',
+                'tohtml',
+                'tutor',
+                'zipPlugin',
+            },
+        },
+    },
+})

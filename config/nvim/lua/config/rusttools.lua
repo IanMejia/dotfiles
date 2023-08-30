@@ -1,4 +1,4 @@
-local opts = {
+return {
     tools = { -- rust-tools options
         autoSetHints = true,
         inlay_hints = {
@@ -27,4 +27,4 @@ local opts = {
     },
 }
 
-require('rust-tools').setup(opts)
+-- require('rust-tools').setup(opts)

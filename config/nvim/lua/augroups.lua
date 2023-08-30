@@ -1,14 +1,18 @@
 local vim = vim
 
--- automatic number toggle
-local number_toggle = vim.api.nvim_create_augroup('numbertoggle', { clear = true })
+local autocmd = vim.api.nvim_create_autocmd
+local augroup = vim.api.nvim_create_augroup
 
-vim.api.nvim_create_autocmd({'InsertLeave'}, {
+-- automatic number toggle
+local number_toggle = augroup('numbertoggle', { clear = true })
+
+autocmd({'InsertLeave'}, {
   pattern = '*',
   group = number_toggle,
   command = 'setlocal relativenumber'
 })
-vim.api.nvim_create_autocmd({'InsertEnter'}, {
+
+autocmd({'InsertEnter'}, {
   pattern = '*',
   group = number_toggle,
   command = 'setlocal norelativenumber'

@@ -1,4 +1,4 @@
--- Neovim 0.5, init.lua
+-- Neovim 0.9.* setup
 
 require'settings'
 require'plugins'
