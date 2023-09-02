@@ -22,8 +22,10 @@ opt('b', 'spelllang', 'en,es')
 opt('b', 'tabstop', indent)
 opt('o', 'background', 'dark')
 opt('o', 'clipboard', 'unnamedplus')
+opt('o', 'guifont', 'Fira Code Regular')
 opt('o', 'ignorecase', true)
 opt('o', 'joinspaces', false)
+opt('o', 'mouse', false)
 opt('o', 'shortmess', vim.o.shortmess .. 'c')
 opt('o', 'showmatch', true)
 opt('o', 'showmode', false)
@@ -32,14 +34,13 @@ opt('o', 'splitbelow', true)
 opt('o', 'splitright', true)
 opt('o', 'termguicolors', true)
 opt('o', 'title', true)
-opt('o', 'mouse', false)
-opt('o', 'guifont', 'Fira Code Regular')
 opt('w', 'conceallevel', 2)
 opt('w', 'linebreak', true)
 opt('w', 'list', true)
 opt('w', 'listchars', 'tab:  ,trail:·')
 opt('w', 'number', true)
 opt('w', 'relativenumber', true)
+opt('w', 'signcolumn', 'yes')
 opt('w', 'wrap', true)
 
 -- improve performance
@@ -64,9 +65,9 @@ opt('w', 'foldmethod', 'syntax')
 opt('w', 'foldnestmax', 10)
 
 -- Providers
-g.loaded_python3_provider = 0
 g.loaded_node_provider = 0
 g.loaded_perl_provider = 0
+g.loaded_python3_provider = 0
 g.loaded_ruby_provider = 0
 
 -- Plugin settings
