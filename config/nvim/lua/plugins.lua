@@ -55,6 +55,11 @@ local plugins = {
         lazy = false,
         config = function() require 'config.lsp' end,
     },
+    -- {
+    --     'nvimdev/lspsaga.nvim',
+    --     event = { "LspAttach" },
+    --     opts = {},
+    -- },
     {
         'hrsh7th/nvim-cmp',
         lazy = false,
