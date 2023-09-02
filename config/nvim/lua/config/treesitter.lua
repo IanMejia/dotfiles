@@ -1,51 +1,61 @@
-return {
-  textobjects = {
-    swap = {
-      enable = true,
-      swap_next = {
-	["<leader>a"] = "@parameter.inner",
-      },
-      swap_previous = {
-	["<leader>A"] = "@parameter.inner",
-      },
+require('nvim-treesitter.configs').setup {
+    auto_install = true,
+    highlight = {
+        enable = true,
+        max_file_lines = 5000,
     },
-    select = {
-      enable = true,
-
-      -- Automatically jump forward to textobj, similar to targets.vim
-      lookahead = true,
-
-      keymaps = {
-        -- You can use the capture groups defined in textobjects.scm
-        ["af"] = "@function.outer",
-        ["if"] = "@function.inner",
-        ["ac"] = "@class.outer",
-        ["ic"] = "@class.inner",
-      },
+    textsubjects = {
+        enable = true,
+        lookahead = true,
+        max_file_lines = 5000,
+        keymaps = {
+            ['.'] = 'textsubjects-smart',
+            [';'] = 'textsubjects-container-outer',
+            ['i;'] = 'textsubjects-container-inner',
+        },
     },
-  },
-  ensure_installed = {
-    'bash',
-    'c_sharp',
-    'clojure',
-    'commonlisp',
-    'dart',
-    'fennel',
-    'go',
-    'graphql',
-    'haskell',
-    'html',
-    'javascript',
-    'julia',
-    'lua',
-    'ocaml',
-    'python',
-    'r',
-    'ruby',
-    'rust',
-    'typescript'
-  },
-  highlight = {
-    enable = true
-  }
+    incremental_selection = {
+        enable = true,
+        keymaps = {
+            init_selection = '<cr>',
+            node_incremental = '<tab>',
+            scope_incremental = '<cr>',
+            scope_decremental = '<s-cr>',
+            node_decremental = '<s-tab>',
+        },
+    },
+    refactor = {
+        smart_rename = { enable = true, keymaps = { smart_rename = 'grr' } },
+        highlight_definitions = { enable = true, max_file_lines = 1000 },
+    },
+    endwise = { enable = true },
+    matchup = {
+        enable = true,
+        include_match_words = true,
+        enable_quotes = true,
+    },
+    ensure_installed = {
+        'bash',
+        'c_sharp',
+        'clojure',
+        'comment',
+        'commonlisp',
+        'dart',
+        'fennel',
+        'go',
+        'graphql',
+        'haskell',
+        'html',
+        'javascript',
+        'julia',
+        'lua',
+        'markdown_inline',
+        'ocaml',
+        'python',
+        'r',
+        'ruby',
+        'rust',
+        'terraform',
+        'typescript'
+    },
 }

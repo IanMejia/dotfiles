@@ -38,8 +38,17 @@ local plugins = {
     },
     {
         'nvim-treesitter/nvim-treesitter',
-        opts = function() require 'config.treesitter' end,
-        -- run = function() vim.cmd [[TSUpdate]] end
+        dependencies = {
+            'nvim-treesitter/nvim-treesitter-refactor',
+            'RRethy/nvim-treesitter-textsubjects',
+            'RRethy/nvim-treesitter-endwise',
+            'windwp/nvim-ts-autotag',
+        },
+        build = ':TSUpdate',
+        event = { 'BufReadPost', 'BufNewFile' },
+        config = function()
+            require 'config.treesitter'
+        end,
     },
     {
         'neovim/nvim-lspconfig',
@@ -112,6 +121,7 @@ local plugins = {
     {
         'hkupty/iron.nvim',
         config = function() require 'config.iron' end,
+        cmd = "IronRepl",
     },
     {
         'tpope/vim-fugitive',
@@ -127,7 +137,6 @@ local plugins = {
     'tpope/vim-repeat',
     'jalvesaq/Nvim-R',
     'norcalli/nvim-colorizer.lua',
-    'nvim-treesitter/nvim-treesitter-textobjects',
     'vimwiki/vimwiki',
     'nvim-tree/nvim-web-devicons',
 
