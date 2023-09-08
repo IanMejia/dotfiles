@@ -1,4 +1,5 @@
 bat
+clojure
 cmus
 fd
 firefox
@@ -13,6 +14,7 @@ python-matplotlib
 python-pynvim
 r
 ripgrep
+rlwrap
 ruby
 texlive
 ttf-fira-code
