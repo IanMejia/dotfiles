@@ -26,6 +26,10 @@ local plugins = {
         ft = { 'clojure', 'lisp', 'commonlistp' }
     },
     {
+        'windwp/nvim-autopairs',
+        opts = {}
+    },
+    {
         'catppuccin/nvim',
         priority = 1000,
         lazy = false,
