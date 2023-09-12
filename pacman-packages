@@ -1,6 +1,7 @@
 bat
 clojure
 cmus
+eslint-language-server
 fd
 firefox
 fzf
@@ -19,6 +20,7 @@ ruby
 texlive
 ttf-fira-code
 ttf-nerd-fonts-symbols-mono
+typescript-language-server
 xf86-video-amdgpu
 zathura
 zathura-djvu

@@ -23,7 +23,8 @@ local plugins = {
     {
         -- repls and arbitrary calls
         'Olical/conjure',
-        ft = { 'clojure', 'lisp', 'commonlistp' }
+        ft = { 'clojure', 'lisp', 'commonlisp' },
+        dependencies = {"PaterJason/cmp-conjure"}
     },
     {
         'windwp/nvim-autopairs',
