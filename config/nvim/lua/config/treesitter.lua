@@ -45,6 +45,7 @@ require('nvim-treesitter.configs').setup {
         'go',
         'graphql',
         'haskell',
+        'hcl',
         'html',
         'javascript',
         'julia',

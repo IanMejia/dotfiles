@@ -39,11 +39,6 @@ nvim_lsp.hls.setup {
   capabilities = capabilities,
 }
 
--- Julia
--- nvim_lsp.julials.setup{
---   capabilities = capabilities,
--- }
-
 -- Golang
 nvim_lsp.gopls.setup {
   capabilities = capabilities,
@@ -51,6 +46,9 @@ nvim_lsp.gopls.setup {
 
 -- R
 nvim_lsp.r_language_server.setup{}
+
+-- Terraform
+nvim_lsp.terraforl_lsp.setup{}
 
 -- Lua
 nvim_lsp.lua_ls.setup {

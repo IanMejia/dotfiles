@@ -17,3 +17,14 @@ autocmd({'InsertEnter'}, {
   group = number_toggle,
   command = 'setlocal norelativenumber'
 })
+
+-- automatic terraform formats
+autocmd({'BufRead', 'BufNewFile'}, {
+  pattern = { '*.tf', '*.tfvars' },
+  command = 'set filetype=terraform'
+})
+
+autocmd({'BufRead', 'BufNewFile'}, {
+  pattern = { '*.hcl', '*.terraformrc' },
+  command = 'set filetype=hcl'
+})
