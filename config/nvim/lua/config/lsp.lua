@@ -48,7 +48,7 @@ nvim_lsp.gopls.setup {
 nvim_lsp.r_language_server.setup{}
 
 -- Terraform
-nvim_lsp.terraforl_lsp.setup{}
+nvim_lsp.terraform_lsp.setup{}
 
 -- Lua
 nvim_lsp.lua_ls.setup {
