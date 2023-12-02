@@ -49,6 +49,7 @@ nvim_lsp.r_language_server.setup{}
 
 -- Terraform
 nvim_lsp.terraform_lsp.setup{}
+nvim_lsp.tflint.setup{}
 
 -- Lua
 nvim_lsp.lua_ls.setup {
