@@ -51,3 +51,10 @@ alias nayya='source `pwd`/.venv/festivus-claims-integrations/bin/activate'
 # chruby
 # source /opt/homebrew/opt/chruby/share/chruby/chruby.sh
 # export PATH="/opt/homebrew/opt/python@3.10/bin:$PATH"
+
+# bun completions
+[ -s "/home/crash/.bun/_bun" ] && source "/home/crash/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
