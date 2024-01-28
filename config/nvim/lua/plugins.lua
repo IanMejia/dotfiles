@@ -24,7 +24,7 @@ local plugins = {
         -- repls and arbitrary calls
         'Olical/conjure',
         ft = { 'clojure', 'lisp', 'commonlisp' },
-        dependencies = {"PaterJason/cmp-conjure"}
+        dependencies = { "PaterJason/cmp-conjure" }
     },
     {
         'windwp/nvim-autopairs',
@@ -69,11 +69,11 @@ local plugins = {
         'hrsh7th/nvim-cmp',
         lazy = false,
         dependencies = {
-            'hrsh7th/cmp-nvim-lsp',
-            'hrsh7th/cmp-buffer',
-            'hrsh7th/cmp-path',
-            'hrsh7th/cmp-cmdline',
             'L3MON4D3/LuaSnip',
+            'hrsh7th/cmp-buffer',
+            'hrsh7th/cmp-cmdline',
+            'hrsh7th/cmp-nvim-lsp',
+            'hrsh7th/cmp-path',
             'saadparwaiz1/cmp_luasnip',
         },
         config = function() require 'config.cmp' end
@@ -137,13 +137,25 @@ local plugins = {
         'tpope/vim-fugitive',
         cmd = "Git",
     },
-    -- {
-    --     -- every editor hates julia
-    --     'JuliaEditorSupport/julia-vim',
-    --     ft = {'julia', 'jl'},
-    --     lazy = true
-    -- },
-
+    {
+        'zbirenbaum/copilot.lua',
+        cmd = 'Copilot',
+        event = 'InsertEnter',
+        config = function()
+            require('copilot').setup(
+                {
+                    suggestion = { enabled = false },
+                    panel = { enabled = false },
+                }
+            )
+        end,
+    },
+    {
+        'zbirenbaum/copilot-cmp',
+        config = function()
+            require("copilot_cmp").setup()
+        end
+    },
     'tpope/vim-repeat',
     'jalvesaq/Nvim-R',
     'norcalli/nvim-colorizer.lua',
