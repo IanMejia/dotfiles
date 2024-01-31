@@ -17,6 +17,7 @@ r
 ripgrep
 rlwrap
 ruby
+ruff-lsp
 texlive
 ttf-fira-code
 ttf-nerd-fonts-symbols-mono

@@ -28,3 +28,8 @@ autocmd({'BufRead', 'BufNewFile'}, {
   pattern = { '*.hcl', '*.terraformrc' },
   command = 'set filetype=hcl'
 })
+
+autocmd({'BufRead', 'BufNewFile'}, {
+  pattern = { '*.tf', '*.tfvars', '*.hcl', '*.terraformrc' , "*.lua" },
+  command = 'setlocal shiftwidth=2 tabstop=2'
+})

@@ -20,6 +20,7 @@ obsidian
 pyright
 readline
 ripgrep
+ruff-lsp
 rust
 sqlite
 swift

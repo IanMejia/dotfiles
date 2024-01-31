@@ -79,7 +79,7 @@ ins_left({
   function()
     return '▊'
   end,
-  color = { fg = colors.blue }, -- Sets highlighting of component
+  color = { fg = colors.blue },      -- Sets highlighting of component
   padding = { left = 0, right = 1 }, -- We don't need space before this
 })
 
@@ -177,7 +177,7 @@ ins_left({
 -- Add components to right sections
 
 ins_right({
-  'o:encoding', -- option component same as &encoding in viml
+  'o:encoding',       -- option component same as &encoding in viml
   fmt = string.upper, -- I'm not sure why it's upper case either ;)
   cond = conditions.hide_in_width,
   color = { fg = colors.green, gui = 'bold' },
@@ -192,7 +192,7 @@ ins_right({
 
 ins_right({
   'branch',
-  fmt = function(str) return str:sub(1,30) end,
+  fmt = function(str) return str:sub(1, 30) end,
   icon = '',
   color = { fg = colors.violet, gui = 'bold' },
 })

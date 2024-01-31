@@ -6,8 +6,19 @@ local capabilities = require('cmp_nvim_lsp').default_capabilities()
 -- Python
 nvim_lsp.pyright.setup {
   capabilities = capabilities,
+  -- This might not be necessary but just in case we happen to need it, we can uncomment it
+  -- settings = {
+  --   python = {
+  --     analysis = {
+  --       diagnosticMode = "off",
+  --       typeCheckingMode = "off",
+  --     },
+  --   },
+  -- },
 }
--- nvim_lsp.jedi_language_server.setup{}
+nvim_lsp.ruff_lsp.setup {
+  capabilities = capabilities,
+}
 
 -- eslint
 nvim_lsp.eslint.setup {
@@ -45,11 +56,11 @@ nvim_lsp.gopls.setup {
 }
 
 -- R
-nvim_lsp.r_language_server.setup{}
+nvim_lsp.r_language_server.setup {}
 
 -- Terraform
-nvim_lsp.terraform_lsp.setup{}
-nvim_lsp.tflint.setup{}
+nvim_lsp.terraform_lsp.setup {}
+nvim_lsp.tflint.setup {}
 
 -- Lua
 nvim_lsp.lua_ls.setup {

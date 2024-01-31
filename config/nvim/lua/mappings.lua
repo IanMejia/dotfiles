@@ -56,11 +56,12 @@ map('n', '<leader>tb', ':Telescope buffers<CR>', opts)
 map('n', '<leader>th', ':Telescope help_tags<CR>', opts)
 
 map('n', '<Space>td', ':Telescope diagnostics<CR>', opts)
-map('n', '<Space>ca', ':Telescope lsp_code_actions<CR>', opts)
 map('n', '<Space>lr', ':Telescope lsp_references<CR>', opts)
 map('n', '<Space>ld', ':Telescope lsp_definitions<CR>', opts)
 map('n', '<Space>tt', ':Telescope lsp_type_definitions<CR>', opts)
 map('n', '<Space>li', ':Telescope lsp_implementations<CR>', opts)
+map('n', '<Space>ic', ':Telescope lsp_incoming_calls<CR>', opts)
+map('n', '<Space>oc', ':Telescope lsp_outgoing_calls<CR>', opts)
 
 -- dap
 map('n', '<leader>dc', ':lua require"dap".continue()<CR>', opts)
@@ -92,3 +93,4 @@ map('n', '[d', '<cmd>lua vim.diagnostic.goto_prev()<CR>', opts)
 map('n', ']d', '<cmd>lua vim.diagnostic.goto_next()<CR>', opts)
 map('n', '<space>q', '<cmd>lua vim.diagnostic.set_loclist()<CR>', opts)
 map('n', '<space>f', '<cmd>lua vim.lsp.buf.format()<CR>', opts)
+map('n', '<space>ca', '<cmd>lua vim.lsp.buf.code_action()<CR>', opts)
