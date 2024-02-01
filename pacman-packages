@@ -13,6 +13,7 @@ neovim
 pipewire-pulse
 python-matplotlib
 python-pynvim
+python-virtualenvwrapper
 r
 ripgrep
 rlwrap

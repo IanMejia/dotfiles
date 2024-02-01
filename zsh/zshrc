@@ -54,3 +54,11 @@ alias makeui='clj -J-Dtest -J-Duser.timezone=UTC -M:dev:clj-tests --watch --fail
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
+
+# virtualenvwrapper
+if [[ "$OSTYPE" == "linux-gnu"* ]]; then
+    export WORKON_HOME="$HOME/.virtualenvs"
+    source /usr/bin/virtualenvwrapper_lazy.sh
+elif [[ "$OSTYPE" == "darwin"* ]]; then
+    source virtualenvwrapper_lazy.sh
+fi
