@@ -32,6 +32,13 @@ path=(
   $path
 )
 
+if [[ "$OSTYPE" == "darwin"* ]]; then
+  path=(
+    /opt/homebrew/bin
+    $path
+  )
+fi
+
 #
 # Less
 #
@@ -48,6 +55,8 @@ if (( $#commands[(i)lesspipe(|.sh)] )); then
 fi
 
 # Auto start x at login
-if systemctl -q is-active graphical.target && [[ ! $DISPLAY && $XDG_VTNR -eq 1 ]]; then
-  exec startx
+if [[ "$OSTYPE" == "linux-gnu"* ]]; then
+    if systemctl -q is-active graphical.target && [[ ! $DISPLAY && $XDG_VTNR -eq 1 ]]; then
+        exec startx
+    fi
 fi
