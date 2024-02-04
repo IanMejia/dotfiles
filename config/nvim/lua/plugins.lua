@@ -28,7 +28,8 @@ local plugins = {
   },
   {
     'windwp/nvim-autopairs',
-    opts = {}
+    opts = {},
+    config = function() require 'config.aupairs' end
   },
   {
     'catppuccin/nvim',
