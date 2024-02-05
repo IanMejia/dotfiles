@@ -7,14 +7,17 @@ local capabilities = require('cmp_nvim_lsp').default_capabilities()
 nvim_lsp.pyright.setup {
   capabilities = capabilities,
   -- This might not be necessary but just in case we happen to need it, we can uncomment it
-  -- settings = {
-  --   python = {
-  --     analysis = {
-  --       diagnosticMode = "off",
-  --       typeCheckingMode = "off",
-  --     },
-  --   },
-  -- },
+  settings = {
+    python = {
+      analysis = {
+        autoImportCompletions = true,
+        autoSearchPaths = true,
+        diagnosticMode = "workspace",
+        typeCheckingMode = "off",
+        useLibraryCodeForTypes = true,
+      },
+    },
+  },
 }
 nvim_lsp.ruff_lsp.setup {
   capabilities = capabilities,
