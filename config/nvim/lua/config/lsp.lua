@@ -19,7 +19,7 @@ nvim_lsp.pyright.setup {
     },
   },
 }
-nvim_lsp.ruff_lsp.setup {
+nvim_lsp.ruff.setup {
   capabilities = capabilities,
 }
 
@@ -29,7 +29,7 @@ nvim_lsp.eslint.setup {
 }
 
 --- Typescript
-nvim_lsp.tsserver.setup {
+nvim_lsp.ts_ls.setup {
   capabilities = capabilities,
 }
 
@@ -50,6 +50,11 @@ nvim_lsp.bashls.setup {
 
 -- Haskell
 nvim_lsp.hls.setup {
+  capabilities = capabilities,
+}
+
+-- elm
+nvim_lsp.elmls.setup {
   capabilities = capabilities,
 }
 

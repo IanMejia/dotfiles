@@ -8,7 +8,7 @@ iron.setup {
     scratch_repl = true,
     repl_definition = {
       python = {
-        command = { "rlwrap", "ipython" }
+        command = { "ipython" }
       },
       sh = {
         command = { "zsh" }
