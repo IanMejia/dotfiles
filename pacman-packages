@@ -1,3 +1,4 @@
+alacritty
 bat
 clojure
 cmus
@@ -9,6 +10,7 @@ gimp
 go
 inkscape
 julia
+neovide
 neovim
 pipewire-pulse
 python-matplotlib
@@ -27,3 +29,4 @@ xf86-video-amdgpu
 zathura
 zathura-djvu
 zathura-pdf-poppler
+zellij

@@ -35,6 +35,8 @@ ln -s $BASEDIR/zsh/zshrc $HOME/.zshrc
 # config files
 ln -s $BASEDIR/config/nvim/init.lua $HOME/.config/nvim/init.lua
 ln -s $BASEDIR/config/nvim/lua $HOME/.config/nvim/
+ln -s $BASEDIR/config/alacritty $HOME/.config/
+ln -s $BASEDIR/config/zellij $HOME/.config/
 ln -s $BASEDIR/config/kitty $HOME/.config/
 
 # fonts

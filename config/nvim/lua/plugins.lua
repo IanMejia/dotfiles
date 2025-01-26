@@ -6,7 +6,7 @@ if not vim.loop.fs_stat(lazypath) then
     'clone',
     '--filter=blob:none',
     'https://github.com/folke/lazy.nvim.git',
-    '--branch=stable',     -- latest stable release
+    '--branch=stable', -- latest stable release
     lazypath,
   })
 end
@@ -87,8 +87,13 @@ local plugins = {
   },
   {
     'ray-x/go.nvim',
-    ft = 'go',
-    opts = {}
+    ft = { 'go', 'gomod' },
+    config = function() require("go").setup() end,
+    event = { "CmdlineEnter" },
+    dependencies = {
+      "ray-x/guihua.lua",
+    },
+    -- build = ':lua require("go.install").update_all_sync()'
   },
   {
     'simrat39/rust-tools.nvim',
