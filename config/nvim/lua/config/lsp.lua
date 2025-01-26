@@ -43,6 +43,9 @@ nvim_lsp.clojure_lsp.setup {
   capabilities = capabilities,
 }
 
+-- roc
+nvim_lsp.roc_ls.setup{}
+
 -- Bash
 nvim_lsp.bashls.setup {
   capabilities = capabilities,
