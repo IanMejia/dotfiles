@@ -1,6 +1,0 @@
-general.import = [
-    "./catppuccin-mocha.toml", # theme
-    "./fonts.toml",
-    "./keybinds.toml",
-]
-

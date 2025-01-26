@@ -1,4 +1,3 @@
-alacritty
 bat
 clojure
 cmus
@@ -10,7 +9,6 @@ gimp
 go
 inkscape
 julia
-neovide
 neovim
 pipewire-pulse
 python-matplotlib
@@ -25,8 +23,8 @@ texlive
 ttf-fira-code
 ttf-nerd-fonts-symbols-mono
 typescript-language-server
+wezterm
 xf86-video-amdgpu
 zathura
 zathura-djvu
 zathura-pdf-poppler
-zellij
