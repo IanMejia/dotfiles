@@ -18,7 +18,7 @@ config.font = wezterm.font_with_fallback({
   { family = "Fira Code Medium",        scale = 1.2 },
   { family = "FiraCode Nerd Font Mono", scale = 1.2 },
 })
-config.font.warn_about_missing_glyphs = false
+config.warn_about_missing_glyphs = false
 
 config.window_background_opacity = 0.9
 config.window_decorations = "RESIZE"
