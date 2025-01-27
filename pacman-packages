@@ -10,6 +10,7 @@ go
 inkscape
 julia
 neovim
+otf-monaspace
 pipewire-pulse
 python-matplotlib
 python-pynvim
@@ -21,6 +22,7 @@ ruby
 ruff-lsp
 texlive
 ttf-fira-code
+ttf-mononoki-nerd
 ttf-nerd-fonts-symbols-mono
 typescript-language-server
 wezterm

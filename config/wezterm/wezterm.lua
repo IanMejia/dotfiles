@@ -11,12 +11,14 @@ if wezterm.config_builder then config = wezterm.config_builder() end
 config.color_scheme = "catppuccin-mocha"
 
 config.font = wezterm.font_with_fallback({
+  { family = "Mononoki Nerd Font",      scale = 1.3 },
   { family = "Mononoki",                scale = 1.2 },
   { family = "Monaspace Krypton",       scale = 1.2 },
   { family = "Monaspace Neon",          scale = 1.2 },
   { family = "Fira Code Medium",        scale = 1.2 },
   { family = "FiraCode Nerd Font Mono", scale = 1.2 },
 })
+config.font.warn_about_missing_glyphs = false
 
 config.window_background_opacity = 0.9
 config.window_decorations = "RESIZE"
