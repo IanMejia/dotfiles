@@ -101,10 +101,13 @@ local plugins = {
     ft = "rust"
   },
   {
-    'NTBBloodbath/rest.nvim',
-    dependencies = 'nvim-lua/plenary.nvim',
-    -- config = function() require [[config/rest]] end,
-    opts = {}
+    "rest-nvim/rest.nvim",
+    ft = "http",
+    dependencies = { "luarocks.nvim" },
+    config = function()
+      require("rest-nvim").setup()
+    end,
+    lazy = false,
   },
   {
     'nvim-telescope/telescope.nvim',
@@ -156,6 +159,12 @@ local plugins = {
   --     )
   --   end,
   -- },
+  {
+    "vhyrro/luarocks.nvim",
+    priority = 1000,
+    config = true,
+    lazy = false
+  },
   {
     'zbirenbaum/copilot-cmp',
     config = function()
