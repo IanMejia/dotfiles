@@ -11,7 +11,7 @@ if wezterm.config_builder then config = wezterm.config_builder() end
 config.color_scheme = "catppuccin-mocha"
 
 config.font = wezterm.font_with_fallback({
-  { family = "Mononoki Nerd Font",      scale = 1.3 },
+  { family = "Mononoki Nerd Font",      scale = 1.2 },
   { family = "Mononoki",                scale = 1.2 },
   { family = "Monaspace Krypton",       scale = 1.2 },
   { family = "Monaspace Neon",          scale = 1.2 },
@@ -32,7 +32,7 @@ config.inactive_pane_hsb = {
 }
 
 -- keybinds
-config.leader = { key = "a", mods = "CTRL", timeout_milliseconds = 1000 }
+config.leader = { key = "a", mods = "ALT", timeout_milliseconds = 1000 }
 config.keys = {
   -- send C-a when pressed twice to avoid conflicting keybinds
   { key = "a", mods = "LEADER",       action = act.SendKey { key = "a", mods = "CTRL" } },
