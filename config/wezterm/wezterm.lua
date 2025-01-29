@@ -32,7 +32,23 @@ config.inactive_pane_hsb = {
 }
 
 -- keybinds
-config.leader = { key = "a", mods = "ALT", timeout_milliseconds = 1000 }
+--
+local is_linux = function()
+	return wezterm.target_triple:find("linux") ~= nil
+end
+
+local is_darwin = function()
+	return wezterm.target_triple:find("darwin") ~= nil
+end
+
+if is_linux() then
+  config.leader = { key = "a", mods = "ALT", timeout_milliseconds = 1000 }
+end
+
+if is_darwin() then
+  config.leader = { key = "a", mods = "CMD", timeout_milliseconds = 1000 }
+end
+
 config.keys = {
   -- send C-a when pressed twice to avoid conflicting keybinds
   { key = "a", mods = "LEADER",       action = act.SendKey { key = "a", mods = "CTRL" } },
