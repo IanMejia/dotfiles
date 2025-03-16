@@ -64,8 +64,10 @@ map('n', '<Space>li', ':Telescope lsp_implementations<CR>', opts)
 map('n', '<Space>ic', ':Telescope lsp_incoming_calls<CR>', opts)
 map('n', '<Space>oc', ':Telescope lsp_outgoing_calls<CR>', opts)
 
+map('n', '<leader>gb', ':Telescope git_branches<CR>', opts)
+
 -- codecompanion
-vmap({'n', 'v'}, '<leader>a', '<cmd>CodeCompanionChat Toggle<CR>', opts)
+vmap({ 'n', 'v' }, '<leader>a', '<cmd>CodeCompanionChat Toggle<CR>', opts)
 vmap('v', 'ga', '<cmd>CodeCompanionChat Add<CR>', opts)
 
 -- dap
