@@ -3,6 +3,7 @@ local g = vim.g
 local vim = vim
 
 local map = vim.api.nvim_set_keymap
+local vmap = vim.keymap.set
 local opts = { noremap = true, silent = true }
 
 g.mapleader = ','
@@ -62,6 +63,10 @@ map('n', '<Space>tt', ':Telescope lsp_type_definitions<CR>', opts)
 map('n', '<Space>li', ':Telescope lsp_implementations<CR>', opts)
 map('n', '<Space>ic', ':Telescope lsp_incoming_calls<CR>', opts)
 map('n', '<Space>oc', ':Telescope lsp_outgoing_calls<CR>', opts)
+
+-- codecompanion
+vmap({'n', 'v'}, '<leader>a', '<cmd>CodeCompanionChat Toggle<CR>', opts)
+vmap('v', 'ga', '<cmd>CodeCompanionChat Add<CR>', opts)
 
 -- dap
 map('n', '<leader>dc', ':lua require"dap".continue()<CR>', opts)

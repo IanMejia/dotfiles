@@ -12,6 +12,7 @@ local indent = 4
 -- plugins
 cmd('filetype plugin indent on')
 cmd('syntax on')
+cmd([[cab cc CodeCompanion]])
 
 -- general
 opt('b', 'autoindent', true)

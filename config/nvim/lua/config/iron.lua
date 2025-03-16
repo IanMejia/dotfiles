@@ -1,5 +1,6 @@
 local iron = require("iron.core")
 local view = require("iron.view")
+local common = require("iron.fts.common")
 
 iron.setup {
   config = {
@@ -8,7 +9,9 @@ iron.setup {
     scratch_repl = true,
     repl_definition = {
       python = {
-        command = { "ipython" }
+        command = { "ipython", "--no-autoindent", "--profile=ian" },
+        format = common.bracketed_paste_python,
+        block_deviders = { "# %%", "#%%" },
       },
       sh = {
         command = { "zsh" }
@@ -16,6 +19,8 @@ iron.setup {
     }
   },
   keymaps = {
+    toggle_repl = "<space>rr",
+    restart_repl = "<space>rR",
     send_motion = "<space>sc",
     visual_send = "<space>sc",
     send_file = "<space>sf",

@@ -129,6 +129,15 @@ local plugins = {
     lazy = false
   },
   {
+    'tpope/vim-abolish',
+    lazy = false
+  },
+  {
+    "olimorris/codecompanion.nvim",
+    config = function() require 'config.codecompanion' end,
+    lazy = false,
+  },
+  {
     'tpope/vim-sexp-mappings-for-regular-people',
     dependencies = 'guns/vim-sexp'
   },
@@ -145,6 +154,12 @@ local plugins = {
   {
     'tpope/vim-fugitive',
     cmd = "Git",
+  },
+  {
+    'MeanderingProgrammer/render-markdown.nvim',
+    dependencies = { 'nvim-treesitter/nvim-treesitter', 'echasnovski/mini.icons' },
+    opts = {},
+    lazy = false
   },
   -- {
   --   'zbirenbaum/copilot.lua',
@@ -175,6 +190,7 @@ local plugins = {
   'jalvesaq/Nvim-R',
   'norcalli/nvim-colorizer.lua',
   'vimwiki/vimwiki',
+  'echasnovski/mini.icons',
   'nvim-tree/nvim-web-devicons',
 
   -- latex the right way
