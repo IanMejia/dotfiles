@@ -66,6 +66,11 @@ nvim_lsp.gopls.setup {
   capabilities = capabilities,
 }
 
+-- Sql
+nvim_lsp.sqls.setup {
+  capabilities = capabilities,
+}
+
 -- R
 nvim_lsp.r_language_server.setup {}
 
