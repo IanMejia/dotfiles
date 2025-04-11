@@ -11,6 +11,7 @@ zstyle ':prezto:load' pmodule \
   'environment' \
   'syntax-highlighting'\
   'terminal' \
+  'homebrew' \
   'editor' \
   'history' \
   'directory' \

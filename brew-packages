@@ -28,6 +28,5 @@ terraform-lsp
 texlive
 tflint
 tree-sitter
-turso
 virtualenv
 virtualenvwrapper

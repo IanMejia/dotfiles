@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/bin/zsh
 # bootstraps every config file
 
 cd "$(dirname "${BASH_SOURCE[0]}")"
