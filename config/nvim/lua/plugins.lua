@@ -111,6 +111,7 @@ local plugins = {
   },
   {
     'nvim-telescope/telescope.nvim',
+    config = function() require 'config.telescope' end,
     lazy = false,
     dependencies = { 'nvim-lua/popup.nvim', 'nvim-lua/plenary.nvim' },
   },
@@ -161,19 +162,19 @@ local plugins = {
     opts = {},
     lazy = false
   },
-  -- {
-  --   'zbirenbaum/copilot.lua',
-  --   cmd = 'Copilot',
-  --   event = 'InsertEnter',
-  --   config = function()
-  --     require('copilot').setup(
-  --       {
-  --         suggestion = { enabled = false },
-  --         panel = { enabled = false },
-  --       }
-  --     )
-  --   end,
-  -- },
+  {
+    'zbirenbaum/copilot.lua',
+    cmd = 'Copilot',
+    event = 'InsertEnter',
+    config = function()
+      require('copilot').setup(
+        {
+          suggestion = { enabled = false },
+          panel = { enabled = false },
+        }
+      )
+    end,
+  },
   {
     "vhyrro/luarocks.nvim",
     priority = 1000,
@@ -202,6 +203,20 @@ local plugins = {
       -- Your DBUI configuration
       vim.g.db_ui_use_nerd_fonts = 1
     end,
+  },
+  {
+    "folke/which-key.nvim",
+    event = "VeryLazy",
+    opts = {},
+    keys = {
+      {
+        "<leader>?",
+        function()
+          require("which-key").show({ global = false })
+        end,
+        desc = "Buffer Local Keymaps (which-key)",
+      },
+    },
   },
   'tpope/vim-repeat',
   'jalvesaq/Nvim-R',
