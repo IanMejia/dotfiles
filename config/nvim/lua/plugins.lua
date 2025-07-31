@@ -81,6 +81,10 @@ local plugins = {
 
   },
   {
+    'saghen/blink.cmp',
+    dependencies = { 'rafamadriz/friendly-snippets' },
+  },
+  {
     'nvim-lualine/lualine.nvim',
     lazy = false,
     config = function() require 'config.lualine' end
