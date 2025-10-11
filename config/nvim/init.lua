@@ -2,5 +2,6 @@
 
 require'settings'
 require'plugins'
-require'mappings'
-require'augroups'
+require'core.mappings'
+require'core.autocmds'
+require'core.lsp'
