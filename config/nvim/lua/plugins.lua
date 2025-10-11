@@ -24,7 +24,7 @@ local plugins = {
     -- repls and arbitrary calls
     'Olical/conjure',
     ft = { 'clojure', 'lisp', 'commonlisp' },
-    dependencies = { "PaterJason/cmp-conjure" }
+    -- dependencies = { 'PaterJason/cmp-conjure' }
   },
   {
     'windwp/nvim-autopairs',
@@ -50,7 +50,7 @@ local plugins = {
       'RRethy/nvim-treesitter-endwise',
       'windwp/nvim-ts-autotag',
     },
-    build = ':TSUpdate',
+    build = ';TSUpdate',
     event = { 'BufReadPost', 'BufNewFile' },
     config = function()
       require 'config.treesitter'
@@ -62,26 +62,62 @@ local plugins = {
   },
   {
     'nvimdev/lspsaga.nvim',
-    event = { "LspAttach" },
+    event = { 'LspAttach' },
     opts = {},
   },
-  {
-    'hrsh7th/nvim-cmp',
-    lazy = false,
-    dependencies = {
-      'L3MON4D3/LuaSnip',
-      'hrsh7th/cmp-buffer',
-      'hrsh7th/cmp-cmdline',
-      'hrsh7th/cmp-nvim-lsp',
-      'hrsh7th/cmp-path',
-      'saadparwaiz1/cmp_luasnip',
-    },
-    config = function() require 'config.cmp' end
+  -- {
+  --   'hrsh7th/nvim-cmp',
+  --   lazy = false,
+  --   dependencies = {
+  --     'L3MON4D3/LuaSnip',
+  --     'hrsh7th/cmp-buffer',
+  --     'hrsh7th/cmp-cmdline',
+  --     'hrsh7th/cmp-nvim-lsp',
+  --     'hrsh7th/cmp-path',
+  --     'saadparwaiz1/cmp_luasnip',
+  --   },
+  --   config = function() require 'config.cmp' end
 
-  },
+  -- },
   {
     'saghen/blink.cmp',
-    dependencies = { 'rafamadriz/friendly-snippets' },
+    version = '1.*',
+    dependencies = { 'fang2hou/blink-copilot', 'rafamadriz/friendly-snippets' },
+    opts = {
+      sources = {
+        default = { 'lsp', 'buffer', 'snippets', 'path', 'copilot' },
+        providers = {
+          copilot = {
+            name = 'copilot',
+            module = 'blink-copilot',
+            score_offset = 100,
+            async = true,
+          },
+        },
+      },
+      keymap = {
+        preset = 'super-tab',
+        ['<Tab>'] = {
+          function(cmp)
+            if vim.b[vim.api.nvim_get_current_buf()].nes_state then
+              cmp.hide()
+              return (
+                require('copilot-lsp.nes').apply_pending_nes()
+                and require('copilot-lsp.nes').walk_cursor_end_edit()
+              )
+            end
+            if cmp.snippet_active() then
+              return cmp.accept()
+            else
+              return cmp.select_and_accept()
+            end
+          end,
+          'snippet_forward',
+          'fallback',
+        },
+      },
+    },
+    lazy = false
   },
   {
     'nvim-lualine/lualine.nvim',
@@ -91,24 +127,24 @@ local plugins = {
   {
     'ray-x/go.nvim',
     ft = { 'go', 'gomod' },
-    config = function() require("go").setup() end,
-    event = { "CmdlineEnter" },
+    config = function() require('go').setup() end,
+    event = { 'CmdlineEnter' },
     dependencies = {
-      "ray-x/guihua.lua",
+      'ray-x/guihua.lua',
     },
-    -- build = ':lua require("go.install").update_all_sync()'
+    -- build = ';lua require('go.install').update_all_sync()'
   },
   {
     'simrat39/rust-tools.nvim',
     opts = function() require 'config.rusttools' end,
-    ft = "rust"
+    ft = 'rust'
   },
   {
-    "rest-nvim/rest.nvim",
-    ft = "http",
-    dependencies = { "luarocks.nvim" },
+    'rest-nvim/rest.nvim',
+    ft = 'http',
+    dependencies = { 'luarocks.nvim' },
     config = function()
-      require("rest-nvim").setup()
+      require('rest-nvim').setup()
     end,
     lazy = false,
   },
@@ -137,7 +173,7 @@ local plugins = {
     lazy = false
   },
   {
-    "olimorris/codecompanion.nvim",
+    'olimorris/codecompanion.nvim',
     config = function() require 'config.codecompanion' end,
     lazy = false,
   },
@@ -147,17 +183,17 @@ local plugins = {
   },
   {
     'akinsho/flutter-tools.nvim',
-    ft = "flutter",
+    ft = 'flutter',
     opts = {}
   },
   {
     'hkupty/iron.nvim',
     config = function() require 'config.iron' end,
-    cmd = "IronRepl",
+    cmd = 'IronRepl',
   },
   {
     'tpope/vim-fugitive',
-    cmd = "Git",
+    cmd = 'Git',
   },
   {
     'MeanderingProgrammer/render-markdown.nvim',
@@ -167,6 +203,7 @@ local plugins = {
   },
   {
     'zbirenbaum/copilot.lua',
+    dependencies = { 'copilotlsp-nvim/copilot-lsp' },
     cmd = 'Copilot',
     event = 'InsertEnter',
     config = function()
@@ -179,16 +216,42 @@ local plugins = {
     end,
   },
   {
-    "vhyrro/luarocks.nvim",
+    'copilotlsp-nvim/copilot-lsp',
+    init = function()
+      vim.g.copilot_nes_debounce = 500
+      vim.lsp.enable('copilot_ls')
+      vim.keymap.set('n', '<tab>', function()
+        local bufnr = vim.api.nvim_get_current_buf()
+        local state = vim.b[bufnr].nes_state
+        if state then
+          local _ = require('copilot-lsp.nes').walk_cursor_start_edit()
+              or (
+                require('copilot-lsp.nes').apply_pending_nes()
+                and require('copilot-lsp.nes').walk_cursor_end_edit()
+              )
+          return nil
+        else
+          return '<C-i>'
+        end
+      end, { desc = 'Accept Copilot NES suggestion', expr = true })
+    end,
+  },
+  {
+    'vhyrro/luarocks.nvim',
     priority = 1000,
     config = true,
     lazy = false
   },
+  -- {
+  --   'zbirenbaum/copilot-cmp',
+  --   config = function()
+  --     require('copilot_cmp').setup()
+  --   end
+  -- },
   {
-    'zbirenbaum/copilot-cmp',
-    config = function()
-      require("copilot_cmp").setup()
-    end
+    'mason-org/mason.nvim',
+    opts = {},
+    cmd = { 'Mason', 'MasonInstall', 'MasonUninstall', 'MasonUninstallAll', 'MasonUpdate', 'MasonLogs' }
   },
   {
     'kristijanhusak/vim-dadbod-ui',
@@ -208,16 +271,16 @@ local plugins = {
     end,
   },
   {
-    "folke/which-key.nvim",
-    event = "VeryLazy",
+    'folke/which-key.nvim',
+    event = 'VeryLazy',
     opts = {},
     keys = {
       {
-        "<leader>?",
+        '<leader>?',
         function()
-          require("which-key").show({ global = false })
+          require('which-key').show({ global = false })
         end,
-        desc = "Buffer Local Keymaps (which-key)",
+        desc = 'Buffer Local Keymaps (which-key)',
       },
     },
   },

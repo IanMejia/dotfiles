@@ -11,7 +11,8 @@ iron.setup {
       python = {
         command = { "ipython", "--no-autoindent", "--profile=ian" },
         format = common.bracketed_paste_python,
-        block_deviders = { "# %%", "#%%" },
+        env = {PYTHON_BASIC_REPL = "1"},
+        block_dividers = { "# %%", "#%%" },
       },
       sh = {
         command = { "zsh" }

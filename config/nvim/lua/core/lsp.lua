@@ -1,6 +1,3 @@
--- lsp configuration --
-local capabilities = require('cmp_nvim_lsp').default_capabilities()
-
 -- Python
 vim.lsp.config(
   'pyright', {
@@ -39,6 +36,6 @@ local noconf_lsps = {
 }
 
 for _, lsp in ipairs(noconf_lsps) do
-  vim.lsp.config(lsp, { capabilities = capabilities })
+  -- vim.lsp.config(lsp, {})
   vim.lsp.enable(lsp)
 end
