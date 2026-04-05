@@ -37,21 +37,22 @@ local plugins = {
     lazy = false,
     config = function() vim.cmd('colorscheme catppuccin-mocha') end
   },
-  {
-    'ggandor/leap.nvim',
-    lazy = false,
-    config = function() require('leap').add_default_mappings() end,
-  },
+  --  {
+  --    'ggandor/leap.nvim',
+  --    lazy = false,
+  --    config = function() require('leap').leap { backward = true } end,
+  --  },
   {
     'nvim-treesitter/nvim-treesitter',
     dependencies = {
-      'nvim-treesitter/nvim-treesitter-refactor',
-      'RRethy/nvim-treesitter-textsubjects',
+      'nvim-treesitter/nvim-treesitter-locals',
+      'nvim-treesitter/nvim-treesitter-textobjects',
       'RRethy/nvim-treesitter-endwise',
       'windwp/nvim-ts-autotag',
     },
     build = ';TSUpdate',
-    event = { 'BufReadPost', 'BufNewFile' },
+    lazy=false,
+    -- event = { 'BufReadPost', 'BufNewFile' },
     config = function()
       require 'config.treesitter'
     end,
@@ -135,8 +136,9 @@ local plugins = {
     -- build = ';lua require('go.install').update_all_sync()'
   },
   {
-    'simrat39/rust-tools.nvim',
-    opts = function() require 'config.rusttools' end,
+    'mrcjkb/rustaceanvim',
+    version = '^7', -- Recommended
+    lazy = false,   -- This plugin is already lazy
     ft = 'rust'
   },
   {
